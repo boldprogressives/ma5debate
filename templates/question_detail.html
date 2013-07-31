@@ -1,0 +1,42 @@
+<div class="question-block cf">
+  <div class="votes">
+    <a href="#/question/{id}/" data-id="{id}"
+         class="vote-button">
+      <div class="vote_tally">{votes}</div>
+      <div class="vote-bottom">
+        Vote
+      </div>
+    </a>
+
+    <div class="social_links">
+      <span class="tweet-button"><a class="twitter" href="https://twitter.com/intent/tweet?url=http://ma5debate.boldprogressives.org/%23/question/{id}/&amp;text=I just voted in %23ma5debate&amp;via=BoldProgressive">Tweet</a></span>
+      <span class="fb-button"><a class="facebook" href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://ma5debate.boldprogressives.org/%23/question/{id}/&redirect_uri=http://ma5debate.boldprogressives.org/%23/question/{id}/&name=MA-05 Debate&caption=I just voted in %23ma5debate&description={submission}" target="_blank">
+      Share</a></span>  
+    </div>
+  </div>
+
+<div class="question">
+     <h3 class="question_text" data-if="submission">
+       <a href="#/question/{id}/">{submission}</a>
+     </h3>
+      <div class="question-meta">
+      	<span class="user_name">{first_name} {last_name}</span>,
+      	<span class="location"><a href="#/location/{y},{x}/">{city}, {state}</a></span>
+      	<div class="time"><a href="#/question/{id}/" title="{created}">{created|datetime}</a></div>
+      </div>
+
+</div>
+  
+</div>
+
+  
+  
+  <hr />
+  
+  
+    <div class="fb-comments" data-href="http://ma5debate.boldprogressives.org/#/question/{id}/"
+         data-width="470"
+         data-num-posts="10">
+    </div>
+  
+<hr />

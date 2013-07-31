@@ -1,0 +1,171 @@
+.lightbox button.take-action:hover, .lightbox a.take-action:hover, .lightbox .flat-button:hover, label.radio:hover {
+text-decoration: none;
+opacity: .8;
+-webkit-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease;
+-o-transition: all .2s ease;
+transition: all .2s ease;
+}
+
+#join_bp button.take-action, #join_bp a.take-action {
+width: auto;
+display:inline-block;
+color: #fff;
+background: #1a86ab;
+border: none;
+font-weight: 600;
+font-size: 20px;
+color: white;
+line-height: 18px;
+padding: 10px 0;
+cursor: pointer;
+width: 100%;
+}
+
+.lightbox #join_bp .take-action{
+text-transform: uppercase;
+text-align: center;
+position: relative;
+top: -2px;
+opacity: 1;
+-webkit-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease;
+-o-transition: all .2s ease;
+transition: all .2s ease;
+margin: .5em auto 2em auto;
+}
+
+form#join_bp{
+	width: 442px;
+	display:block;
+	margin: auto;
+}
+
+
+/*  lightbox styles */
+
+.lightbox h2{
+font-family: 'Open Sans Condensed', helvetica, arial, sans-serif;
+color: #052B47;
+text-align: center;
+text-transform: uppercase;
+font-size: 36px;
+line-height: 40px;
+margin-bottom: 30px;
+border-bottom: solid 1px #ccc;
+}
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	background: #f3f3f3;
+	padding: 6px 10px;
+	font-size: 16px;
+	margin: 10px 2px;
+}
+
+.join_bp input#email {
+	width: 65%;
+}
+
+.join_bp input#zip {
+	width: 28%;
+}
+
+#survey-questions > div {
+	padding: 1em 0;
+	line-height: 1.5em;
+}
+
+#survey-questions p{
+	margin-bottom: 10px;
+}
+
+.lightbox{
+	position: fixed;
+	width: 600px;
+	height: auto;
+	background: #fff;
+	top: 100px;
+	left: 50%;
+	margin-left: -300px;
+	top: 100px;
+	padding: 20px;
+	z-index: 200;
+	display:block;
+	text-align: center;
+	max-height: 75%;
+	overflow-y: auto;
+}
+
+.close_box{
+display: block;
+margin-right: 2px;
+float: right;
+color: #555;
+border: solid 1px #555;
+padding: 0 5px 5px 5px;
+font-size: 18px;
+line-height: 18px;
+cursor: pointer;
+}
+
+.close_box:hover{
+	background: #f3f3f3;
+}
+
+#overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.75);
+	z-index: 100;
+}
+
+.mobile-only{
+	display: none;
+}
+
+
+/* mobile styles */
+@media only screen 
+and (max-width : 767px)  {
+
+.mobile-only{
+	display: block;
+}
+
+.hidden-phone, #brand{
+	display:none;
+}
+
+#signup_form, #thanks {
+background: #fff;
+text-align: center;
+padding: 1em 20px;
+}
+
+.mobile{
+	display:block;
+}
+
+#join_bp button.take-action, #join_bp a.take-action{
+	font-size: 16px;	
+}
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	display:block;
+	width: 80%;
+	margin: 1em auto;
+}
+
+
+input[type="text"].campaign_website {
+width: auto;
+}
+
+button[type="submit"]{
+ width: auto;
+}
+
+}

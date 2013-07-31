@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head> <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Debate Questions</title>
+
+	<link rel="canonical" href="http://boldprogressives.org/running-for-office/" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
+	<link rel="stylesheet" type="text/css" media="screen" href="rfo.css" />
+	
+
+<!--[if !IE]><!--><script> if (/*@cc_on!@*/false) { document.documentElement.className+=' ie10'; } </script><!--<![endif]-->
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css" />
+        <![endif]-->
+    <link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.ie.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" media="screen" href="lightbox.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="debate.css" />
+
+</head>
+<body>	
+  <div style="display:none" class="lightbox">
+  <div class="close_box">X</div>
+    	<p>Verify your location</p>
+    	<div class="verify_location_error"></div>
+    	<form id="vote_form">
+    	<input type="email" id="vote_email" placeholder="Email"/>
+    	<input type="text" id="vote_zip" placeholder="Zip" />
+    	<button class="take-action" type="submit">Verify</button>
+    	</form>
+    </div>
+
+
+	<div id="overlay" style="display:none">&nbsp;</div>   
+<div id="page_content">
+	<header id="header">
+		<nav style="display: none">
+			<ul class="cf">
+				<li><a href="http://boldprogressives.org/about">About</a></li>
+				<li><a href="http://boldprogressives.org/category/news">In the News</a></li>
+				<li><a href="http://boldprogressives.org/candidates">Candidates</a></li>
+				<li><a href="http://boldprogressives.org/campaigns">Campaigns</a></li>
+				<li><a href="http://boldprogressives.org/blog">Blog</a></li>
+				<li><a href="https://secure.actblue.com/contribute/page/warren_shirt_2?refcode=rfo">Store</a></li>
+			</ul>
+		</nav>
+		<div class="container branding">
+			<a href="http://boldprogressives.org">
+				<img id="brand" src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/img/pccc-logo.jpg" alt="Progressive Change Campaign
+                Committee">
+            </a>
+        </div>
+    </header>
+
+<div style="min-height: 550px" class="breaker content cf">
+  <div class="width-align">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1390830227802266";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <div id="nav">
+      <a href="#/sort/date/">Show Newest Questions</a>
+      |
+      <a href="#/sort/votes/">Show Popular Questions</a>
+      |
+      <a href="#/location/">Browse on a Map</a>
+
+      <span id="recognized_user">
+      </span>
+        </div>
+   
+    
+
+    
+     <hr />
+    
+    
+    
+   
+    <div class="span66">
+     <div id="map" style="display: none; height: 400px;"></div>
+    <div id="container" >
+    
+    
+    
+    
+    </div>
+    </div>
+    <div class="span33 form-well">
+		
+        <div id="add_question">
+    	<h2>Submit a new Question</h2>
+    	
+    	<div id="thanks" style="display:none"></div>
+    	
+    	<div id="add_question_error" class="error" style="display:none"><p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
+    	
+    	<p class="invalid" style="display:none">Please enter a valid email address and zipcode.</p>
+    	
+    	</div>
+    	
+    	<form id="new_question" name="new_question" onsubmit="opendebate.submitQuestion(); return false;">
+	  <textarea name="question" id="new_question_text" placeholder="Question..."></textarea>
+
+	  <input class="user" type="text" name="first_name" id="first_name"  placeholder="First Name"/>    	
+	  <input class="user" type="text" name="last_name" id="last_name"  placeholder="Last Name"/>
+	  <input class="user" type="email" name="email" id="email"  placeholder="Email"/>
+	  <input class="user" type="text" name="zip" id="zip"  placeholder="Zipcode"/>
+	  <button type="submit" class="take-action">Add Your Question</button>
+          <hr />
+    	</form>
+    	
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+
+
+<footer id="footer">
+    	<div class="container cf">
+        	<div class="width-align">
+  		      	<h3 class="visible-phone">Sitemap</h3>
+                <div class="span50 footer-vert">
+                    <div class="span33">
+                        <ul>
+                                                    <li><a href="http://boldprogressives.org/about/">About</a></li>
+                                                    <li><a href="http://boldprogressives.org/candidates/">Candidates</a></li>
+                                                    <li><a href="http://boldprogressives.org/campaigns/">Campaigns</a></li>
+                                                    <li><a href="http://boldprogressives.org/blog/">Blog</a></li>
+                                                    <li><a href="http://boldprogressives.org/category/news/">News</a></li>
+                                                    <li><a href="http://act.boldprogressives.org/survey/survey_newwebsite_feedback/?source=rfo-footer">Feedback</a></li>
+                                                </ul>
+                    </div>
+                    <div class="span33">
+                        <ul>
+                                                    <li><a href="https://secure.actblue.com/contribute/page/pccc_main?refcode=bp">Donate</a></li>
+                                                    <li><a href="http://act.boldprogressives.org/survey/talent/">Volunteer</a></li>
+                                                    <li><a href="http://boldprogressives.org/press-resources/">Press Resources</a></li>
+                                                    <li><a href="http://boldprogressives.org/privacy-policy/">Privacy Policy</a></li>
+                                                    <li><a href="http://boldprogressives.org/contact/">Contact Us</a></li>
+                                                    <li><a href="http://boldprogressives.org/jobs-at-the-pccc/">Jobs at the PCCC</a></li>
+                                                </ul>
+                    </div>
+                </div>
+                <div class="span50">
+                    <div class="footer-pad">
+                        <h3>SHARE YOUR SKILLS</h3>
+                        <p>Are you a great web designer, a talented video editor, or do you simply have time to volunteer? Contribute your skills to the progressive movement!</p>
+                                                <a href="http://act.boldprogressives.org/survey/talent_next/" class="flat-button">Sign up for the next generation of talent!</a>
+                                            </div>
+                </div>
+                </div>
+        </div>
+        <div class="conatiner">
+        	<div class="width-align">
+                <div class="disclaimer">
+                    <p>Paid for by the Progressive Change Campaign Committee PAC (BoldProgressives.org) and not authorized by any candidate or candidate's committee. Contributions to the PCCC are not deductible as charitable contributions for federal income tax purposes.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div><!-- headslide-wrap -->
+</div>
+
+
+
+
+    <script type="text/javascript" 
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/js/bootstrap.js.gzip"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+    <script src="leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="obviel/obviel-template.js"></script>
+    <script type="text/javascript" src="obviel/obviel.js"></script>
+    <script type="text/javascript" src="pccc-ak-async-post.js"></script>
+    <script type="text/javascript" src="humane.js"></script>
+    <script type="text/javascript" src="opendebate.js"></script>
+    <script>
+      window.getArgs = function() {
+	    var argsStr = window.location.search;
+	    var pairs = argsStr.replace(/^\?/, '').split('&');
+	    var args = {};
+	    unesc = unescape;
+	    if ( typeof(decodeURIComponent) != 'undefined' )
+	    	unesc = decodeURIComponent;
+	    for ( var i = 0; i < pairs.length; ++i ) {
+		    pair = pairs[i].split('=');
+		    if (pair[0]) {
+			    if (pair[1])
+			    	pair[1] = unesc(pair[1].replace(/\+/g, ' '));
+			    args[unesc(pair[0].replace(/\+/g, ' '))] = pair[1];
+			}
+		}
+		return args;
+      };
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-6874881-6', 'boldprogressives.org');
+    </script>
+
+    <script type="text/javascript">
+      function recognized_user_callback(valid, user) {
+        if( !valid ) {
+          $("#new_question input.user").val("");
+        } else {
+          $.each(["first_name", "last_name", "email", "zip"], function(i, n) {
+            $("#new_question input[name=" + n + "]").val(user[n]);
+          });
+        } 
+      };
+
+  function fetch_and_validate_question() {
+
+    $("#add_question_error").slideUp();
+    $("#add_question_error .empty_input, #add_question_error .invalid").fadeOut();
+    $("input.error").removeClass("error");
+
+    var data = {};
+    var errors = 0;
+    $("#new_question input, #new_question textarea").each(function() {
+      console.log("checking "+ $(this).attr("id"));
+      if( $(this).val() === "" ) {
+        console.log("error on "+ $(this).attr("id"));
+        $(this).addClass("error");
+  	errors++;
+      }
+    });
+    
+    if( errors > 0 ) {
+      $("#add_question_error .empty_input").fadeIn();
+      $("#add_question_error").slideDown();
+      return false;
+    } 
+    
+    data.first_name = $("#first_name").val();
+    data.last_name = $("#last_name").val();
+    data.email = $("#email").val();
+    data.zip = $("#zip").val();
+
+    data.action_submission = $("#new_question_text").val();
+    return data;
+  };
+
+  function question_submitted_callback(result, data) {
+      console.log("SubmitActionKitForm begins");
+      $("#thanks").slideUp();
+      $("thanks").remove("p");
+      if( result == "success" ) {
+        $(".error").removeClass("error");
+
+        $("#new_question input, #new_question textarea").val("");
+        $("#thanks").append('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Add another?</p>');
+      	$("#thanks").slideDown();
+      } else {
+        $.each(data, function(key, val) {
+   	  $("#"+key).addClass('error');
+ 	});
+        console.log("errors: " + JSON.stringify(data));
+        $("#add_question_error .invalid").fadeIn();
+	$("#add_question_error").slideDown();
+      }
+  };
+
+        function vote_submitted_callback(result, data) {
+          if( result == "success" ) {
+            $(".lightbox").fadeOut();
+            $("#overlay").fadeOut();
+          } else {
+            $.each(data, function(key, val) {
+   	      $('.verify_location_error').append(val);
+ 	    });
+          }
+        }
+
+        function vote_user_data_fetcher(question_id) {
+          data = {};
+          data.email = $("#vote_email").val();
+    	  data.zip =  $("#vote_zip").val();
+          return data;
+        }
+
+      $(window).load(function() {
+        opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback);
+     
+     	$(document).on("click", ".vote-button", function(){
+          if( opendebate.akid || opendebate.recognized_user ) {
+            opendebate.vote($(this).attr("id"));
+            return false;
+          }
+          var submit_function = 'opendebate.vote('+$(this).attr("id")+');' + 
+                                ' return false;';
+     	  $("#vote_form").attr("onsubmit", submit_function);
+     	  $("#overlay").fadeIn();
+     	  $(".lightbox").fadeIn();
+     	  return false;
+     	});
+     	
+     	/* Close any lightbox by clicking X */
+	$(document).on('click', '.close_box', function(){
+			$(this).parent('.lightbox').fadeOut();
+			$('.active').removeClass("active");
+			$('#overlay').fadeOut();
+	});
+	
+     
+     $(document).keyup(function(e) { 
+        			if (e.keyCode == 27) { // esc keycode
+        				$('.active').removeClass("active");
+           				$('.lightbox').fadeOut();
+          				$('#overlay').fadeOut();
+	          		}   			
+       			});
+       		
+
+       		$(document).on("click", "#overlay", function(){
+        			$(".lightbox").fadeOut();
+        			$(this).fadeOut();
+    			   			    
+    			});
+     
+      });
+    </script>
+
+
+<script type="text/javascript">
+  validators = {};
+  validators.email = function(value) {
+    if ( !/^\s*\S+@\S+\.\S+\s*$/.test(value) )
+        return false
+    return true;
+  };
+
+  validators.zip = function(value) {
+    if ( !/\d{5}/.test(value) )
+        return false;
+    return true;
+  };	  
+  
+  var validate = function() {
+    var valid = true;
+    
+    //Validate email and zip
+    var val = $("#actionkit-signup-form input[name=email]").val();
+    if( !validators.email(val) ) {
+      $("#actionkit-signup-form input[name=email]").addClass("error");
+      valid = false;
+    } else {
+      $("#actionkit-signup-form input[name=email]").removeClass("error");
+    }
+    var val = $("#actionkit-signup-form input[name=zip]").val();
+    if( !validators.zip(val) ) {
+      $("#actionkit-signup-form input[name=zip]").addClass("error");
+      valid = false;
+    } else {
+      $("#actionkit-signup-form input[name=zip]").removeClass("error");
+    }
+    
+    console.log("good ol pre submit validation");
+    if( !valid ) return false;
+  };
+  
+  $("#actionkit-signup-form").on("submit", validate);
+  $("#actionkit-signup-form input[type=submit]").on("click", validate);
+
+  window.formatDate = function(datestring) {
+
+  var zeroPadded = function(n) {
+    return n < 10 ? "0" + n : "" + n;
+  };
+	     
+	     var last_updated = new Date(datestring) // e.g. "Feb. 13, 2013, 03:39:14 AM", assumed to be UTC
+	     last_updated.setMinutes(last_updated.getMinutes() - last_updated.getTimezoneOffset());
+	     var months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.",
+	     "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+	     last_updated = months[last_updated.getMonth()] + " " + last_updated.getDate()
+	     + ", " + (last_updated.getYear() + 1900) + ", "
+	     + (last_updated.getHours() > 12 ? last_updated.getHours() - 12 : last_updated.getHours()) 
+    + ":" + zeroPadded(last_updated.getMinutes())
+    + (last_updated.getHours() > 11 ? " PM" : " AM");
+    return last_updated;
+    }
+    $("span.time a").each(function() { 
+      var gmt = $(this).text();
+      var localeTime = formatDate(gmt);
+      $(this).attr("title", localeTime).text(humaneDate(localeTime) || localeTime);
+    });
+</script>
+
+<script type="text/javascript">
+// instead of including all of http://act.boldprogressives.org/resources/actionkit.js
+// just using the getArgs function
+	</script>
+	
+</body>
+</html>

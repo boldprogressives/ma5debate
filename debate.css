@@ -1,0 +1,273 @@
+.width-align {
+max-width: 1040px;
+margin: 0 auto;
+}
+
+.span66 {
+width: 65%;
+float: left;
+}
+
+.span33 {
+width: 30%;
+float: right;
+}
+
+
+#container, #map{
+margin-right: 20px;
+}
+
+.form-well h2 {
+border-bottom: none;
+line-height: 40px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+#thanks p{
+display: block;
+background: #fff;
+color: #1a86ab;
+padding: 15px 6px;
+margin-bottom: 20px;
+}
+
+
+
+#add_question input, #add_question textarea{
+background: #fff;
+width: 80%;
+}
+
+button.take-action, a.take-action {
+width: auto;
+display:inline-block;
+color: #fff;
+background: #1a86ab;
+border: none;
+font-weight: 600;
+font-size: 20px;
+color: white;
+line-height: 18px;
+padding: 10px 30px 10px 30px;
+cursor: pointer;
+}
+
+.take-action{
+text-transform: uppercase;
+text-align: center;
+position: relative;
+top: -2px;
+opacity: 1;
+-webkit-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease;
+-o-transition: all .2s ease;
+transition: all .2s ease;
+margin: 1em auto;
+}
+
+.votes {
+display: inline-block;
+text-align: center;
+font-size: 18px;
+color: #1a86ab;
+width: 18%;
+float: left;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+	padding-left: 60px;
+	padding-top: 10px;
+}
+
+.leaflet-container .votes{
+	width: 60px;
+	left: 15px;
+	top: 20px;
+	position: absolute;
+}
+
+.leaflet-container .question, .leaflet-container .question-block{
+	display:inline-block; 
+	clear: both;
+	float: none;
+	width: auto;
+
+}
+
+.leaflet-container .question-block{
+	margin-left: 10px;
+}	
+
+.leaflet-popup .question_text {
+margin-top: -20px;
+}
+
+.user_name{
+	font-weight: bold;
+}
+
+.time a{
+	text-decoration: italic;
+	color: #333;
+}
+
+.votes>a, .votes .leaflet-container .vote a{
+display: inline-block;
+}
+
+.votes a {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.vote_tally{
+    display:block;
+    padding: 0 5px;	
+    font-weight: bold;
+    border: 1px solid #1a86ab;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: -10px;
+    color: #0078A8;
+}
+
+.votes .vote-bottom, .votes .leaflet-container .vote a{
+display: block;
+margin: 10px auto;
+color: #fff;
+background: #1a86ab;
+font-size: 16px;
+line-height: 18px;
+padding: 5px;
+border-radius: 0 0 5px 5px;
+text-transform: uppercase;
+border-bottom:none;
+}
+
+.votes>a:hover .vote-bottom {
+    background-color: #052b47;
+}
+.votes>a:hover .vote_tally {
+    border-color: #052b47;
+    color: #052b47;
+}
+
+.votes .social_links a {
+  font-size: 0.8em;
+  display: inline-block;
+}
+
+.social_links a:hover {
+  border-radius: 5px;
+  background-color: #1a86ab;
+  color: white;
+}
+
+.question-block{
+	display: block;
+	clear:both;
+	margin: 1em 0;
+}
+
+h3.question_text{
+	font-size: 22px;
+}
+
+.question{
+display:inline-block;
+width: 78%;
+margin-left: 1%;
+float: right;
+}
+
+
+
+
+.social span, .question-meta{
+	margin: 10px auto;
+}
+
+.tweet-button a {
+    display: inline-block;
+    padding: 2px 5px 2px 20px;
+    background: url('https://twitter.com/favicons/favicon.ico') 1px center no-repeat;
+	border-bottom: none;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.fb-button a {
+    display: inline-block;
+    padding: 2px 5px 2px 20px;
+    background: url('http://g.etfv.co/http://www.facebook.com') 1px center no-repeat;
+	border-bottom: none;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.comments a {
+	display: inline-block;
+	padding: 2px 5px;
+}
+
+input[type=email].error, input[type=text].error, textarea.error{
+	border: solid 1px #D9000D;
+}
+
+#nav{
+	margin: 1em auto;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+
+.tooltip:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+
+.tooltip:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+
+.error p{
+	
+	color:  #D9000D;
+}
+
+textarea {
+	
+	width: auto;
+	
+}
+
+.form-well {
+padding: 20px;
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+background-color: #f3f3f3;
+border-color: #e3e3e3;
+border-style: solid;
+border-width: 1px;
+}
