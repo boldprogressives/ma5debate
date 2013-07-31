@@ -364,6 +364,7 @@
     
       if( empty > 0 ){	
     		$("#verify_location_error .empty_input").fadeIn();
+    		return false;
       }
       
       if(!validators.email($("#vote_email").val())){
