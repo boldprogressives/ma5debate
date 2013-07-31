@@ -259,10 +259,12 @@
       }
       
       if(!validators.email($("#email").val())){
+      	   $("#email").addClass("error");
 		   $("#add_question_error .invalid_email").fadeIn();
 	  }
 	   
 	  if(!validators.zip($("#zip").val())){
+	  	   $("#zip").addClass("error");
 		   $("#add_question_error .invalid_zip").fadeIn();
 	  }
 
