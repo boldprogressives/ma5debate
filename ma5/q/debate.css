@@ -130,26 +130,23 @@ display: inline-block;
 
 .vote_tally{
     display:block;
-    padding: 0 5px;	
+    padding: 2px 5px;	
     font-weight: bold;
-    border: 1px solid #1a86ab;
-    border-bottom: none;
-    border-radius: 5px 5px 0 0;
-    margin-bottom: -10px;
-    color: #0078A8;
+    background-color: #006ea9;
+    margin-bottom: 1px;
+    color: #fff;
 }
 
 .votes .vote-bottom, .votes .leaflet-container .vote a{
 display: block;
-margin: 10px auto;
+margin:  auto;
 color: #fff;
-background: #1a86ab;
+background: #bb0008;
 font-size: 16px;
 line-height: 18px;
-padding: 5px;
-border-radius: 0 0 5px 5px;
+width:100%;
 text-transform: uppercase;
-border-bottom:none;
+
 }
 
 .votes>a:hover .vote-bottom {
