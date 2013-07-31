@@ -162,6 +162,12 @@ text-transform: uppercase;
   display: inline-block;
 }
 
+.social_links {
+	padding-top:5px;
+	border-top: solid 1px rgb(215,215,215)
+}
+
+
 .social_links a:hover {
   border-radius: 5px;
   background-color: #1a86ab;
@@ -173,6 +179,8 @@ text-transform: uppercase;
 	clear:both;
 	margin: 1em 0;
 	background: #fff;
+	padding: 10px;
+	border: solid 2px rgb(201,201,201);
 }
 
 h3.question_text{
