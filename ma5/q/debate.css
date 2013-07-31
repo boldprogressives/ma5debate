@@ -129,6 +129,7 @@ display: inline-block;
 }
 
 .vote_tally{
+	font-family: 'Open Sans Condensed', sans-serif;
     display:block;
     padding: 5px;	
     font-weight: bold;
