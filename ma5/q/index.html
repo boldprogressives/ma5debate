@@ -24,7 +24,13 @@
 
 </head>
 <body>	
-  <div style="display:none" class="lightbox">
+
+  <div class="lightbox out_of_area" style="display:none">
+    <div class="close_box">X</div>
+    Sorry, we're currently only allowing Massachusetts residents to vote for the questions they want in the debate.  But feel free to submit your own question for voting, and share with your friends in Massachusetts!
+  </div>
+
+  <div style="display:none" class="lightbox" id="vote_form_lightbox">
   <div class="close_box">X</div>
     	<p>Verify your location</p>
     	
@@ -33,7 +39,7 @@
     	
     	<p class="invalid_vote_email" style="display:none">Please enter a valid email address.</p>
     	<p class="invalid_vote_zip" style="display:none">Please enter a valid zipcode.</p>
-		<p class="out_of_area" style="display:none">Sorry, this action is not available where you live.</p>
+
     	</div>
 
 	    <form id="vote_form">
@@ -323,7 +329,7 @@
        $("#verify_location_error input.error").removeClass("error");
         
         if( result == "success" ) {
-            $(".lightbox").fadeOut();
+            $("#vote_form_lightbox").fadeOut();
             $("#overlay").fadeOut();
         
         } else {
@@ -334,8 +340,10 @@
             	$('#vote_'+key).addClass("error");
             	$('.invalid_vote_'+key).fadeIn();
             } else {
-	        	$('#vote_zip').addClass("error");
+              $("#vote_form_lightbox").fadeOut();
+        $("#overlay").fadeIn();
 	        	$('.out_of_area').fadeIn();
+
 			}
 			
 			
@@ -407,7 +415,7 @@
                                 ' return false;';
      	  $("#vote_form").attr("onsubmit", submit_function);
      	  $("#overlay").fadeIn();
-     	  $(".lightbox").fadeIn();
+     	  $("#vote_form_lightbox").fadeIn();
      	  return false;
      	});
      	
