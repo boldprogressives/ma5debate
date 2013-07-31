@@ -130,11 +130,12 @@ display: inline-block;
 
 .vote_tally{
     display:block;
-    padding: 2px 5px;	
+    padding: 5px;	
     font-weight: bold;
     background-color: #006ea9;
     margin-bottom: 1px;
     color: #fff;
+    font-size: 30px;
 }
 
 .votes .vote-bottom, .votes .leaflet-container .vote a{
