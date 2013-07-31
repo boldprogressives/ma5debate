@@ -318,6 +318,7 @@
             $("#overlay").fadeOut();
           } else {
             $.each(data, function(key, val) {
+            console.log(key);
    	      $('.verify_location_error').append('<p>'+val+'</p>');
  	    });
  	    	$(".verify_location_error").slideDown();
