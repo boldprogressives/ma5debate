@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Debate Questions</title>
 
-	<link rel="canonical" href="http://boldprogressives.org/running-for-office/" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
 	<link rel="stylesheet" type="text/css" media="screen" href="rfo.css" />
@@ -25,16 +24,22 @@
 
 </head>
 <body>	
-  <div style="display:none" class="lightbox">
+
+  <div class="lightbox out_of_area" style="display:none">
+    <div class="close_box">X</div>
+    Sorry, we're currently only allowing Massachusetts residents to vote for the questions they want in the debate.  But feel free to submit your own question for voting, and share with your friends in Massachusetts!
+  </div>
+
+  <div style="display:none" class="lightbox" id="vote_form_lightbox">
   <div class="close_box">X</div>
     	<p>Verify your location</p>
     	
-    	<div id="verify_location_error" class="error" style="display:none">
+    	<div id="verify_location_error" class="error_msg" style="display:none">
 		<p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
     	
     	<p class="invalid_vote_email" style="display:none">Please enter a valid email address.</p>
     	<p class="invalid_vote_zip" style="display:none">Please enter a valid zipcode.</p>
-		<p class="out_of_area" style="display:none">Sorry, this action is not available where you live.</p>
+
     	</div>
 
 	    <form id="vote_form">
@@ -113,7 +118,7 @@
     	
     	<div id="thanks" style="display:none"></div>
     	
-    	<div id="add_question_error" class="error" style="display:none"><p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
+    	<div id="add_question_error" class="error_msg" style="display:none"><p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
     	
     	<p class="invalid_email" style="display:none">Please enter a valid email address.</p>
     	<p class="invalid_zip" style="display:none">Please enter a valid zipcode.</p>
@@ -319,10 +324,12 @@
   };
 
         function vote_submitted_callback(result, data) {
-       
+		
+		
+       $("#verify_location_error input.error").removeClass("error");
         
         if( result == "success" ) {
-            $(".lightbox").fadeOut();
+            $("#vote_form_lightbox").fadeOut();
             $("#overlay").fadeOut();
         
         } else {
@@ -333,8 +340,10 @@
             	$('#vote_'+key).addClass("error");
             	$('.invalid_vote_'+key).fadeIn();
             } else {
-	        	$('#vote_zip').addClass("error");
+              $("#vote_form_lightbox").fadeOut();
+        $("#overlay").fadeIn();
 	        	$('.out_of_area').fadeIn();
+
 			}
 			
 			
@@ -347,6 +356,7 @@
 
         function vote_user_data_fetcher(question_id) {
         
+       $("#verify_location_error .error").removeClass("error");
                var empty = 0;
     
     $("#vote_form input").each(function() {
@@ -364,16 +374,18 @@
     
       if( empty > 0 ){	
     		$("#verify_location_error .empty_input").fadeIn();
+    		$("#verify_location_error").slideDown();
+    		return false;
       }
       
       if(!validators.email($("#vote_email").val())){
       	   $("#vote_email").addClass("error");
-		   $("#verify_location_error .invalid_email").fadeIn();
+		   $("#verify_location_error .invalid_vote_email").fadeIn();
 	  }
 	   
 	  if(!validators.zip($("#vote_zip").val())){
 	  	   $("#vote_zip").addClass("error");
-		   $("#verify_location_error .invalid_zip").fadeIn();
+		   $("#verify_location_error .invalid_vote_zip").fadeIn();
 	  }
 
       
@@ -403,7 +415,7 @@
                                 ' return false;';
      	  $("#vote_form").attr("onsubmit", submit_function);
      	  $("#overlay").fadeIn();
-     	  $(".lightbox").fadeIn();
+     	  $("#vote_form_lightbox").fadeIn();
      	  return false;
      	});
      	
