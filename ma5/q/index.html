@@ -28,7 +28,16 @@
   <div style="display:none" class="lightbox">
   <div class="close_box">X</div>
     	<p>Verify your location</p>
-    	<div class="verify_location_error error" style="display:none"></div>
+    	<div class="verify_location_error error" style="display:none">
+	    	<div id="add_question_error" class="error" style="display:none"><p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
+    	
+    	<p class="invalid_vote_email" style="display:none">Please enter a valid email address.</p>
+    	<p class="invalid_vote_zip" style="display:none">Please enter a valid zipcode.</p>
+		<p class="out_of_area" style="display:none">Sorry, this action is not available where you live.</p>
+    	</div>
+
+	    	
+    	</div>
     	<form id="vote_form">
     	<input type="email" id="vote_email" placeholder="Email"/>
     	<input type="text" id="vote_zip" placeholder="Zip" />
@@ -311,22 +320,28 @@
   };
 
         function vote_submitted_callback(result, data) {
-        console.log(data);
-        $(".verify_location_error").slideUp();
-        $("input.error").removeClass("error");
-        $('.verify_location_error').html("");
-          if( result == "success" ) {
+       
+        
+        if( result == "success" ) {
             $(".lightbox").fadeOut();
             $("#overlay").fadeOut();
-          } else {
+        
+        } else {
+            
             $.each(data, function(key, val) {
+            
             if(key != "zip:not_targeted"){
-            $('#vote_'+key).addClass("error");
+            	$('#vote_'+key).addClass("error");
+            	$('.invalid_vote_'+key).fadeIn();
             } else {
-	        $('#vote_zip').addClass("error");
-           }
-   	      $('.verify_location_error').append('<p>'+val+'</p>');
- 	    });
+	        	$('#vote_zip').addClass("error");
+	        	$('.out_of_area').fadeIn();
+			}
+			
+			
+		   	
+		   	});
+ 	    	
  	    	$(".verify_location_error").slideDown();
           }
         }
@@ -342,10 +357,12 @@
         opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback);
      
      	$(document).on("click", ".vote-button", function(){
+          
           if( opendebate.akid || opendebate.recognized_user ) {
             opendebate.vote($(this).attr("id"));
             return false;
           }
+          
           var submit_function = 'opendebate.vote('+$(this).attr("id")+');' + 
                                 ' return false;';
      	  $("#vote_form").attr("onsubmit", submit_function);

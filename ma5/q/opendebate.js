@@ -229,6 +229,48 @@
 
   od.vote = function(question_id) {
       
+       $("#verify_location_error").slideUp();
+       $("input.error").removeClass("error");
+       $('#verify_location_error').html("");
+       
+       
+       
+       var empty = 0;
+    
+    $("#vote_form input").each(function() {
+    	
+    	if( $(this).val() === "" ) {
+        	$(this).addClass("error");
+			empty++;
+		}
+		
+    });
+    
+    //handle all possible errors
+    
+    if( empty > 0 || !validators.email($("#vote_email").val()) || !validators.zip($("#vote_zip").val())) {
+    
+      if( empty > 0 ){	
+    		$("#add_question_error .empty_input").fadeIn();
+      }
+      
+      if(!validators.email($("#vote_email").val())){
+      	   $("#vote_email").addClass("error");
+		   $("#verify_location_error .invalid_email").fadeIn();
+	  }
+	   
+	  if(!validators.zip($("#vote_zip").val())){
+	  	   $("#vote_zip").addClass("error");
+		   $("#verify_location_error .invalid_zip").fadeIn();
+	  }
+
+      
+            $("#verify_location_error").slideDown();
+
+			return false;
+	  }
+       
+       
        
       var data = {
           "action_vote": question_id,
