@@ -250,21 +250,26 @@
 		
     });
     
-    if( empty > 0 ) {
-      $("#add_question_error .empty_input").fadeIn();
-      $("#add_question_error").slideDown();
-      return false;
-    } else {
-	    
-	   if(!validators.email($("#email").val())){
+    //handle all possible errors
+    
+    if( empty > 0 || !validators.email($("#email").val()) || !validators.zip($("#zip").val())) {
+    
+      if( empty > 0 ){	
+    		$("#add_question_error .empty_input").fadeIn();
+      }
+      
+      if(!validators.email($("#email").val())){
 		   $("#add_question_error .invalid_email").fadeIn();
-	   }
+	  }
 	   
-	    if(!validators.zip($("#zip").val())){
+	  if(!validators.zip($("#zip").val())){
 		   $("#add_question_error .invalid_zip").fadeIn();
-	   }
-	   
-	   $("#add_question_error").slideDown();
+	  }
+
+      
+      $("#add_question_error").slideDown();
+  
+	  return false;
     
     }
     
