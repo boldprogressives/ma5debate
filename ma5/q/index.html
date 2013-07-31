@@ -311,6 +311,7 @@
   };
 
         function vote_submitted_callback(result, data) {
+        console.log(data);
         $(".verify_location_error").slideUp();
         $("input.error").removeClass("error");
         $('.verify_location_error').html("");
