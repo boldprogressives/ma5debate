@@ -180,6 +180,13 @@ border-bottom:none;
 
 h3.question_text{
 	font-size: 22px;
+	color: #006ea9;
+}
+
+h3.question_text a{
+	color: #006ea9;
+	text-decoration: none;
+	border: none;
 }
 
 .question{
