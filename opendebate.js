@@ -44,6 +44,10 @@
     }).addTo(map);
     od.map_layer = L.markerClusterGroup().addTo(map);
     map.invalidateSize();
+    map.on("popupopen", function(e) {
+      var contents = $(e.popup._container).find("#map_popup").get(0);
+      contents && FB.XFBML.parse(contents);
+    });
 
     od.data = null;
     od.votes = null;
@@ -113,8 +117,8 @@
   };
 
   od.refresh = function(view) {
-    FB.XFBML.parse();
     od.map.invalidateSize();
+    FB.XFBML.parse();
   };
 
   od.submitVote = function(question_id, akid, user_id) {
@@ -351,7 +355,7 @@
         });
             
         od.map_layer.addLayers(markers_layer);
-        od.refresh();
+        od.map.invalidateSize();
         if( !x || !y ) {
             od.map.fitBounds(od.map_layer.getBounds());
         } else {
@@ -379,16 +383,24 @@
     if( active_question ) {
       $("#container").render(active_question, "question_detail").done(od.refresh);
     } else {
-      var active_sort = hash.match(/^\#\/sort\/(\w+)\/$/);
+      var active_sort = hash.match(/^\#\/sort\/(\w+)\//);
+      var page = hash.match(/^\#\/sort\/\w+\/p(\d+)\/$/);
       if( active_sort ) { active_sort = active_sort[1]; }
+      if( page ) { page = parseInt(page[1]); }
       if( active_sort === "date" && od.dataSort !== "date" ) {
         od.sortByDate();
       } else if( active_sort === "votes" && od.dataSort !== "votes" ) {
         od.sortByVotes(); 
-      } else if( !map_view ) {
-        window.location.hash = "#/sort/votes/";
+      }
+      if( !page && !map_view ) {
+        window.location.hash = "#/sort/" + (active_sort || "votes") + "/p1/";
         return;
       }
+
+      od.data.pages = {};
+      od.data.pages.current = page;
+      recalcPage();
+
       $("#container").render(od.data).done(od.refresh);
     }
   };
@@ -508,6 +520,12 @@
         }
     });
     od.dataSort = "date";
+
+    od.data.pages = {};
+    od.data.pages.current = 1;
+
+    recalcPage();
+
   };
   od.sortByVotes = function() {
     if( !od.data || !od.votes ) {
@@ -524,5 +542,47 @@
       }
     });
     od.dataSort = "votes";
+
+    od.data.pages = {};
+    od.data.pages.current = 1;
+
+    recalcPage();
+
   };
+
+  var recalcPage = function() {
+
+    od.data.pages.previous = null;
+    od.data.pages.next = null;
+
+    var total = od.data.pages.total = Math.ceil(od.data.entries.length / 20);
+
+    var current = od.data.pages.current;
+
+    var next = current + 1;
+    if( next <= total ) {
+      od.data.pages.next = "/sort/" + od.dataSort + "/p" + next + "/";
+    }
+    var prev = current - 1;
+    if( prev > total ) {
+      prev = total;
+    }
+    if( prev > 0 ) {
+      od.data.pages.previous = "/sort/" + od.dataSort + "/p" + prev + "/";
+    }
+    var this_page = od.data.pages.entries = [];
+    for( var i=((current-1) * 20); i < (current*20) && (i < od.data.entries.length); ++i ) {
+        this_page.push(od.data.entries[i]);
+    }
+  };
+
+  od.pageNext = function() {
+    od.data.pages.current += 1;
+    recalcPage();
+  };
+  od.pagePrev = function() {
+    od.data.pages.current -= 1;
+    recalcPage();
+  };
+
 })(jQuery, obviel);
