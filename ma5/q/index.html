@@ -319,8 +319,11 @@
             $("#overlay").fadeOut();
           } else {
             $.each(data, function(key, val) {
-            console.log(key);
+            if(key != "zip:not_targeted"){
             $('#vote_'+key).addClass("error");
+            } else {
+	        $('#vote_zip').addClass("error");
+           }
    	      $('.verify_location_error').append('<p>'+val+'</p>');
  	    });
  	    	$(".verify_location_error").slideDown();
