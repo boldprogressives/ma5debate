@@ -293,7 +293,7 @@
       
       if( result == "success" ) {
         
-        $(".error").removeClass("error");
+        $("input.error, textarea.error").removeClass("error");
 
         $("#new_question input, #new_question textarea").val("");
         $("#thanks").append('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Add another?</p>');
