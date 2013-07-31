@@ -319,6 +319,7 @@
             $("#overlay").fadeOut();
           } else {
             $.each(data, function(key, val) {
+            console.log(key);
             $('#vote_'+key).addClass("error");
    	      $('.verify_location_error').append('<p>'+val+'</p>');
  	    });
