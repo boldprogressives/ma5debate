@@ -107,7 +107,8 @@
     	
     	<div id="add_question_error" class="error" style="display:none"><p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
     	
-    	<p class="invalid" style="display:none">Please enter a valid email address and zipcode.</p>
+    	<p class="invalid_email" style="display:none">Please enter a valid email address.</p>
+    	<p class="invalid_zip" style="display:none">Please enter a valid zipcode.</p>
     	
     	</div>
     	
@@ -234,33 +235,47 @@
   function fetch_and_validate_question() {
 
     $("#add_question_error").slideUp();
-    $("#add_question_error .empty_input, #add_question_error .invalid").fadeOut();
+    $("#add_question_error .empty_input, #add_question_error .invalid_email, #add_question_error .invalid_zip").fadeOut();
     $("input.error, textarea.error").removeClass("error");
 
     var data = {};
-    var errors = 0;
+    var empty = 0;
     
     $("#new_question input, #new_question textarea").each(function() {
     	
     	if( $(this).val() === "" ) {
         	$(this).addClass("error");
-			errors++;
+			empty++;
 		}
 		
     });
     
-    if( errors > 0 ) {
+    if( empty > 0 ) {
       $("#add_question_error .empty_input").fadeIn();
       $("#add_question_error").slideDown();
       return false;
-    } 
+    } or {
+	    
+	   if(!validators.email($("#email").val())){
+		   $("#add_question_error .invalid_email").fadeIn();
+	   }
+	   
+	    if(!validators.zip($("#zip").val())){
+		   $("#add_question_error .invalid_zip").fadeIn();
+	   }
+	   
+	   $("#add_question_error").slideDown();
+    
+    }
     
     data.first_name = $("#first_name").val();
     data.last_name = $("#last_name").val();
     data.email = $("#email").val();
     data.zip = $("#zip").val();
 
-    data.action_submission = $("#new_question_text").val();
+
+
+	data.action_submission = $("#new_question_text").val();
     return data;
   };
 
