@@ -312,13 +312,14 @@
 
         function vote_submitted_callback(result, data) {
         $(".verify_location_error").slideUp();
+        $("input.error").removeClass("error");
         $('.verify_location_error').html("");
           if( result == "success" ) {
             $(".lightbox").fadeOut();
             $("#overlay").fadeOut();
           } else {
             $.each(data, function(key, val) {
-            console.log(key);
+            $('#'+key).addClass("error");
    	      $('.verify_location_error').append('<p>'+val+'</p>');
  	    });
  	    	$(".verify_location_error").slideDown();
