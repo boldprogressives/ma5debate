@@ -154,8 +154,7 @@
         });
   };
     
-  obviel.template.registerFormatter('datetime', function(gmt) {
-
+  var datetime_formatter = function(gmt) {
       var zeroPadded = function(n) {
           return n < 10 ? "0" + n : "" + n;
       };
@@ -174,7 +173,10 @@
 
       var localeTime = formatDate(gmt);
       return humaneDate(localeTime) || localeTime;
-  });
+  };
+
+  obviel.template.registerFormatter('datetime', datetime_formatter);
+  Handlebars.registerHelper("datetime", datetime_formatter);
 
   od.submitQuestion = function() {
     ga("send", "event", "question", "submit");
@@ -280,12 +282,13 @@
     iface: "question",
     obvtUrl: "templates/question.html"
   });
-  obviel.view({
-    iface: "question",
-    name: "question_in_map",
-    obvtUrl: "templates/question_in_map.html"
-  });
 
+  var map_popup_template = null;
+  $.ajax("templates/question_in_map.html", {
+      success: function(data) {
+          map_popup_template = Handlebars.compile(data);
+      } 
+  });
   obviel.view({
     iface: "question",
     name: "question_detail",
@@ -338,21 +341,22 @@
         }
         $("#map").show(); $("#container").hide();
         od.map_layer.clearLayers();
+
+        var markers_layer = [];
         $.each(od.data.entries, function(i, obj) {
             if( obj.iface !== "question" ) return;
-            var popup_div = $("<div>");
-            popup_div.render(obj, "question_in_map").done(function() {
-              var marker = L.marker([obj.y, obj.x]).bindPopup(popup_div.html());
-              popup_div.remove();
-              od.map_layer.addLayer(marker);
-              od.refresh();
-              if( !x || !y ) {
-                od.map.fitBounds(od.map_layer.getBounds());
-              } else {
-                od.map.setView([y, x], 10);
-              }
-            });
+            var marker = L.marker([obj.y, obj.x]).bindPopup(
+                map_popup_template(obj));
+            markers_layer.push(marker);
         });
+            
+        od.map_layer.addLayers(markers_layer);
+        od.refresh();
+        if( !x || !y ) {
+            od.map.fitBounds(od.map_layer.getBounds());
+        } else {
+            od.map.setView([y, x], 10);
+        }
 
     } else {
       $("#map").hide(); $("#container").show();
