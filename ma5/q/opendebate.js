@@ -230,7 +230,7 @@
   od.vote = function(question_id) {
       
         $("#verify_location_error").slideUp();
-       $("input.error").removeClass("error");
+       $("#verify_location_error input.error").removeClass("error");
  
       
        
