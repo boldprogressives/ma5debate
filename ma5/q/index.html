@@ -319,7 +319,9 @@
   };
 
         function vote_submitted_callback(result, data) {
-       
+		
+		
+       $("#verify_location_error input.error").removeClass("error");
         
         if( result == "success" ) {
             $(".lightbox").fadeOut();
