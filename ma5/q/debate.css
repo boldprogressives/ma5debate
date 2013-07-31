@@ -251,7 +251,7 @@ input[type=email].error, input[type=text].error, textarea.error{
     z-index: 99;
 }
 
-.error p{
+.error_msg p{
 	
 	color:  #D9000D;
 }
