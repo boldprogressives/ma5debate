@@ -28,7 +28,7 @@
   <div style="display:none" class="lightbox">
   <div class="close_box">X</div>
     	<p>Verify your location</p>
-    	<div class="verify_location_error error"></div>
+    	<div class="verify_location_error error" style="display:none"></div>
     	<form id="vote_form">
     	<input type="email" id="vote_email" placeholder="Email"/>
     	<input type="text" id="vote_zip" placeholder="Zip" />
@@ -311,14 +311,16 @@
   };
 
         function vote_submitted_callback(result, data) {
+        $(".verify_location_error").slideUp();
         $('.verify_location_error').html("");
           if( result == "success" ) {
             $(".lightbox").fadeOut();
             $("#overlay").fadeOut();
           } else {
             $.each(data, function(key, val) {
-   	      $('.verify_location_error').append(val);
+   	      $('.verify_location_error').append('<p>'+val+'</p>');
  	    });
+ 	    	$(".verify_location_error").slideDown();
           }
         }
 
