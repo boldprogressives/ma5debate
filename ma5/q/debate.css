@@ -70,6 +70,11 @@ margin: 10px 2px;
 
 }
 
+/* only shows up for mobile */
+.add_question_header_link {
+    display: none;
+}
+
 button.take-action, a.take-action {
 width: auto;
 display:inline-block;
@@ -373,6 +378,10 @@ hr.mic_icon:after{
 /* mobile styles */
 @media only screen 
 and (max-width : 930px) {
+
+    .add_question_header_link {
+        display: initial;
+    }
 
     .content .span33 {
         margin-bottom: 30px;
