@@ -14,6 +14,28 @@ a:link{
 	border: none;
 }
 
+.pagination {
+  font-size: 12px;
+}
+.pagination a[data-pagination] {
+  visibility: hidden;
+}
+.pagination .pagination-prev {
+    float: left;
+}
+.pagination .pagination-next {
+    float: right;
+}
+.pagination span {
+    width: 85%;
+    display: inline-block;
+    text-align: center;
+}
+
+.pagination a[data-pagination^='/sort/'] {
+  visibility: visible;
+}
+
 .pagination.top {
 	margin-bottom: 0;
 }

@@ -1,16 +1,24 @@
 <div>
   <div class="pagination top">
-    Page {pages.current} of {pages.total} (Showing {pages.entries.length} of {entries.length} questions)
-    <a data-if="pages.previous" href="#{pages.previous}">Prev</a>
-    <a data-if="pages.next" href="#{pages.next}">Next</a>
+    <a class="pagination-prev"
+       data-pagination="{pages.previous}"
+       href="#{pages.previous}">&laquo;&nbsp;Prev</a>
+    <span>Page {pages.current} of {pages.total} (Showing {pages.entries.length} of {entries.length} questions)</span>
+    <a class="pagination-next"
+       data-pagination="{pages.next}"
+       href="#{pages.next}">Next&nbsp;&raquo;</a>
   </div>
   <div data-repeat="pages.entries">
     <div data-render="@."></div>
   </div>
-  <div class="pagination">
-    Page {pages.current} of {pages.total} (Showing {pages.entries.length} of {entries.length} questions)
-    <a data-if="pages.previous" href="#{pages.previous}">Prev</a>
-    <a data-if="pages.next" href="#{pages.next}">Next</a>
+  <div class="pagination bottom">
+    <a class="pagination-prev"
+       data-pagination="{pages.previous}"
+       href="#{pages.previous}">&laquo;&nbsp;Prev</a>
+    <span>Page {pages.current} of {pages.total} (Showing {pages.entries.length} of {entries.length} questions)</span>
+    <a class="pagination-next"
+       data-pagination="{pages.next}"
+       href="#{pages.next}">Next&nbsp;&raquo;</a>
   </div>
 </div>
 
