@@ -430,7 +430,9 @@ min-height: 39px;
 	clear:both;
 	display:block;
 	width: 100%;
-	
+}
+.content .span33 {
+    width: 94;
 }
 
 .hero{
