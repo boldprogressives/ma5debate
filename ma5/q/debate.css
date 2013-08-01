@@ -237,14 +237,14 @@ float: right;
    	border-bottom: none;
 }
 
-.tweet-button a:before {
+.tweet-button:before {
    content:"";
    position:absolute;
    right:0;
    top:0;
    width:15px;
    height:15px; 
-   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px 0px center no-repeat;
+   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px 0px no-repeat;
 }
 
 .fb-button a {
@@ -253,14 +253,14 @@ float: right;
   border-bottom: none;
 }
 
-.fb-button a:before{
-	  content:"";
+.fb-button:before{
+   content:"";
    position:absolute;
    right:0;
    top:0;
    width:15px;
    height:15px; 
-   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 15px 0px center no-repeat;
+   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 15px 0px no-repeat;
 }
 
 .comments a {
@@ -268,14 +268,14 @@ float: right;
 	padding: 2px 5px;
 }
 
-.comments a:before{	  
+.comments:before{	  
    content:"";
    position:absolute;
    right:0;
    top:0;
    width:15px;
    height:15px; 
-   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 30px 0px center no-repeat;
+   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 30px 0px no-repeat;
 }
 
 input[type=email].error, input[type=text].error, textarea.error{
