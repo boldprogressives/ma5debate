@@ -404,12 +404,13 @@
      
      	$(document).on("click", ".vote-button", function(){
           
+          var question_id = $(this).data("id");
           if( opendebate.akid || opendebate.recognized_user ) {
-            opendebate.vote($(this).data("id"));
+            opendebate.vote(question_id);
             return false;
           }
           
-          var submit_function = 'opendebate.vote('+$(this).data("id")+');' + 
+          var submit_function = 'opendebate.vote('+question_id+');' + 
                                 ' return false;';
      	  $("#vote_form").attr("onsubmit", submit_function);
      	  $("#overlay").fadeIn();
