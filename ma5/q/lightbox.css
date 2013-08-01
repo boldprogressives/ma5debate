@@ -172,6 +172,9 @@ input[type="text"], input[type="password"], input[type="datetime"], input[type="
 	margin: 1em auto;
 }
 
+.lightbox input {
+  width: 95%;
+}
 
 input[type="text"].campaign_website {
 width: auto;
