@@ -231,6 +231,15 @@ float: right;
 	margin: 10px auto;
 }
 
+.fb-button:before, .tweet-button:before, .comments:before{
+content: "";
+position: absolute;
+left: 4px;
+top: 1px;
+width: 15px;
+height: 15px;
+}
+
 .tweet-button, .fb-button, .comments{
   position:relative;
 }
@@ -241,29 +250,10 @@ float: right;
    	border-bottom: none;
 }
 
-.tweet-button:before {
-content: "";
-position: absolute;
-left: 4px;
-top: 1px;
-width: 15px;
-height: 15px;
-background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px 0px no-repeat;
-}
 .fb-button a {
     display: inline-block;
     padding: 2px 5px 2px 20px;
 	border-bottom: none;
-}
-
-.fb-button:before{
-content: "";
-position: absolute;
-left: 4px;
-top: 1px;
-width: 15px;
-height: 15px;
-background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -15px 0 no-repeat;
 }
 
 .comments a {
@@ -271,15 +261,31 @@ background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-
 	padding: 2px 5px 2px 20px;
 }
 
+.fb-button:before{
+background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -15px 0 no-repeat;
+}
+
+.tweet-button:before {
+background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px 0px no-repeat;
+}
+
 .comments:before{	  
-content: "";
-position: absolute;
-left: 4px;
-top: 1px;
-width: 15px;
-height: 15px;
 background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -30px 0 no-repeat;
 }
+
+.fb-button:before:hover{	
+background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -15px -15px no-repeat;
+}
+
+.comments:before:hover{	  
+background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -30px -15px no-repeat;
+}
+
+.tweet-button:before {
+background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px -15px no-repeat;
+}
+
+
 input[type=email].error, input[type=text].error, textarea.error{
 	border: solid 1px #D9000D;
 }
