@@ -5,6 +5,11 @@ header .nav li { float: left; padding-left: 20px; text-transform: uppercase; }
 header .logos { padding-top: 20px; }
 header .logos img { margin-bottom: 20px; } 
 
+a:link{
+	text-decoration: none;
+	border: none;
+}
+
 .width-align {
 max-width: 1040px;
 margin: 0 auto;
