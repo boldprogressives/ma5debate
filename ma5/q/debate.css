@@ -273,15 +273,15 @@ background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-
 background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -30px 0 no-repeat;
 }
 
-.fb-button:before:hover{	
+.fb-button:hover:before{	
 background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -15px -15px no-repeat;
 }
 
-.comments:before:hover{	  
+.comments:hover:before{	  
 background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') -30px -15px no-repeat;
 }
 
-.tweet-button:before {
+.tweet-button:hover:before {
 background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px -15px no-repeat;
 }
 
