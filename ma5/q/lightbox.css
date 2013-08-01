@@ -132,7 +132,7 @@ cursor: pointer;
 and (max-width : 767px)  {
 
 .lightbox {
-width: 100%;
+width: 92%;
 left: 0;
 top: 0;
 margin: 0;
