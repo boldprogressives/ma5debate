@@ -3,9 +3,9 @@
 <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>OpenDebateQuestions.com | About the 5th District of Massachusetts</title>
+	<title>OpenDebateQuestions.com | {{ page title }}</title>
 
-	<link rel="canonical" href="http://opendebatequestions.com/ma5/" />
+	<link rel="canonical" href="http://opendebatequestions.com/ma5/{{ page slug }} " />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:600" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/rfo.css" />
@@ -17,6 +17,16 @@ Blue: #006ea9
 Red: #bb0008
 Gray background: #e8e8e8
 */
+.breaker.content.gray {background-color: #e3e3e3; border-top: 1px solid black; padding-top: 20px; padding-bottom: 40px; }
+
+.card { background-color: white; border: 1px border #c7c7c7; padding-bottom: 120px;
+  -moz-box-shadow:    0px 0px 1px 1px #aaa;
+  -webkit-box-shadow: 0px 0px 1px 1px #aaa;
+  box-shadow:         0px 0px 1px 1px #aaa;
+}
+.card * { margin: 20px 40px; }
+.card h2 { text-transform: uppercase; color: #006ea9; padding-top: 1em; width: auto;}
+.card p { font-size: 14px; line-height: 1.35em; }
 
 @media (min-width: 1200px) {
 	
@@ -46,39 +56,32 @@ Gray background: #e8e8e8
     	<div class="width-align">
 	    	<ul class="pull-right">
 	    		<li><a href="/ma5/">Home</a></li>
-	    		<li><a href="#">Candidates</a></li>
-				<li><a href="#">The District</a></li>
-				<li><a href="#">Format</a></li>
-				<li><a href="#">Participate</a></li>
+	    		<li><a href="/ma5/candidates/">Candidates</a></li>
+				<li><a href="/ma5/district/">The District</a></li>
+				<li><a href="/ma5/format/">Format</a></li>
+				<li><a href="/ma5/q/">Participate</a></li>
 	    	</ul>
     	</div>
     	</div>
     	<div class="breaker cf logos">
     	<div class="width-align">
-    		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-logo.gif" />
-    		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/open-debate-logo.gif" class="pull-right" />
+    		<a href="http://boldprogressives.org"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-logo.gif" /></a>
+    		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/pccc-debate-logo.png" class="pull-right" />
     	</div>
     	</div>
     </header>
-
-
-content here.
-
-
-</div>
-
-
-
 <footer>
     	<div class="breaker cf nav">
     	<div class="width-align">
 	    	<ul class="cf">
 	    		<li><a href="/ma5/">Home</a></li>
-	    		<li><a href="#">Candidates</a></li>
-				<li><a href="#">The District</a></li>
-				<li><a href="#">Format</a></li>
-				<li><a href="#">Participate</a></li>
-				<li><a href="#">Donate to our work</a></li>
+	    		<li><a href="/ma5/candidates/">Candidates</a></li>
+				<li><a href="/ma5/district/">The District</a></li>
+				<li><a href="/ma5/about/">About The Debate</a></li>
+				<li><a href="/ma5/q/">Participate</a></li>
+				<li><a href="/ma5/contact/">Contact</a></li>
+				<li><a href="/ma5/privacy/">Privacy Policy</a></li>				
+				<li><a href="http://actblue.com">Donate to our work</a></li>
 	    	</ul>
     	</div>
     	</div>
@@ -99,15 +102,8 @@ content here.
 </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
-
   <script src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/js/bootstrap.js.gzip"></script>
-
-
-
-</script>
-
-<script type="text/javascript">
+  <script type="text/javascript">
 // instead of including all of http://act.boldprogressives.org/resources/actionkit.js
 // just using the getArgs function
     getArgs = function() {
