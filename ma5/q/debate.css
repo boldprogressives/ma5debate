@@ -14,6 +14,11 @@ a:link{
 	margin-bottom: 0;
 }
 
+.pagination a:link{
+	
+	font-weight: bold;
+}
+
 .width-align {
 max-width: 1040px;
 margin: 0 auto;
@@ -174,14 +179,12 @@ text-transform: uppercase;
 .votes>a:hover .vote-bottom {
     background-color: #052b47;
 }
-.votes>a:hover .vote_tally {
-    border-color: #052b47;
-    color: #052b47;
-}
+
 
 .votes .social_links a {
   font-size: 0.8em;
   display: inline-block;
+  color: #e8e8e8;
 }
 
 .social_links {
@@ -191,9 +194,7 @@ text-transform: uppercase;
 
 
 .social_links a:hover {
-  border-radius: 5px;
-  background-color: #1a86ab;
-  color: white;
+  color: #006ea9;
 }
 
 .question-block{
