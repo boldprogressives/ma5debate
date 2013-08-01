@@ -18,9 +18,14 @@ Red: #bb0008
 Gray background: #e8e8e8
 */
 .breaker.content {background-color: #e3e3e3; border-top: 1px solid black; padding-top: 20px; padding-bottom: 40px; }
-.card { background-color: white; border: 2px solid rgb(201,201,201); padding-bottom: 120px; }
+.card { background-color: white; border: 1px border #c7c7c7; padding-bottom: 120px;
+  -moz-box-shadow:    0px 0px 1px 1px #aaa;
+  -webkit-box-shadow: 0px 0px 1px 1px #aaa;
+  box-shadow:         0px 0px 1px 1px #aaa;
+}
+
 .card * { margin: 20px 40px; }
-.card h2 { text-transform: uppercase; color: #006ea9; margin-top: 1em; width: auto;}
+.card h2 { text-transform: uppercase; color: #006ea9; padding-top: 1em; width: auto;}
 .card p { font-size: 14px; line-height: 1.35em; }
 
 @media (min-width: 1200px) {
@@ -71,7 +76,7 @@ Gray background: #e8e8e8
   <div class="width-align card">
   	<h2>Privacy Policy</h2>
   	<p>The Progressive Change Campaign Committee will send you updates by email. If at any time you would like to unsubscribe from our email list, you may do so by clicking the unsubscribe link at the bottom of all PCCC emails. If partner organizations are listed on a site, as part of a given campaign that you opt into, they may send you updates as well.</p>
-	<p>PCCC collects information you voluntarily provide on petitions, sign-up forms, or donations including name, email, and zip code. For petitions, open letters, or similar public communications that you’ve signed or completed, we treat your name, city, state, and comments as public information. We will not make your street address publicly available, but we may transmit it to public officials as part of a petition or open letter. PCCC may also use cookies from third parties such as Google Adwords to serve ads based on usage of this site.</p>
+	<p>PCCC collects information you voluntarily provide on petitions, sign-up forms, or donations including name, email, and zip code. For petitions, open letters, or similar public communications that you&rsquo;ve signed or completed, we treat your name, city, state, and comments as public information. We will not make your street address publicly available, but we may transmit it to public officials as part of a petition or open letter. PCCC may also use cookies from third parties such as Google Adwords to serve ads based on usage of this site.</p>
 
   </div>
  </div>
