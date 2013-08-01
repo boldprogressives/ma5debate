@@ -231,6 +231,10 @@ float: right;
 	margin: 10px auto;
 }
 
+.social span{
+  position:relative;
+}
+
 .tweet-button a {
     display: inline-block;
     padding: 2px 5px 2px 20px;
@@ -250,7 +254,7 @@ float: right;
 .fb-button a {
     display: inline-block;
     padding: 2px 5px 2px 20px;
-  border-bottom: none;
+	border-bottom: none;
 }
 
 .fb-button:before{
