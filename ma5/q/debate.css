@@ -342,13 +342,14 @@ input[type=email].error, input[type=text].error, textarea.error{
 	font-size: 12px;
 }
 
-#nav #recognized_user {
-    display: block;
-    width: 100%;
+#recognized_user {
     text-align: right;
+    margin-bottom: 15px;
 }
 #recognized_user a {
     text-decoration: underline;
+    color: white;
+    float: right;
 }
 
 .tooltip{
