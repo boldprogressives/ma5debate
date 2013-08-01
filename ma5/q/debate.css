@@ -36,6 +36,14 @@ a:link{
   visibility: visible;
 }
 
+.leaflet-container a {
+color: inherit;
+}
+
+.leaflet-container location a {
+	color: #006ea9;
+}
+
 .pagination.top {
 	margin-bottom: 0;
 }
