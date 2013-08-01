@@ -222,13 +222,13 @@ text-transform: uppercase;
 	border: solid 2px rgb(201,201,201);
 }
 
-h3.question_text{
+h3.question_text, h5.question_text{
 	font-size: 18px;
 	font-weight: 400;
 	color: #006ea9;
 }
 
-h3.question_text a, h5.question_text a{
+h3.question_text a, h5.question_text{
 	color: #006ea9;
 	text-decoration: none;
 	border: none;
