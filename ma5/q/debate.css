@@ -418,6 +418,8 @@ and (max-width : 930px) {
     .content .span33 {
         margin-bottom: 30px;
         margin-top: 30px;
+        margin-right: -8%;
+        width: 108%;
     }
 
     #add_question input, #add_question textarea {
@@ -427,5 +429,12 @@ and (max-width : 930px) {
     #add_question .take-action {
         width: 100%;
         margin-left: 3px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .question-block {
+        margin-left: -10%;
+        width: 120%;
     }
 }
