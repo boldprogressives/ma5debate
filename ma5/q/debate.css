@@ -343,6 +343,15 @@ input[type=email].error, input[type=text].error, textarea.error{
 	font-size: 12px;
 }
 
+#nav #recognized_user {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+#recognized_user a {
+    text-decoration: underline;
+}
+
 .tooltip{
     display: inline;
     position: relative;
