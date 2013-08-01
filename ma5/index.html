@@ -9,6 +9,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:600" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://boldprogressives.org/running-for-office/rfo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/ma5/header-footer.css" />
 
 <style>
 /* 
@@ -22,21 +23,6 @@ Gray background: #e8e8e8
 	
 }
 
-.nav { background-color: #006ea9; color: white; }
-.nav a { color: white; text-decoration: none; border-bottom-style: none; }
-.nav ul { list-style-type: none; margin-top: 6px; margin-bottom: 6px; font-size: 13px;}
-footer .nav ul { margin-top: 15px; margin-bottom: 15px; width: 520px; margin-left: auto; margin-right: auto; }
-.nav li { float: left; padding-left: 20px; text-transform: uppercase; }
-footer .nav li { padding-left: 10px; padding-right: 10px; }
-.width-align { max-width: 960px; }
-header .logos { padding-top: 30px; }
-header .logos img { margin-bottom: 20px; } 
-footer .width-align, footer ul, footer ul li { text-align: center; }
-
-/*header .nav { border-bottom: 1px solid #549ed7; border-top: 1px solid #004c76; }
-footer*/ .nav { border-top: 1px solid #549ed7; border-bottom: 1px solid #004c76; }
-footer .blurb .disclaimer p { color: #e3e3e3; border-style: solid; border-width: 1px; font-size: 11px; line-height: 1.3em; padding: 8px 20px; max-width: 700px; margin-left: auto; margin-right: auto;}
-footer .blurb { background-color: #005786; padding-top: 60px; padding-bottom: 30px; }
 
 
 @media (min-width: 900px) {
@@ -57,15 +43,16 @@ h1.thin { font-size: 40px; font-weight: 300; line-height: 1.3em; text-align: cen
 .candidate-testimonial img { width: auto; }
 .candidate-testimonial h3 { font-weight: 300; color: black; font-size: 20px; margin-bottom: 1em; }
 .waiting h2.home-header { font-size: 48px; text-shadow: 0.1em 0.1em 0.1em black; color: white; margin-top: 210px; }
-.breaker.content.waiting { background-color: #484848; background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg); background-position: center center; background-repeat: repeat-x; }
+.breaker.content.waiting { background-color: #484848; background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg); background-position: center center; background-repeat: no-repeat; height: 570px; border-top: 1px solid white; }
 a.take-action {text-transform: uppercase; font-weight: 300; color: white; }
 a.take-action:hover { opacity: 0.8; }
 a.take-action.blue { background-color: #006ea9; }
-div.breaker.content.waiting { height: 570px; /*padding-bottom: 150px;*/}
+
+
 .waiting a.take-action { font-size: 24px; margin-top: 60px; padding: 15px 40px 15px 40px;}
 
-.testimonials .take-action.gray { color: black; background-color: #e3e3e3; font-weight: 300; font-size: 14px;}
-
+.testimonials .take-action.gray { color: black; background-color: #e3e3e3; font-weight: 300; font-size: 14px; padding-top: 7px; padding-bottom: 7px; }
+.testimonials { border-bottom: 1px solid gray;}
 
 .width-align.hero {
 	background-color: rgba(255,255,255,0.8);
