@@ -234,24 +234,48 @@ float: right;
 .tweet-button a {
     display: inline-block;
     padding: 2px 5px 2px 20px;
-    background: url('https://twitter.com/favicons/favicon.ico') 1px center no-repeat;
-	border-bottom: none;
-	margin-right: 10px;
-	border-radius: 5px;
+   	border-bottom: none;
+}
+
+.tweet-button a:before {
+   content:"";
+   position:absolute;
+   right:0;
+   top:0;
+   width:15px;
+   height:15px; 
+   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 0px 0px center no-repeat;
 }
 
 .fb-button a {
     display: inline-block;
     padding: 2px 5px 2px 20px;
-    background: url('http://g.etfv.co/http://www.facebook.com') 1px center no-repeat;
-	border-bottom: none;
-	margin-right: 10px;
-	border-radius: 5px;
+  border-bottom: none;
+}
+
+.fb-button a:before{
+	  content:"";
+   position:absolute;
+   right:0;
+   top:0;
+   width:15px;
+   height:15px; 
+   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 15px 0px center no-repeat;
 }
 
 .comments a {
 	display: inline-block;
 	padding: 2px 5px;
+}
+
+.comments a:before{	  
+   content:"";
+   position:absolute;
+   right:0;
+   top:0;
+   width:15px;
+   height:15px; 
+   background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png') 30px 0px center no-repeat;
 }
 
 input[type=email].error, input[type=text].error, textarea.error{
