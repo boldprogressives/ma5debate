@@ -7,6 +7,7 @@ footer .nav li { padding-left: 10px; padding-right: 10px; }
 .width-align { max-width: 960px; }
 header .logos { padding-top: 30px; }
 header .logos img { margin-bottom: 30px; } 
+header .logos 
 footer .width-align, footer ul, footer ul li { text-align: center; }
 
 /*header .nav { border-bottom: 1px solid #549ed7; border-top: 1px solid #004c76; }
