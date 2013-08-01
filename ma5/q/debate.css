@@ -162,9 +162,11 @@ float: left;
 
 }
 
-.leaflet-container .question-block{
-	margin-left: 10px;
-}	
+.leaflet-container .question-block {
+margin-left: 10px;
+border: 0;
+margin-top: 5px;
+}
 
 .leaflet-popup .question_text {
 margin-top: -20px;
