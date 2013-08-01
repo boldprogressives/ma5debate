@@ -11,7 +11,7 @@ a:link{
 }
 
 .pagination {
-	margin-bottom: none;
+	margin-bottom: 0;
 }
 
 .width-align {
@@ -219,8 +219,7 @@ h3.question_text a{
 
 .question{
 display:inline-block;
-width: 78%;
-margin-left: 1%;
+width: 82%;
 float: right;
 }
 
