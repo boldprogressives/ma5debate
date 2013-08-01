@@ -182,9 +182,13 @@ text-transform: uppercase;
 
 
 .votes .social_links a {
-  font-size: 0.8em;
   display: inline-block;
   color: #e8e8e8;
+}
+
+.votes .social_links{
+	border: 0;
+	padding-top: 10px;
 }
 
 .social_links {
@@ -230,6 +234,7 @@ float: right;
 .social span, .question-meta{
 	margin: 10px auto;
 }
+
 
 .fb-button:before, .tweet-button:before, .comments:before{
 content: "";
