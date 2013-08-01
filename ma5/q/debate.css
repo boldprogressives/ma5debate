@@ -382,7 +382,8 @@ and (max-width : 930px) {
         width: 97%;
     }
 
-    button.take-action, a.take-action {
-        margin-left: 35%;
+    #add_question .take-action {
+        width: 100%;
+        margin-left: 3px;
     }
 }
