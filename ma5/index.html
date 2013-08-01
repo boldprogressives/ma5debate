@@ -6,30 +6,54 @@
 	<title>OpenDebateQuestions.com | Massachusetts 5th Congressional District</title>
 
 	<link rel="canonical" href="http://opendebatequestions.com/ma5/" />
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:700" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:600" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://boldprogressives.org/running-for-office/rfo.css" />
 
 <style>
+@media(min-width: 900px) {
+	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
+	
+}
 .breaker.content.banner { background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg); min-height: 570px; }
 .candidate-blurbs .name { font-size: 16px; }
 .candidate-blurbs .title { font-size: 13px; }
 .candidate-blurbs a.more { font-size: 13px; color: #006ea9; }
 .candidate-blurbs a.more:hover { font-size: 13px; color: #bb0008; text-decoration: none; border-bottom-style: none; border-bottom-width: 0px; }
-.candidate-entry img { width: 72px; float: left; margin-right: 12px;}
+.candidate-entry img { width: 64px; float: left; margin-right: 12px;}
 .candidate-entry { margin: 12px 12px 12px 0; }
 .candidate-entry .after {float: left; }
-.candidate-blurbs { float: right; background-color: white; padding: 12px 12px 12px 24px; }
+.candidate-blurbs { line-height: 1em; }
+.candidate-blurbs { float: right; background-color: white; padding: 16px 16px 16px 32px; }
 .candidate-blurbs h4 { font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif; font-weight: 700; color: #006ea9; text-transform: uppercase; }
 h1.thin { font-size: 40px; font-weight: 300; line-height: 1.3em; text-align: center; margin-bottom: 20px; }
 .candidate-testimonial img { width: auto; }
-h2.home-header { font-size: 48px; text-shadow: 0.1em 0.1em 0.1em black; color: white; }
-.breaker.content.waiting { background-image: url(); background-color: #484848; }
+.candidate-testimonial h3 { font-weight: 300; color: black; font-size: 20px; margin-bottom: 1em; }
+.waiting h2.home-header { font-size: 48px; text-shadow: 0.1em 0.1em 0.1em black; color: white; margin-top: 210px; }
+.breaker.content.waiting { background-color: #484848; background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg); background-position: center center; background-repeat: repeat-x; }
 a.take-action {text-transform: uppercase; font-weight: 300; color: white; }
 a.take-action:hover { opacity: 0.8; }
 a.take-action.blue { background-color: #006ea9; }
-.waiting {padding-top: 150px; padding-bottom: 150px;}
-.waiting a.take-action { font-size: 24px; margin-top: 50px; padding: 15px 40px 15px 40px;}
+div.breaker.content.waiting { height: 600px; /*padding-bottom: 150px;*/}
+.waiting a.take-action { font-size: 24px; margin-top: 60px; padding: 15px 40px 15px 40px;}
+
+.width-align.hero {
+	background-color: rgba(255,255,255,0.8);
+	margin-top: 50px; margin-bottom: 50px;
+	padding: 20px 30px;
+}
+.width-align.hero .darkgray { background-image:url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-feature-bg.png); color: white; 
+	text-align: center; padding: 30px;
+}
+h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-top: 0.8em; margin-bottom: 0.8em;}
+.hero h1 { font-size: 48px; font-family: "Open Sans Condensed", Helvetica, sans-serif; margin-bottom: 0.8em;}
+.hero .darkgray>p { margin-bottom: 60px;  }
+.hero .darkgray .left {width: 45%; border-right-color: white; border-right-style: solid; border-right-width: 1px;  }
+.hero .darkgray a.take-action {
+	margin-top:5px; margin-bottom: 5px; width: 240px; font-size: 16px; margin-right: 24px;
+}
+/*.hero .darkgray { width: 680px; }*/
+
 </style>
 
 
@@ -66,10 +90,12 @@ a.take-action.blue { background-color: #006ea9; }
     </header>
 
 <div class="breaker content banner cf">
-<div class="width-align">
-	<div class="hero width-align">
+
+	<div class="width-align hero cf">
+		
 		<div class="candidate-blurbs">
 			<h4>The Candidates</h4>
+			<hr />
 			<div class="candidate-entry cf">
 				<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/sciortino-debate.jpg" />
 				<div class="after">
@@ -113,12 +139,27 @@ a.take-action.blue { background-color: #006ea9; }
 			</div>
 															
 		</div>
-	    <div class="darkgray">
-	    </div>
-	    <div class="nobg"></div>
+	   <div class="darkgray">
+		   <h1>You choose. They answer.</h1> 
+		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? Now you can do something about it. Ask a question for the candidates, and if you're a Massachusetts resident, you can vote on the most relevant questions. We'll use your input and your votes to structure the debate on August 9 at 8pm Eastern. </p>
+		   <div class="left cf">
+			   <a class="take-action blue pull-right">Submit a question</a>
+			   <a class="take-action blue pull-right">Vote on the questions</a>
+			   <a class="take-action red pull-right">sign up for a reminder</a>			   			   
+		   </div>
+		   
+		   <div class="right"></div>
+	   </div>
+	   
+	   <div class="nobg">
+	   	<h3 class="wide">Watch the debate right here.</h3>
+	   	<p>When the debate airs, the window above will show the event to a nationwide audience. If you want us to send you a reminder, <a href="#">click here</a>.</p>
+		   
+		   
+	   </div>
 	    
-    </div><!-- hero -->
-</div>
+    </div><!-- .hero.width-align -->
+
 </div>
 
 
@@ -129,20 +170,20 @@ a.take-action.blue { background-color: #006ea9; }
    <div class="candidate-testimonial span33">
    	<img class="testimonial-photo img-circle" src="https://s3.amazonaws.com/s3.boldprogressives.org/images/submit-step.gif"/>
    	<h3>1. Submit Your Question</h3>
-   	<p>Anyone can submit a question, and our debate moderators will choose from your submissions to pose questions during the debate.</p>
+   	<p>Anyone can submit a question to be asked of the 5 Democratic candidates for US House in MA-5.</p>
    </div>
 
    <div class="candidate-testimonial span33">
    	<img class="testimonial-photo img-circle" src="https://s3.amazonaws.com/s3.boldprogressives.org/images/vote-step.gif"/>
-   	<h3>2. Vote For The Best
-   	<p>lorem ipsum and stuff</p>
+   	<h3>2. Vote For The Best</h3>
+   	<p>Massachusetts voters can vote for questions, to show the moderators what issues are on people's minds.</p>
 
    </div>
    
       <div class="candidate-testimonial span33">
    	<img class="testimonial-photo img-circle" src="https://s3.amazonaws.com/s3.boldprogressives.org/images/watch-step.gif" />
    	<h3>3. Watch Online</h3>
-   	<p>more lorem ipsum</p>
+   	<p>Watch online, and ask your friends to do the same. This debate is for the community, so spread the word!</p>
 
    </div>
 
