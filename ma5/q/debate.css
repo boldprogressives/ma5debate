@@ -10,6 +10,15 @@ a:link{
 	border: none;
 }
 
+.pagination {
+	margin-bottom: 0;
+}
+
+.pagination a:link{
+	
+	font-weight: bold;
+}
+
 .width-align {
 max-width: 1040px;
 margin: 0 auto;
@@ -55,6 +64,10 @@ margin-bottom: 20px;
 #add_question input, #add_question textarea{
 background: #fff;
 width: 80%;
+padding: 6px 10px;
+font-size: 16px;
+margin: 10px 2px;
+
 }
 
 button.take-action, a.take-action {
@@ -143,7 +156,7 @@ display: inline-block;
 .vote_tally{
 	font-family: 'Open Sans Condensed', sans-serif;
     display:block;
-    padding: 5px;	
+    padding: 10px;	
     font-weight: bold;
     background-color: #006ea9;
     margin-bottom: 2px;
@@ -156,7 +169,7 @@ display: block;
 margin:  auto;
 color: #fff;
 background: #bb0008;
-font-size: 16px;
+font-size: 10px;
 line-height: 18px;
 width:100%;
 text-transform: uppercase;
@@ -166,14 +179,12 @@ text-transform: uppercase;
 .votes>a:hover .vote-bottom {
     background-color: #052b47;
 }
-.votes>a:hover .vote_tally {
-    border-color: #052b47;
-    color: #052b47;
-}
+
 
 .votes .social_links a {
   font-size: 0.8em;
   display: inline-block;
+  color: #e8e8e8;
 }
 
 .social_links {
@@ -183,9 +194,7 @@ text-transform: uppercase;
 
 
 .social_links a:hover {
-  border-radius: 5px;
-  background-color: #1a86ab;
-  color: white;
+  color: #006ea9;
 }
 
 .question-block{
@@ -211,8 +220,7 @@ h3.question_text a{
 
 .question{
 display:inline-block;
-width: 78%;
-margin-left: 1%;
+width: 82%;
 float: right;
 }
 
