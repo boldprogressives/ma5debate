@@ -44,6 +44,11 @@ color: inherit;
 	color: #006ea9;
 }
 
+.leaflet-container .question-text{
+	font-weight: 400; 
+	font-size: 14px;	
+}
+
 .pagination.top {
 	margin-bottom: 0;
 }
@@ -253,16 +258,17 @@ text-transform: uppercase;
 	border: solid 2px rgb(201,201,201);
 }
 
-h3.question_text {
+h3.question_text a {
 	font-size: 18px;
 	font-weight: 400;
 	color: #006ea9;
-}
-
-h3.question_text a, h5.question_text{
-	color: #006ea9;
 	text-decoration: none;
 	border: none;
+}
+
+h5.question_text{
+	color: #006ea9;
+	line-height: 	
 }
 
 .question{
