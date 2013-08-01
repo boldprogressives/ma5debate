@@ -5,6 +5,10 @@ header .nav li { float: left; padding-left: 20px; text-transform: uppercase; }
 header .logos { padding-top: 20px; }
 header .logos img { margin-bottom: 20px; } 
 
+body{
+	font-size: 13px;
+}
+
 a:link{
 	text-decoration: none;
 	border: none;
@@ -192,7 +196,6 @@ text-transform: uppercase;
 
 .votes .social_links a {
   display: inline-block;
-  color: #e8e8e8;
 }
 
 .votes .social_links{
@@ -225,7 +228,7 @@ h3.question_text{
 	color: #006ea9;
 }
 
-h3.question_text a{
+h3.question_text a, h5.question_text a{
 	color: #006ea9;
 	text-decoration: none;
 	border: none;
@@ -238,10 +241,9 @@ float: right;
 }
 
 
-
-
-.social span, .question-meta{
+.social_links, .question-meta{
 	margin: 10px auto;
+	font-size: 12px;	
 }
 
 
