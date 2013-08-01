@@ -31,7 +31,8 @@
       }
 
       function submitActionkitForm(pageName, data, callback) {
-        $("<iframe />").attr("id", "crossdomain").hide().appendTo("body");
+        $("<iframe />").attr("name", "crossdomain")
+                       .attr("id", "crossdomain").hide().appendTo("body");
         var form = $("<form />").attr("method", "POST")
                                 .attr("target", "crossdomain")
                                 .hide().appendTo("body");
