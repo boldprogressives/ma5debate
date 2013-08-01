@@ -122,7 +122,7 @@ cursor: pointer;
 	z-index: 100;
 }
 
-.mobile-only{
+.mobile-only, .mobile{
 	display: none;
 }
 
