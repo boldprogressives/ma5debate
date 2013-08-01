@@ -405,11 +405,11 @@
      	$(document).on("click", ".vote-button", function(){
           
           if( opendebate.akid || opendebate.recognized_user ) {
-            opendebate.vote($(this).attr("id"));
+            opendebate.vote($(this).data("id"));
             return false;
           }
           
-          var submit_function = 'opendebate.vote('+$(this).attr("id")+');' + 
+          var submit_function = 'opendebate.vote('+$(this).data("id")+');' + 
                                 ' return false;';
      	  $("#vote_form").attr("onsubmit", submit_function);
      	  $("#overlay").fadeIn();
