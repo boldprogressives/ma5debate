@@ -183,6 +183,7 @@ margin-top: 5px;
 
 .leaflet-popup .question_text {
 margin-top: -20px;
+
 }
 
 .user_name{
@@ -268,7 +269,10 @@ h3.question_text a {
 
 h5.question_text{
 	color: #006ea9;
-	line-height: 	
+	font-weight 400; 
+	font-size: 14px; 
+	line-height: 20px; 
+	color: rgb (34,34,34);	
 }
 
 .question{
