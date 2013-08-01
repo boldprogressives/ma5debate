@@ -35,7 +35,7 @@
     od.question_submitted_callback = question_submitted_callback;
     od.vote_user_data_fetcher = vote_user_data_fetcher;
     od.vote_submitted_callback = vote_submitted_callback;
-    od.already_voted_callback = already_voted_calback;
+    od.already_voted_callback = already_voted_callback;
 
     od.setAkid();
 
