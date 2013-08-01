@@ -10,15 +10,15 @@
 
     <div class="social_links">
       <span class="tweet-button"><a class="twitter" href="https://twitter.com/intent/tweet?url=http://opendebatequestions.com/ma5/q/%23/question/{id}/&amp;text=I just voted in %23ma5debate&amp;via=BoldProgressive">Tweet</a></span>
-      <span class="fb-button"><a class="facebook" href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/ma5/q/%23/question/{id}/&redirect_uri=http://opendebatequestions.com/ma5/q/%23/question/{id}/&name=MA-05 Debate&caption=I just voted in %23ma5debate&description={submission}" target="_blank">
+      <span class="fb-button"><a class="facebook" href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/ma5/q/%23/question/{id}/&redirect_uri=http://opendebatequestions.com/ma5/q/%23/question/{id}/&name=MA-05 Debate&caption=I just voted in %23ma5debate&description={submission|excerpt}" target="_blank">
       Share</a></span>  
     </div>
   </div>
 
 <div class="question">
-     <h3 class="question_text" data-if="submission">
-       <a href="#/question/{id}/">{submission}</a>
-     </h3>
+     <h5 class="question_text" data-if="submission">
+       {submission}
+     </h5>
       <div class="question-meta">
       	Submitted by <span class="user_name">{first_name} {last_name}</span> from
       	<span class="location"><a href="#/location/{y},{x}/">{city}, {state}</a></span>

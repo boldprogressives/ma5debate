@@ -178,9 +178,24 @@
       var localeTime = formatDate(gmt);
       return humaneDate(localeTime) || localeTime;
   };
-
   obviel.template.registerFormatter('datetime', datetime_formatter);
   Handlebars.registerHelper("datetime", datetime_formatter);
+
+  var excerpter = function(text) {
+    if( text.length > 200 ) {
+        var excerpt = text.substr(0, 200);
+        for( var i=200; i<250 && i<text.length; ++i ) {
+            if( text[i] === " " ) {
+                break;
+            }
+            excerpt += text[i];
+        }
+        return excerpt + "...";
+    }
+    return text;
+  };
+  obviel.template.registerFormatter('excerpt', excerpter);
+  Handlebars.registerHelper('excerpt', excerpter);
 
   od.submitQuestion = function() {
     ga("send", "event", "question", "submit");
