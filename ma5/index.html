@@ -22,12 +22,18 @@ Gray background: #e8e8e8
 	
 }
 
-header .nav { background-color: #006ea9; color: white; }
-header .nav a { color: white; text-decoration: none; border-bottom-style: none; }
-header .nav ul { list-style-type: none; margin-top: 6px; margin-bottom: 6px; font-size: 13px;}
-header .nav li { float: left; padding-left: 20px; text-transform: uppercase; }
+.nav { background-color: #006ea9; color: white; }
+.nav a { color: white; text-decoration: none; border-bottom-style: none; }
+.nav ul { list-style-type: none; margin-top: 6px; margin-bottom: 6px; font-size: 13px;}
+.nav li { float: left; padding-left: 20px; text-transform: uppercase; }
+footer .nav li { padding-left: 10px; padding-right: 10px; }
+
 header .logos { padding-top: 20px; }
 header .logos img { margin-bottom: 20px; } 
+footer .width-align { text-align: center; }
+footer .blurb .disclaimer p { color: #e3e3e3; border-style: solid; border-width: 1px; font-size: 12px; line-height: 1.3em; padding: 8px 20px; max-width: 740px;}
+footer .blurb { background-color: #005786; padding-top: 30px; padding-bottom: 30px; }
+
 
 @media (min-width: 900px) {
 	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
@@ -58,19 +64,22 @@ div.breaker.content.waiting { height: 600px; /*padding-bottom: 150px;*/}
 	background-color: rgba(255,255,255,0.8);
 	margin-top: 50px; margin-bottom: 50px;
 	padding: 20px 30px;
-	max-width: 960px;
+	max-width: 900px;
 }
 .width-align.hero .darkgray { background-image:url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-feature-bg.png); color: white; 
-	text-align: center; padding: 30px; max-width: 630px; max-height: 330px;
+	text-align: center; padding: 30px; max-width: 570px; max-height: 325px;
 }
-h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-top: 0.8em; margin-bottom: 0.8em;}
-.hero h1 { font-size: 48px; font-family: "Open Sans Condensed", Helvetica, sans-serif; margin-bottom: 0.8em;}
+h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-top: 0.8em; margin-bottom: 0.6em;}
+.hero h1 { font-size: 43px; font-family: "Open Sans Condensed", Helvetica, sans-serif; margin-bottom: 0.8em; margin-top: 0.6em;}
 .hero .darkgray>p { margin-bottom: 40px;  }
 .hero .darkgray .left {width: 45%; border-right-color: white; border-right-style: solid; border-right-width: 1px; float: left; }
-.hero .darkgray .right { float: left; }
+.hero .darkgray .right { float: left; text-align: center; }
+.hero .darkgray h3.wide { text-align: center; color: white;}
+
 .hero .darkgray a.take-action {
-	margin-top:5px; margin-bottom: 5px; width: 200px; font-size: 16px; margin-right: 24px;
+	margin-top:5px; margin-bottom: 5px; width: 200px; font-size: 16px; margin-right: 24px; padding-top: 7px; padding-bottom: 7px;
 }
+.hero p { font-size: 14px; line-height: 1.3em; }
 /*.hero .darkgray { width: 680px; }*/
 
 </style>
@@ -179,7 +188,7 @@ h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-to
 		</div>
 	   <div class="darkgray cf">
 		   <h1>You choose. They answer.</h1> 
-		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? Now you can do something about it. Ask a question for the candidates, and if you're a Massachusetts resident, you can vote on the most relevant questions. We'll use your input and your votes to structure the debate on August 9 at 8pm Eastern. </p>
+		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? With the open debate format, you ask the questions &ndash; and if you're a Massachusetts resident, you can vote on the most relevant questions. We'll use your input and your votes to structure the debate on August 9 at 8pm Eastern. </p>
 		   <div class="left cf">
 			   <a class="take-action blue pull-right">Submit a question</a>
 			   <a class="take-action blue pull-right">Vote on the questions</a>
@@ -240,148 +249,35 @@ h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-to
    
    
    <!-- "Get Started" lightbox element -->
-<div class="lightbox active" id="candidate_form" style="display:none">
-	
-	<div class="close_box">x</div>
 
-	<h2>Campaign Information</h2>
-	<form class="ak-form" name="act" id="candidate" method="POST" action="javascript:submitLightbox('candidate');" accept-charset="utf-8">
-		<div id="survey-contact" class="col">
-		<!-- begin user_form_wrapper.html -->
-
-			<ul class="compact" id="ak-errors" style="display:none"></ul>
-			<div id="unknown_user" class="user-form ak-labels-overlaid ak-errs-below">
-			<!-- begin user_form.html -->
-				<input type="text" name="first_name" id="id_first_name" placeholder="first name" />
-				<input type="text" name="last_name" id="id_last_name" placeholder="last name" />
-				<input type="text" name="email" class="required" id="email" placeholder="e-mail address" />
-				<input type="text" name="zip" class="required" id="zip" placeholder="zip code" />
-				<input type="text" name="phone" class="phone" id="id_phone" placeholder="phone" />
-				<input type="text" name="action_campaign-name" class="campaign" id="id_campaign-name" placeholder="campaign name" />
-			<!-- end user_form.html -->
-			<hr />
-			</div>
-				
-		<!-- end user_form_wrapper.html -->
-		</div>
-
-		<div id="survey-questions">
-			<div id="role">
-				<p>Your role:</p>
-				<input type="radio" name="action_role" id="id_candidate" value="candidate" />
-					<label class="role" for="id_candidate">Candidate</label>
-				<input type="radio" name="action_role" id="id_staff" value="staff" />
-					<label class="role" for="id_staff">Staff</label>
-			</div>
-			
-			<div id="office-level">
-				<p>Are you running for federal, state, or local office?</p>
-				<input type="radio" name="action_office" id="federal" value="federal" />
-					<label for="federal">Federal</label>
-				<input type="radio" name="action_office" id="state" value="state" />
-					<label for="state">State</label>
-				<input type="radio" name="action_office" id="local" value="local" />
-					<label for="local">Local</label>
-			</div>
-
-			<div id="type-of-race">
-				<p>Type of race:</p>
-				<input type="radio" name="action_racetype" id="openseat" value="openseat" />
-					<label for="openseat">Open Seat</label>
-				<input type="radio" name="action_racetype" id="rep-challenge" value="rep-challenge" />
-					<label for="rep-challenge">Challenging Incumbent Republican</label>
-				<input type="radio" name="action_racetype" id="dem-challenge" value="dem-challenge" />
-					<label for="dem-challenge">Challenging Incumbent Democrat</label>
-				<input type="radio" name="action_racetype" id="incumbent" value="incumbent" />
-					<label for="incumbent">Incumbent</label>
-			</div>
-
-			<div class="input-parent why-are-you-running-for-office-in-27-words-or-less">
-				<p>Why are you running for office in 27 words or less?</p>
-				<textarea cols="50" rows="4" name="action_candidate-27-words"></textarea>
-			</div>
-
-			<div class="input-parent campaign-website-if-applicable">
-				<input type="text" class="campaign_website" name="action_website" placeholder="campaign website" />
-			</div>
-
-			<hr />
-	
-    	<button type="submit" class="submit cf btn take-action" >Submit</button>
-
-
-		
-    	</div>
-    	
-		<input type="hidden" name="country" value="United States" />
-		<input type="hidden" name="page" id="page_campaign" class="page" value="pccc_running_for_office" />
-		<input type="hidden" name="required" value="country" />
-
-	</form>
-
+    
+   </div>
+</div>
 </div>
 
-<div class="lightbox" id="thanks" style="display:none">
-	<div class="close_box">x</div>
-		<h2>Thank you!</h3>
-		<p>We will contact you soon</p>
-		<hr />
-		<p><a href="http://boldprogressives.org/">
-	   	<img id="brand" src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/img/pccc-logo.jpg" 
-	   		alt="Progressive Change Campaign Committee">
-       </a></p>
-       
-	</div>
 
 
-   
-   </div>
-    
-    </div></div>
-
-
-
-<footer id="footer">
-    	<div class="container cf">
-        	<div class="width-align">
-  		      	<h3 class="visible-phone">Sitemap</h3>
-                <div class="span50 footer-vert">
-                    <div class="span33">
-                        <ul>
-                                                    <li><a href="http://boldprogressives.org/about/">About</a></li>
-                                                    <li><a href="http://boldprogressives.org/candidates/">Candidates</a></li>
-                                                    <li><a href="http://boldprogressives.org/campaigns/">Campaigns</a></li>
-                                                    <li><a href="http://boldprogressives.org/blog/">Blog</a></li>
-                                                    <li><a href="http://boldprogressives.org/category/news/">News</a></li>
-                                                    <li><a href="http://act.boldprogressives.org/survey/survey_newwebsite_feedback/?source=rfo-footer">Feedback</a></li>
-                                                </ul>
-                    </div>
-                    <div class="span33">
-                        <ul>
-                                                    <li><a href="https://secure.actblue.com/contribute/page/pccc_main?refcode=bp">Donate</a></li>
-                                                    <li><a href="http://act.boldprogressives.org/survey/talent/">Volunteer</a></li>
-                                                    <li><a href="http://boldprogressives.org/press-resources/">Press Resources</a></li>
-                                                    <li><a href="http://boldprogressives.org/privacy-policy/">Privacy Policy</a></li>
-                                                    <li><a href="http://boldprogressives.org/contact/">Contact Us</a></li>
-                                                    <li><a href="http://boldprogressives.org/jobs-at-the-pccc/">Jobs at the PCCC</a></li>
-                                                </ul>
-                    </div>
-                </div>
-                <div class="span50">
-                    <div class="footer-pad">
-                        <h3>SHARE YOUR SKILLS</h3>
-                        <p>Are you a great web designer, a talented video editor, or do you simply have time to volunteer? Contribute your skills to the progressive movement!</p>
-                                                <a href="http://act.boldprogressives.org/survey/talent_next/" class="flat-button">Sign up for the next generation of talent!</a>
-                                            </div>
-                </div>
-                </div>
-        </div>
-        <div class="conatiner">
-        	<div class="width-align">
+<footer>
+    	<div class="breaker cf nav">
+    	<div class="width-align">
+	    	<ul class="cf">
+	    		<center><li><a href="#">Candidates</a></li>
+				<li><a href="#">The District</a></li>
+				<li><a href="#">Format</a></li>
+				<li><a href="#">Participate</a></li>
+				<li><a href="#">Donate to our work</a></li>
+	    	</center></ul>
+    	</div>
+    	</div>
+    	
+    	
+        <div class="breaker cf blurb">
+        	<div class="width-align"><center>
                 <div class="disclaimer">
-                    <p>Paid for by the Progressive Change Campaign Committee PAC (BoldProgressives.org) and not authorized by any candidate or candidate's committee. Contributions to the PCCC are not deductible as charitable contributions for federal income tax purposes.</p>
+                    <p>Paid for by the Progressive Change Campaign Committee PAC (BoldProgressives.org) and not authorized by any candidate or candidate's <br /> 
+                    committee. Contributions to the PCCC are not deductible as charitable contributions for federal income tax purposes.</p>
                 </div>
-            </div>
+        	</center></div>
         </div>
     </footer>
     </div><!-- headslide-wrap -->
