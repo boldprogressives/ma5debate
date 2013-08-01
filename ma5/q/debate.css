@@ -252,6 +252,7 @@ input[type=email].error, input[type=text].error, textarea.error{
 
 #nav{
 	margin: 1em auto;
+	font-size: 12px;
 }
 
 .tooltip{
