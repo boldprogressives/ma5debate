@@ -8,7 +8,8 @@
                      submit_question_fetcher,
                      question_submitted_callback,
                      vote_user_data_fetcher,
-                     vote_submitted_callback) {
+                     vote_submitted_callback,
+                     already_voted_callback) {
 
     $(window).on("hashchange", function(e) {
       window.location.hash && ga("send", "pageview", window.location.hash.substr(1));
@@ -34,6 +35,7 @@
     od.question_submitted_callback = question_submitted_callback;
     od.vote_user_data_fetcher = vote_user_data_fetcher;
     od.vote_submitted_callback = vote_submitted_callback;
+    od.already_voted_callback = already_voted_callback;
 
     od.setAkid();
 
@@ -125,6 +127,9 @@
     var votes = od.getVotesForUser(user_id);
     if( votes.indexOf(question_id) == -1 ) {
       votes.push(question_id);
+    } else {
+      od.already_voted_callback(question_id, votes);
+      return false;
     }
   
     submitActionkitForm(od.pages.vote, {

@@ -27,7 +27,13 @@
 
   <div class="lightbox out_of_area" style="display:none">
     <div class="close_box">X</div>
+    <h4>Sorry!  Massachusetts only.</h4>
     Sorry, we're currently only allowing Massachusetts residents to vote for the questions they want in the debate.  But feel free to submit your own question for voting, and share with your friends in Massachusetts!
+  </div>
+  <div class="lightbox already_voted" style="display:none">
+    <div class="close_box">X</div>
+    <h4>You've already voted for this question!</h4>
+    You can only vote once per question.  You can still cast a vote for any other questions, and make sure to tell your friends to vote for this question too!
   </div>
 
   <div style="display:none" class="lightbox" id="vote_form_lightbox">
@@ -321,64 +327,56 @@
       }
   };
 
-        function vote_submitted_callback(result, data) {
+      function vote_submitted_callback(result, data) {
 		
-		
-       $("#verify_location_error input.error").removeClass("error");
+        $("#verify_location_error input.error").removeClass("error");
         
         if( result == "success" ) {
             $("#vote_form_lightbox").fadeOut();
             $("#overlay").fadeOut();
         
         } else {
-            
-            $.each(data, function(key, val) {
+          $.each(data, function(key, val) {
             
             if(key != "zip:not_targeted"){
             	$('#vote_'+key).addClass("error");
             	$('.invalid_vote_'+key).fadeIn();
             } else {
-              $("#vote_form_lightbox").fadeOut();
-        $("#overlay").fadeIn();
-	        	$('.out_of_area').fadeIn();
-
-			}
+                $("#vote_form_lightbox").fadeOut();
+                $("#overlay").fadeIn();
+ 	        $('.out_of_area').fadeIn();
+	    }
 			
-			
-		   	
-		   	});
- 	    	
- 	    	$("#verify_location_error").slideDown();
-          }
+	  });
+ 	$("#verify_location_error").slideDown();
         }
-
-        function vote_user_data_fetcher(question_id) {
-        
-       $("#verify_location_error .error").removeClass("error");
-               var empty = 0;
-    
-    $("#vote_form input").each(function() {
-    	
-    	if( $(this).val() === "" ) {
-        	$(this).addClass("error");
-			empty++;
-		}
-		
-    });
-    
-    //handle all possible errors
-    
-    if( empty > 0 || !validators.email($("#vote_email").val()) || !validators.zip($("#vote_zip").val())) {
-    
-      if( empty > 0 ){	
-    		$("#verify_location_error .empty_input").fadeIn();
-    		$("#verify_location_error").slideDown();
-    		return false;
       }
+
+      function vote_user_data_fetcher(question_id) {
+        
+        $("#verify_location_error .error").removeClass("error");
+        var empty = 0;
+    
+        $("#vote_form input").each(function() {
+    	
+    	  if( $(this).val() === "" ) {
+            $(this).addClass("error");
+	    empty++;
+	  }
+        });
+        //handle all possible errors
+    
+        if( empty > 0 || !validators.email($("#vote_email").val()) || !validators.zip($("#vote_zip").val())) {
+    
+          if( empty > 0 ){	
+    	    $("#verify_location_error .empty_input").fadeIn();
+    	    $("#verify_location_error").slideDown();
+    	    return false;
+          }
       
-      if(!validators.email($("#vote_email").val())){
-      	   $("#vote_email").addClass("error");
-		   $("#verify_location_error .invalid_vote_email").fadeIn();
+          if(!validators.email($("#vote_email").val())){
+      	    $("#vote_email").addClass("error");
+	    $("#verify_location_error .invalid_vote_email").fadeIn();
 	  }
 	   
 	  if(!validators.zip($("#vote_zip").val())){
@@ -386,30 +384,35 @@
 		   $("#verify_location_error .invalid_vote_zip").fadeIn();
 	  }
 
-      
-            $("#verify_location_error").slideDown();
-
-			return false;
-	 }
+        
+          $("#verify_location_error").slideDown();
+	  return false;
+	}
        
         
-          data = {};
-          data.email = $("#vote_email").val();
-    	  data.zip =  $("#vote_zip").val();
-          return data;
-        }
+        data = {};
+        data.email = $("#vote_email").val();
+    	data.zip =  $("#vote_zip").val();
+        return data;
+      }
+
+      function already_voted_callback(question_id, votes) {
+        $(".already_voted").fadeIn();
+        $("#overlay").fadeIn();
+      }
 
       $(window).load(function() {
-        opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback);
+        opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
      
      	$(document).on("click", ".vote-button", function(){
           
+          var question_id = $(this).data("question_id");
           if( opendebate.akid || opendebate.recognized_user ) {
-            opendebate.vote($(this).attr("id"));
+            opendebate.vote(question_id);
             return false;
           }
           
-          var submit_function = 'opendebate.vote('+$(this).attr("id")+');' + 
+          var submit_function = 'opendebate.vote('+question_id+');' + 
                                 ' return false;';
      	  $("#vote_form").attr("onsubmit", submit_function);
      	  $("#overlay").fadeIn();
