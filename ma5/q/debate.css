@@ -378,6 +378,8 @@ input[type=email].error, input[type=text].error, textarea.error{
 	background-color:  #D9000D;
 	color: #fff;
 	padding: 2px 10px;
+	width: 80%;
+	margin: auto;
 }
 
 textarea {
