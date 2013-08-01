@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/rfo.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/header-footer.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/debate.css" />
 
 <style>
 /* 
@@ -31,6 +32,7 @@ Gray background: #e8e8e8
 .card p { font-size: 14px; line-height: 1.35em; margin-top: 1em; margin-bottom: 1em;}
 .candidate-entry > * { float: left; }
 .candidate-entry .after { max-width: 670px; margin-left: 30px; }
+.candidate-entry .before { width: 110px; }
 
 
 @media (min-width: 1200px) {
@@ -48,6 +50,40 @@ Gray background: #e8e8e8
 .card h3 { color: #006ea9; font-weight: 400; font-size: 20px; }
 .card .title { font-weight: 400; font-size: 13px; margin-bottom: 1em; margin-top: 0em; }
 .card p { line-height: 1.4em; }
+
+a.web, a.comment, a.fb, a.tw, a:hover.web, a:hover.comment, a:hover.fb, a:hover.tw {
+	width: 12px;
+	height: 12px;
+	line-height: 12px;
+	background-image: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png');
+	margin: 10px;
+
+
+}
+
+
+a.tw { background-position: 0 0;}
+a.fb { background-position: -15px 0; }
+a.comment { background-position: -30px 0; }
+a.web { background-position: -45px 0; }
+
+a:hover.tw { background-position: 0px -15px; }
+a:hover.fb { background-position: -15px -15px; }
+a:hover.comment { background-position: -30px -15px; }
+a:hover.web { background-position: -45px -15px; }
+
+
+
+span.fb-sprite {
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	background-image: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-sprites.png');
+}
+
+
+
+
 
 </style>
 
@@ -86,16 +122,28 @@ Gray background: #e8e8e8
   	<h2>The Candidates</h2>
   	
   	<div class="candidate-entry cf">
-		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/sciortino-debate.jpg" />
+		<div class="before">
+			<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/brownsberger-debate.jpg" />
+			<a class="web" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="fb" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="tw" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		</div>
 		<div class="after">
-			<h3 class="name">Carl Sciortino</h3>
+			<h3 class="name">Will Brownsberger</h3>
 			<p class="title">State Representative</p>
-			<p>Carl Sciortino has served as a state representative since 2005. In 2004 he defeated an anti same sex marriage incumbent and is now one of the few LGBT members of the legislature. </p>
-			<p>An active member of the House Progressive Caucus, he has fought for socio-economic justice on a large number of issues, from raising the minimum wage to advocating for strong public schools. Carl will continue to fight for progressive policies that address the needs of Massachusetts working families.</p>
+
+			<p>With his six years as a state legislator and 30 years of experience in business, law, and state/local government, Will Brownsberger has been a thoughtful, independent and effective advocate for marriage equality, clean energy, transparency in government, fiscal responsibility, and innovation in education. As a legislator he has given continuing attention to meeting local needs — especially road and transit projects. As a Congressman, he will attend carefully to the needs of his whole district. </p>
 		</div>
 	</div>
-	<div class="candidate-entry cf">
-		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/clark-debate.jpg" />
+  	
+  	<div class="candidate-entry cf">
+		<div class="before">
+			<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/clark-debate.jpg" />
+			<a class="web" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="fb" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="tw" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		</div>
+
 		<div class="after">
 			<h3 class="name">Katherine Clark</h3>
 			<p class="title">State Senator</p>
@@ -104,24 +152,47 @@ Gray background: #e8e8e8
 		</div>
 	</div>
 
+	
 	<div class="candidate-entry cf">
-		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/brownsberger-debate.jpg" />
-		<div class="after">
-			<h3 class="name">Will Brownsberger</h3>
-			<p class="title">State Representative</p>
-			<p>With his six years as a state legislator and 30 years of experience in business, law, and state/local government, Will Brownsberger has been a thoughtful, independent and effective advocate for marriage equality, clean energy, transparency in government, fiscal responsibility, and innovation in education. As a legislator he has given continuing attention to meeting local needs — especially road and transit projects. As a Congressman, he will attend carefully to the needs of his whole district. </p>
+		<div class="before">
+			<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/koutoujian-debate.jpg" />
+			<a class="web" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="fb" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="tw" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
 		</div>
-	</div>
-	<div class="candidate-entry cf">
-		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/koutoujian-debate.jpg" />
+
+
 		<div class="after">
 			<h3 class="name">Peter Koutoujian</h3>
 			<p class="title">County Sheriff</p>
 			<p>Peter J. Koutoujian has served as  Middlesex Sheriff since 2011, after fourteen years on Beacon Hill representing the 10th Middlesex District. Utilizing his experience in the law and public sector, Peter instituted progressive new policies like mandating a campaign political finance education classes for all employees. In 2011, his community service work and devotion to heritage earned him the prestigious Ellis Island Medal of Honor. He is ready to bring progressive values, and a lot of hard work, to Washington.</p>
 		</div>
 	</div>
+	
 	<div class="candidate-entry cf">
-		<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/spilka-debate.jpg" />
+		<div class="before">
+			<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/sciortino-debate.jpg" />
+			<a class="web" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="fb" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="tw" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		</div>
+
+		<div class="after">
+			<h3 class="name">Carl Sciortino</h3>
+			<p class="title">State Representative</p>
+			<p>Carl Sciortino has served as a state representative since 2005. In 2004 he defeated an anti same sex marriage incumbent and is now one of the few LGBT members of the legislature. </p>
+			<p>An active member of the House Progressive Caucus, he has fought for socio-economic justice on a large number of issues, from raising the minimum wage to advocating for strong public schools. Carl will continue to fight for progressive policies that address the needs of Massachusetts working families.</p>
+		</div>
+	</div>
+	
+	<div class="candidate-entry cf">
+		<div class="before">
+			<img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/spilka-debate.jpg" />
+			<a class="web" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="fb" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a class="tw" href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		</div>
+
 		<div class="after">
 			<h3 class="name">Karen Spilka</h3>
 			<p class="title">State Senator</p>
