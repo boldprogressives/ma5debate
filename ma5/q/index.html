@@ -404,7 +404,7 @@
      
      	$(document).on("click", ".vote-button", function(){
           
-          var question_id = $(this).data("id");
+          var question_id = $(this).data("question_id");
           if( opendebate.akid || opendebate.recognized_user ) {
             opendebate.vote(question_id);
             return false;
