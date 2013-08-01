@@ -139,6 +139,11 @@ margin: 0;
 height: 100%;
 }
 
+.close-mobile{
+	clear:both;
+	margin: auto;
+}
+
 .mobile-only{
 	display: block;
 }
