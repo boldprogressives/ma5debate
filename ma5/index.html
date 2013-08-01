@@ -74,14 +74,16 @@ div.breaker.content.waiting { height: 570px; /*padding-bottom: 150px;*/}
 h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-top: 0.8em; margin-bottom: 0.6em;}
 .hero h1 { font-size: 43px; font-family: "Open Sans Condensed", Helvetica, sans-serif; margin-bottom: 0.8em; margin-top: 0.6em; line-height: 1.0em;}
 .hero .darkgray>p { margin-bottom: 40px;  }
-.hero .darkgray .left {width: 45%; border-right-color: white; border-right-style: solid; border-right-width: 1px; float: left; }
-.hero .darkgray .right { float: left; text-align: center; }
-.hero .darkgray h3.wide { text-align: center; color: white;}
-
+.hero .darkgray .left {width: 300px; border-right-color: white; border-right-style: solid; border-right-width: 1px; float: left; }
+.hero .darkgray .right { float: left; text-align: center; padding-left: 40px;}
+.hero .darkgray h3.wide { text-align: center; color: white; font-size: 16px; margin-left: -20px;}
 .hero .darkgray a.take-action {
 	margin-top:5px; margin-bottom: 5px; width: 200px; font-size: 16px; margin-right: 24px; padding-top: 7px; padding-bottom: 7px;
 }
 .hero p { font-size: 14px; line-height: 1.3em; }
+.hero .countdown-unit { float: left; margin-right: 20px; }
+.hero .countdown-unit .number { font-size: 39px; font-family: "Open Sans Condensed", Helvetica, sans-serif; }
+.hero .countdown-unit .label { text-transform: uppercase; font-size: 13px;}
 /*.hero .darkgray { width: 680px; }*/
 
 </style>
@@ -197,10 +199,26 @@ h3.wide { text-transform: uppercase; font-weight: 600; color: #006ea9; margin-to
 			   <a class="take-action red pull-right">sign up for a reminder</a>			   			   
 		   </div>
 		   
-		   <div class="right">
+		   <div class="right"><center>
 			   <h3 class="wide">Countdown to debate</h3>
+			   <div class="countdown-unit">
+				   <p class="number">11</p>
+				   <p class="label">Days</p>
+			   </div>
+			   <div class="countdown-unit">
+				   <p class="number">09</p>
+				   <p class="label">Hrs</p>
+			   </div>
+			   <div class="countdown-unit">
+				   <p class="number">43</p>
+				   <p class="label">Mins</p>
+			   </div>
+			   <div class="countdown-unit">
+				   <p class="number">21</p>
+				   <p class="label">Secs</p>
+			   </div>
 			   
-		   </div>
+		   </center></div>
 	   </div>
 	   
 	   <div class="nobg">
