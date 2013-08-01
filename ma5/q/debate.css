@@ -36,6 +36,14 @@ a:link{
   visibility: visible;
 }
 
+.leaflet-container a {
+color: inherit;
+}
+
+.leaflet-container location a {
+	color: #006ea9;
+}
+
 .pagination.top {
 	margin-bottom: 0;
 }
@@ -162,9 +170,11 @@ float: left;
 
 }
 
-.leaflet-container .question-block{
-	margin-left: 10px;
-}	
+.leaflet-container .question-block {
+margin-left: 10px;
+border: 0;
+margin-top: 5px;
+}
 
 .leaflet-popup .question_text {
 margin-top: -20px;
@@ -244,13 +254,13 @@ text-transform: uppercase;
 	border: solid 2px rgb(201,201,201);
 }
 
-h3.question_text{
+h3.question_text, h5.question_text{
 	font-size: 18px;
 	font-weight: 400;
 	color: #006ea9;
 }
 
-h3.question_text a, h5.question_text a{
+h3.question_text a, h5.question_text{
 	color: #006ea9;
 	text-decoration: none;
 	border: none;
