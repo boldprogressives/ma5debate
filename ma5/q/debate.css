@@ -369,3 +369,20 @@ hr.mic_icon:after{
 	content: "";
 	
 }
+
+/* mobile styles */
+@media only screen 
+and (max-width : 930px) {
+
+    .content .span33 {
+        margin-bottom: 30px;
+    }
+
+    #add_question input, #add_question textarea {
+        width: 97%;
+    }
+
+    button.take-action, a.take-action {
+        margin-left: 35%;
+    }
+}
