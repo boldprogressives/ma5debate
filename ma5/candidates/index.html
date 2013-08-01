@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/rfo.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/header-footer.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/debate.css" />
+
 
 <style>
 /* 
@@ -42,9 +42,19 @@ Gray background: #e8e8e8
 
 
 
-@media (min-width: 900px) {
-	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
-	
+@media (max-width: 1035px) {
+  .candidate-entry .after {
+    max-width: 60%;
+  }	
+}
+@media (max-width: 500px) {
+  .candidate-entry .before {
+    margin-left: 30px;
+
+  }
+  .candidate-entry .after {
+    width: 100%;
+  }	
 }
 
 .card h3 { color: #006ea9; font-weight: 400; font-size: 20px; }
