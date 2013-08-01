@@ -19,6 +19,10 @@ a:link{
 	font-weight: bold;
 }
 
+#new_question {
+	text-align: center;
+}
+	
 .width-align {
 max-width: 1040px;
 margin: 0 auto;
