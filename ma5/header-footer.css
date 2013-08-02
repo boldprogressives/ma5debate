@@ -20,4 +20,10 @@ footer .blurb { background-color: #005786; padding-top: 60px; padding-bottom: 30
 footer .nav ul{
 	width: auto;
 }
+
+
+.hidden-phone{
+	display:none;
+}
+
 }
