@@ -423,7 +423,7 @@ background-color: #006ea9;
 	
 }
 
-.lightbox input[type=email], input[type=text]{
+.lightbox input[type=email], .lightbox input[type=text]{
 	display: block;
 	clear:both;
 	margin: 10px auto;
