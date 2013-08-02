@@ -88,7 +88,8 @@ margin-right: 20px;
 
 .form-well h2, .lightbox h2 {
 border-bottom: none;
-line-height: 40px;
+line-height: 28px;
+padding-top: 12px;
 margin-bottom: 20px;
 text-align: center;
 color: #fff;
@@ -515,3 +516,5 @@ and (max-width : 930px) {
         width: 120%;
     }
 }
+
+.question-block
