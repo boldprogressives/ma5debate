@@ -41,17 +41,28 @@
 
   <div class="lightbox out_of_area" style="display:none">
     <div class="close_box">X</div>
-    <h4>Sorry!  Massachusetts only.</h4>
+    <h2 style="font-size: 22px">Sorry!  Massachusetts only.</h2>
     Sorry, we're currently only allowing Massachusetts residents to vote for the questions they want in the debate.  But feel free to submit your own question for voting, and share with your friends in Massachusetts!
+  </div>
+  <div class="lightbox donate" style="display: none">
+    <div class="close_box">X</div>
+    <hr class="checkbox_icon" />
+    <h2 style="font-size: 22px">Thanks for your submission</h2>
+    <span style="font-size: 12px">Can you help us do these people powered debates in the future by donating to this project?</span>
+    <a class="take-action" target="_blank" style="font-size: 18px" 
+       href="">Yes, I'll Donate</a>
+    <div><a style="font-size: 10px; color: white" 
+            onclick="$('.donate').fadeOut(); $('#overlay').fadeOut(); return false;"
+            href="#">No thanks, I don't care about democracy.</a></div>
   </div>
   <div class="lightbox already_voted" style="display:none">
     <div class="close_box">X</div>
-    <h4>You've already voted for this question!</h4>
+    <h2 style="font-size: 22px">You've already voted for this question!</h2>
     You can only vote once per question.  You can still cast a vote for any other questions, and make sure to tell your friends to vote for this question too!
   </div>
 
   <div style="display:none" class="lightbox" id="vote_form_lightbox">
-  <div class="close_box .hidden-phone">X</div>
+  <div class="close_box">X</div>
     	<hr class="mic_icon"/>
     	<h2>Sign Up &ndash; Be Heard</h2>
     	<div id="verify_location_error" class="error_msg" style="display:none">
@@ -322,7 +333,8 @@
         $("#new_question input, #new_question textarea").val("");
         $("#thanks").append('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Add another?</p>');
       	$("#thanks").slideDown();
-      
+        $(".lightbox.donate").fadeIn();
+        $("#overlay").fadeIn();
       } else {
         
         $.each(data, function(key, val) {
