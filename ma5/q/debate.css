@@ -436,7 +436,8 @@ background: rgba(255,255,255,.75);
 	border: solid 10px #fff;
 	border-radius: 0;
 	width: 300px;
-	left:35%;
+	left:38%;
+	margin-left:auto;
 }
 
 .lightbox input[type=email], .lightbox input[type=text]{
