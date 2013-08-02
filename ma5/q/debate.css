@@ -419,7 +419,9 @@ background-color: #006ea9;
 }
 
 .lightbox{
-	border: solid 6px #fff;
+	border: solid 10px #fff;
+	border-radius: 0;
+	width: auto;
 	
 }
 
