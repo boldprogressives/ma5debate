@@ -3,7 +3,7 @@
 <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>OpenDebateQuestions.com | Sign Up For Reminders</title>
+	<title>OpenDebateQuestions.com | About the 5th District of Massachusetts</title>
 
 	<link rel="canonical" href="http://opendebatequestions.com/ma5/" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:600" rel="stylesheet" type="text/css" />
@@ -23,8 +23,6 @@ Gray background: #e8e8e8
   -webkit-box-shadow: 0px 0px 1px 1px #aaa;
   box-shadow:         0px 0px 1px 1px #aaa;
 }
-@media (min-width: 1080px) { .card.width-align { width: 960px; } }
-@media (max-width: )
 .card.width-align { width: 960px; }
 .card>* { margin: 20px 40px; }
 .card h2 { text-transform: uppercase; color: #006ea9; padding-top: 1em; width: auto;}
@@ -33,21 +31,55 @@ Gray background: #e8e8e8
 .candidate-entry .after { max-width: 670px; margin-left: 30px; }
 
 
-@media (min-width: 1200px) {
-	
-	
-}
-
-
-
-@media (min-width: 900px) {
-	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
-	
-}
 
 .card h3 { color: #006ea9; font-weight: 400; font-size: 20px; }
 .card .title { font-weight: 400; font-size: 13px; margin-bottom: 1em; margin-top: 0em; }
 .card p { line-height: 1.4em; }
+
+.form-well.gray h2 {
+border-bottom: none;
+line-height: 40px;
+margin-bottom: 20px;
+text-align: center;
+color: #fff;
+text-transform: uppercase;
+}
+
+.form-well.gray {
+/*padding: 20px;*/
+color: #fff;
+background-color: #f3f3f3;
+width: 400px;
+border: 1px solid #cdcdcd;
+}
+
+.form-well.gray > form { margin-left: 20px; margin-right: 20px; width: 360px; }
+.form-well > form textarea, .form-well > form input, .form-well > form select { width: 340px; background-color: white; padding: 4px 10px; border-top: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 1px solid #eaeaea; border-left: 1px solid #eaeaea; margin-bottom: 16px; }
+.form-well > form button { width: 360px; font-weight: 300; background-color: #006ea9; margin: 6px auto 1em;}
+
+hr.email_icon {
+	margin: 30px 0;
+	color: #006ea9;
+	background-color: #006ea9;
+	height: 2px;
+	display:block;
+}
+
+hr.email_icon:after {
+	display:block;
+	background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/contact-debate-icon.png') no-repeat center center #f3f3f3;
+	margin-top:-16px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 30px;
+	width: 38px;
+	content: "";
+	
+}
+
+
+
+
 </style>
 
 
@@ -59,7 +91,6 @@ Gray background: #e8e8e8
 	<div id="overlay" style="display:none">&nbsp;</div>   
 <div id="page_content">
     
-
     <header>
     	<div class="breaker cf nav">
     	<div class="width-align">
@@ -82,69 +113,53 @@ Gray background: #e8e8e8
 
 
  <div class="breaker content cf">
-  <div class="width-align card">
+  <div class="width-align card cf">
   	<h2>Sign up for reminders</h2>
-
-<form class="ak-form" name="act" method="POST" action="/act/" accept-charset="utf-8">
-
-                                
-                                <h1 id="form_title" class="form_title">
-                                  
-                                  
-                                  
-                                  <span class="ab default ab-name=form-title ab-version=sign-up">
-                                    Sign up
-                                  </span>
-                                  
-
-                                  
-                                </h1>
-                                
-
-
-
-
-
-
-<p class="aside">Sign your name below</p>
+  	<p>Fill out the form to get a reminder about the debate.</p>
+  	
+  	
+<div class="form-well gray pull-right">
+<form class="ak-form" name="act" method="POST" action="//act.boldprogressives.org/act/" accept-charset="utf-8">
+               
+<hr class="email_icon" />
 
 <div id="survey-contact" class="col">
 <!-- begin user_form_wrapper.html -->
 <ul class="compact"></ul>
 <ul class="compact" id="ak-errors" style="display:none"></ul>
-<div id="known_user">
+<!--div id="known_user">
 Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.forms.logOut()">Click here.</a>
 <hr />
-</div>
+</div-->
 <div id="unknown_user" class="user-form ak-labels-overlaid ak-errs-below">
 
 <!-- begin user_form.html -->
   <div class="" id="id_first_name_box">
-    <input name="first_name" placeholder="first name" id="id_first_name" type="text">
+    <input name="first_name" placeholder="First Name" id="id_first_name" type="text">
   </div>
   <div class="" id="id_last_name_box">
-    <input name="last_name" placeholder="last name" id="id_last_name" type="text">
+    <input name="last_name" placeholder="Last Name" id="id_last_name" type="text">
   </div>
   <div class="required" id="id_email_box">
-    <input name="email" placeholder="e-mail address" id="id_email" type="text">
+    <input name="email" placeholder="Email" id="id_email" type="text">
   </div>
   <div class="required" id="id_zip_box">
-    <input name="zip" placeholder="ZIP Code" id="id_zip" type="text">
+    <input name="zip" placeholder="Zip Code" id="id_zip" type="text">
   </div>
+  
+  <div class=" ak-err-below">
+<input type="text" class="phone field" name="phone" id="id_phone" placeholder="Phone" value="" title="phone" />
+</div>
   <input type="hidden" name="country" value="United States">
 
 <!-- end user_form.html -->
 
-
-
-
-<hr />
 </div>
 
 
 
   
-    <input type="hidden" name="redirect" value="/cms/thanks/ma5_debate_reminders_please?source=-pagefollowup-ma5_debate_reminders_please" /> 
+    <input type="hidden" name="redirect" value="http://opendebatequestions.com/ma5/" /> 
   
 
 <!-- end user_form_wrapper.html -->
@@ -154,64 +169,32 @@ Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.f
 <!--div id="survey-questions" class="col ak-labels-above"-->
 <div id="survey-questions" class="">
 
+   <button class="take-action ab default ab-name=form-submit-button-text ab-version=submit" >submit</button>
 
-
-
-
-                                            
-                                            
-                                            
-                                            
-
-
-
-
-
-
-
-											
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            <button class="take-action ab default ab-name=form-submit-button-text ab-version=submit" >submit</button>
-                                            
-
-                                            
-                                            
-
-
-
-
-
-<input type="hidden" name="page" value="ma5_debate_reminders_please">
+<input type="hidden" name="page" value="ma5_debate_contact">
 <input type="hidden" name="required" value="country">
-
 
 </div>
 
 </form>
-
-
-
+</div>
 
   </div>
 </div>
-
 
 
 <footer>
     	<div class="breaker cf nav">
     	<div class="width-align">
 	    	<ul class="cf">
-	    		<li><a href="#">Candidates</a></li>
-				<li><a href="#">The District</a></li>
-				<li><a href="#">Format</a></li>
-				<li><a href="#">Participate</a></li>
-				<li><a href="#">Donate to our work</a></li>
+	    		<li><a href="/ma5/">Home</a></li>
+	    		<li><a href="/ma5/candidates/">Candidates</a></li>
+				<li><a href="/ma5/district/">The District</a></li>
+				<li><a href="/ma5/about/">About</a></li>
+				<li><a href="/ma5/q/">Participate</a></li>
+				<li><a href="/ma5/contact/">Contact</a></li>
+				<li><a href="/ma5/privacy/">Privacy Policy</a></li>				
+				<li><a href="https://secure.actblue.com/contribute/page/pccc_main?refcode=ma5debate" style="font-weight: 600">Donate to our work</a></li>
 	    	</ul>
     	</div>
     	</div>
@@ -232,6 +215,17 @@ Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.f
 </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="/ma5/q/jquery.cookie.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      var akid = window.location.search.match(/akid=(.*\.\d+\.[\d\w-]+)/);
+      if( akid && akid.length ) {
+        akid = akid[1];
+        $.cookie("pccc.akid", akid, {expires: 7, path: "/"});
+      } 
+    });
+  </script>
+
   <script src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/js/bootstrap.js.gzip"></script>
   <script type="text/javascript">
 // instead of including all of http://act.boldprogressives.org/resources/actionkit.js
