@@ -15,6 +15,14 @@
 <!--[if !IE]><!--><script> if (/*@cc_on!@*/false) { document.documentElement.className+=' ie10'; } </script><!--<![endif]-->
 <style type="text/css">
 .breaker.content {background-color: #e3e3e3; border-top: 1px solid rgb(160,160,160); padding-top: 20px; padding-bottom: 40px; }
+.card { 
+  background-color: white; 
+  border: 0 !important; 
+  padding-bottom: 120px;
+  -moz-box-shadow:    0px 0px 1px 1px #aaa !important;
+  -webkit-box-shadow: 0px 0px 1px 1px #aaa !important;
+  box-shadow:         0px 0px 1px 1px #aaa !important;
+}
 </style>
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
@@ -401,7 +409,7 @@
       }
 
       $(window).load(function() {
-        opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
+        opendebate.init("ma5debate_questions", "ma5debate_vote", "ma5debate_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
      
      	$(document).on("click", ".vote-button", function(){
           

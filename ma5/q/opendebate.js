@@ -83,7 +83,7 @@
     if( akid ) {
                $.ajax({
                    type: 'GET',
-                   url: "//act.boldprogressives.org/cms/thanks/" + od.pages.votecheck + "?checkAkid=yes&akid=" + akid + "&template_set=(TEST)%20Magic%20Actionfield%20Stuff",
+                   url: "//act.boldprogressives.org/cms/thanks/" + od.pages.votecheck + "?checkAkid=yes&akid=" + akid,
                    async: false,
                    jsonp: "jsonp",
                    contentType: "application/json",
@@ -144,7 +144,7 @@
                var thanks_redirect = data;
                $.ajax({
                    type: 'GET',
-                   url: "//act.boldprogressives.org" + thanks_redirect + "&template_set=(TEST)%20Magic%20Actionfield%20Stuff",
+                   url: "//act.boldprogressives.org" + thanks_redirect,
                    async: false,
                    jsonp: "jsonp",
                    contentType: "application/json",
@@ -227,7 +227,7 @@
         var thanks_redirect = data;
         $.ajax({
           type: 'GET',
-          url: "//act.boldprogressives.org" + thanks_redirect + "&template_set=(TEST)%20Magic%20Actionfield%20Stuff",
+          url: "//act.boldprogressives.org" + thanks_redirect,
           async: false,
           jsonp: "jsonp",
           contentType: "application/json",
