@@ -97,12 +97,15 @@ text-transform: uppercase;
 
 #thanks p{
 display: block;
-background: #fff;
-color: #1a86ab;
+color: #fff;
 padding: 15px 6px;
 margin-bottom: 20px;
 }
 
+#thanks p a{
+	font-weight: bold;
+	color: #fff;
+}
 
 
 #add_question input, #add_question textarea{
