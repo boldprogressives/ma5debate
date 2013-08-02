@@ -127,13 +127,19 @@ cursor: pointer;
 }
 
 
+@media only screen and (max-width: 1000px) {
+  .lightbox {
+      left: 30%;
+  }
+}
+
 /* mobile styles */
 @media only screen 
 and (max-width : 767px)  {
 
 .lightbox {
-width: 92%;
-left: 0;
+width: 92% !important;
+left: -2px !important;
 top: 0;
 margin: 0;
 height: 100%;
