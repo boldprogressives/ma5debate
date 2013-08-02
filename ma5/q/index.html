@@ -23,6 +23,7 @@
   -webkit-box-shadow: 0px 0px 1px 1px #aaa !important;
   box-shadow:         0px 0px 1px 1px #aaa !important;
 }
+.vote-bottom { font-size: 12px; font-weight: 600; }
 </style>
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
@@ -333,8 +334,12 @@
         $("#new_question input, #new_question textarea").val("");
         $("#thanks").append('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Add another?</p>');
       	$("#thanks").slideDown();
-        $(".lightbox.donate").fadeIn();
-        $("#overlay").fadeIn();
+
+        if( ! $.cookie("pccc.donate-lb") ) {
+          $(".lightbox.donate").fadeIn();
+          $("#overlay").fadeIn();
+          $.cookie("pccc.donate-lb", "yes", {expires: 7, path: "/"});
+        }
       } else {
         
         $.each(data, function(key, val) {
