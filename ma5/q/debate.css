@@ -220,7 +220,7 @@ display: inline-block;
 }
 
 .leaflet-container .vote_tally {
-  padding: 5px 20px;
+  padding: 0 20px;
 }
 
 .votes .vote-bottom, .votes .leaflet-container .vote a{
