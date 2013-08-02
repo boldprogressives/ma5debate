@@ -57,7 +57,7 @@ border: 1px solid #cdcdcd;
 .form-well > form textarea, .form-well > form input, .form-well > form select { width: 340px; background-color: white; padding: 4px 10px; border-top: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 1px solid #eaeaea; border-left: 1px solid #eaeaea; margin-bottom: 16px; }
 .form-well > form button { width: 360px; font-weight: 300; background-color: #006ea9; margin: 6px auto 1em;}
 
-hr.email_icon {
+hr.reminder_icon {
 	margin: 30px 0;
 	color: #006ea9;
 	background-color: #006ea9;
@@ -65,9 +65,9 @@ hr.email_icon {
 	display:block;
 }
 
-hr.email_icon:after {
+hr.reminder_icon:after {
 	display:block;
-	background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/contact-debate-icon.png') no-repeat center center #f3f3f3;
+	background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/reminder-debate-icon.png') no-repeat center center #f3f3f3;
 	margin-top:-16px;
 	margin-left: auto;
 	margin-right: auto;
@@ -77,6 +77,26 @@ hr.email_icon:after {
 	
 }
 
+
+
+@media (max-width: 767px) {
+	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
+	.card.width-align{
+		width: 86%;
+		margin: auto;
+		padding: 0;
+	}
+	
+	.form-well.gray{
+		margin: auto;
+		width:100%;
+	}
+	
+	.form-well.gray > form{
+		margin: auto;
+
+}
+}
 
 
 
@@ -114,14 +134,14 @@ hr.email_icon:after {
 
  <div class="breaker content cf">
   <div class="width-align card cf">
-  	<h2>Sign up for reminders</h2>
+  	<h2>Sign up for a reminder</h2>
   	<p>Fill out the form to get a reminder about the debate.</p>
   	
   	
 <div class="form-well gray pull-right">
 <form class="ak-form" name="act" method="POST" action="//act.boldprogressives.org/act/" accept-charset="utf-8">
                
-<hr class="email_icon" />
+<hr class="reminder_icon" />
 
 <div id="survey-contact" class="col">
 <!-- begin user_form_wrapper.html -->
