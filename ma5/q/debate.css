@@ -82,9 +82,10 @@ margin-bottom: 30px;
 	background:  #e8e8e8;
 }
 
-#container, #map{
+#container, #map, #nav {
 margin-right: 20px;
 }
+
 
 .form-well h2, .lightbox h2 {
 border-bottom: none;
@@ -360,7 +361,8 @@ input[type=email].error, input[type=text].error, textarea.error{
 
 #nav{
 	margin: 1em auto;
-	font-size: 12px;
+	font-size: 14px;
+	text-align: center;
 }
 
 #recognized_user {
