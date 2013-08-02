@@ -211,12 +211,16 @@ display: inline-block;
 .vote_tally{
 	font-family: 'Open Sans Condensed', sans-serif;
     display:block;
-    padding: 10px;	
+    padding: 10px 20px;	
     font-weight: bold;
     background-color: #006ea9;
     margin-bottom: 2px;
     color: #fff;
     font-size: 30px;
+}
+
+.leaflet-container .vote_tally {
+  padding: 5px 20px;
 }
 
 .votes .vote-bottom, .votes .leaflet-container .vote a{
