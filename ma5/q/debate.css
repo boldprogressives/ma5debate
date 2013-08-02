@@ -418,6 +418,20 @@ background-color: #006ea9;
 
 }
 
+.close_box {
+display: block;
+color: #006ea9
+border: solid 1px #fff;
+padding: 0 5px;
+font-size: 12px;
+line-height: 18px;
+cursor: pointer;
+position: absolute;
+right: 5px;
+top: 9px;
+background: rgba(255,255,255,.75);
+}
+
 .lightbox{
 	border: solid 10px #fff;
 	border-radius: 0;
