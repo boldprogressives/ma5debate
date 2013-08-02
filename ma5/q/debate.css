@@ -82,13 +82,15 @@ margin-bottom: 30px;
 	background:  #e8e8e8;
 }
 
-#container, #map{
+#container, #map, #nav {
 margin-right: 20px;
 }
 
+
 .form-well h2, .lightbox h2 {
 border-bottom: none;
-line-height: 40px;
+line-height: 28px;
+padding-top: 12px;
 margin-bottom: 20px;
 text-align: center;
 color: #fff;
@@ -359,7 +361,8 @@ input[type=email].error, input[type=text].error, textarea.error{
 
 #nav{
 	margin: 1em auto;
-	font-size: 12px;
+	font-size: 14px;
+	text-align: center;
 }
 
 #recognized_user {
@@ -447,7 +450,7 @@ background: #60a5c9;
 	border: solid 10px #fff;
 	border-radius: 0;
 	width: 300px;
-	left:33%;
+	left:30%;
 	margin-left:auto;
 }
 
@@ -458,7 +461,6 @@ background: #60a5c9;
 }
 
 hr.mic_icon, hr.checkbox_icon {
-	
 	color: #fff;
 	background-color: #fff;
 	height: 2px;
@@ -467,6 +469,7 @@ hr.mic_icon, hr.checkbox_icon {
 
 hr.checkbox_icon:after {
 	background: url('check-lightbox-debate.png') no-repeat center center #006ea9;
+        background-position-y: 5px;
 }
 hr.mic_icon:after {
 	background: url('mic-form-v2.png') no-repeat center center #006ea9;
@@ -494,9 +497,10 @@ and (max-width : 930px) {
     .content .span33 {
         margin-bottom: 30px;
         margin-top: 30px;
-        margin-right: -8%;
-        width: 108%;
+        width: 94%;
     }
+    
+    div.breaker.content > div.width-align > div.span66 { width: 100%; }
 
     #add_question input, #add_question textarea {
         width: 97%;
@@ -514,3 +518,5 @@ and (max-width : 930px) {
         width: 120%;
     }
 }
+
+.question-block

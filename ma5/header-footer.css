@@ -1,7 +1,7 @@
 .nav { background-color: #006ea9; color: white; }
 .nav a { color: white; text-decoration: none; border-bottom-style: none; }
 .nav ul { list-style-type: none; margin-top: 6px; margin-bottom: 6px; font-size: 13px;}
-footer .nav ul { margin-top: 15px; margin-bottom: 15px; width: 840px; margin-left: auto; margin-right: auto; }
+footer .nav ul { margin-top: 15px; margin-bottom: 15px; width: 777px; margin-left: auto; margin-right: auto; }
 .nav li { float: left; padding-left: 20px; text-transform: uppercase; }
 footer .nav li { padding-left: 10px; padding-right: 10px; }
 .width-align { max-width: 960px; }
@@ -9,20 +9,22 @@ header .logos { padding-top: 30px; }
 header .logos img { margin-bottom: 30px; } 
 header .logos 
 footer .width-align, footer ul, footer ul li { text-align: center; }
-
+header, footer { font-weight: 300; }
 /*header .nav { border-bottom: 1px solid #549ed7; border-top: 1px solid #004c76; }
 footer*/ .nav { border-top: 1px solid #549ed7; border-bottom: 1px solid #004c76; }
 footer .blurb .disclaimer p { color: #e3e3e3; border-style: solid; border-width: 1px; font-size: 11px; line-height: 1.3em; padding: 8px 20px; max-width: 700px; margin-left: auto; margin-right: auto;}
 footer .blurb { background-color: #005786; padding-top: 60px; padding-bottom: 30px; }
 
+footer .nav ul, header .nav ul { padding: 0; margin-top: 0; margin-bottom: 0; }
+footer .nav ul li, header .nav ul li { padding: 0; margin-top: -2px; margin-bottom: -2px; }
+footer .nav li a { padding: 15px 10px; line-height: 52px; }
+header .nav li a { padding: 8px 10px; line-height: 38px; }
+header .nav li:last-child a { padding: 8px 20px; }
+.nav li a.donate, .nav li:last-child a { font-weight: 600; background-color: #d3202f;}
 
 @media only screen and (max-width: 960px) {
 footer .nav ul{
 	width: auto;
-}
-
-.card{
-	padding:0;
 }
 
 .hidden-phone, header .breaker.logos a:last-child img {
