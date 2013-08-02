@@ -401,7 +401,7 @@
       }
 
       $(window).load(function() {
-        opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
+        opendebate.init("ma5debate_questions", "ma5debate_vote", "ma5debate_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
      
      	$(document).on("click", ".vote-button", function(){
           
