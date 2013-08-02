@@ -276,10 +276,32 @@ Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.f
   <script src="/ma5/q/jquery.cookie.js"></script>
   <script type="text/javascript">
     $(window).load(function() {
-      var akid = window.location.search.match(/akid=(.*\.\d+\.[\d\w-]+)/);
-      if( akid && akid.length ) {
-        akid = akid[1];
+      window.getArgs = function() {
+	    var argsStr = window.location.search;
+	    var pairs = argsStr.replace(/^\?/, '').split('&');
+	    var args = {};
+	    unesc = unescape;
+	    if ( typeof(decodeURIComponent) != 'undefined' )
+	    	unesc = decodeURIComponent;
+	    for ( var i = 0; i < pairs.length; ++i ) {
+		    pair = pairs[i].split('=');
+		    if (pair[0]) {
+			    if (pair[1])
+			    	pair[1] = unesc(pair[1].replace(/\+/g, ' '));
+			    args[unesc(pair[0].replace(/\+/g, ' '))] = pair[1];
+			}
+		}
+		return args;
+      };
+    
+    $(window).load(function() {
+      var akid = getArgs().akid;
+      if( akid ) {
         $.cookie("pccc.akid", akid, {expires: 7, path: "/"});
+      } 
+      var source = getArgs().source;
+      if( source ) {
+        $.cookie("pccc.source", source, {expires: 1, path: "/"});
       } 
     });
   </script>

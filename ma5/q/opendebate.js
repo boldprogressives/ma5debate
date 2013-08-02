@@ -135,6 +135,7 @@
     submitActionkitForm(od.pages.vote, {
         "akid": akid,
         "action_vote": votes,
+        "source": $.cookie("pccc.source") || "",
         "status": "complete"
         }, function(result, data) {
              if( result == "success" ) {
@@ -210,6 +211,8 @@
       return false;
     }
 
+    data.source = $.cookie("pccc.source") || "";
+
     submitActionkitForm(od.pages.question, data, function(result, data) {
 	  
       if( result === "success" ) {
@@ -282,7 +285,7 @@
         }
       }
       
-      
+      data.source = $.cookie("pccc.source") || "";      
       
       submitActionkitForm(od.pages.votecheck, data, 
         function(result, data) {

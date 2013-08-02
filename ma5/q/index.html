@@ -428,6 +428,12 @@
       }
 
       $(window).load(function() {
+
+        var source = getArgs().source;
+        if( source ) {
+          $.cookie("pccc.source", source, {expires: 1, path: "/"});
+        } 
+
         opendebate.init("ma5debate_questions", "ma5debate_vote", "ma5debate_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
      
      	$(document).on("click", ".vote-button", function(){
