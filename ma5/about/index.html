@@ -132,6 +132,16 @@ Gray background: #e8e8e8
 </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="/ma5/q/jquery.cookie.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      var akid = window.location.search.match(/akid=(.*\.\d+\.[\d\w-]+)/);
+      if( akid && akid.length ) {
+        akid = akid[1];
+        $.cookie("pccc.akid", akid, {expires: 7, path: "/"});
+      } 
+    });
+  </script>
 
 
   <script src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/js/bootstrap.js.gzip"></script>
