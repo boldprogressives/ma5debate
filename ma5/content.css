@@ -34,3 +34,8 @@ Gray background: #e8e8e8
 .card h3 { color: #006ea9; font-weight: 400; font-size: 20px; }
 .card .title { font-weight: 400; font-size: 13px; margin-bottom: 1em; margin-top: 0em; }
 .card p { line-height: 1.4em; }
+
+@media only screen and (max-width: 430px) {
+
+
+}
