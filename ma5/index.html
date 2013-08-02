@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -23,6 +24,9 @@ Gray background: #e8e8e8
   .breaker.content.waiting { background-size: 100%; }
 
 }
+
+
+
 
 
 @media (min-width: 900px) {
@@ -95,6 +99,116 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
    -webkit-box-shadow: inset 0 0 10px #000000;
    box-shadow:         inset 0 0 10px #000000;
 }
+
+@media only screen and (max-width: 767px) {
+.width-align.hero{
+	width: auto;
+	padding:0;
+	width:100%;
+	margin:0;
+}
+
+.width-align.hero .darkgray, .width-align.hero .candidate-blurbs{
+	width:100%;
+	clear:both;
+	float: none;
+	max-width:inherit;
+	max-height:inherit;
+	margin-bottom: 0;
+}
+.width-align.hero .candidate-blurbs{
+	padding: 0;
+}
+
+.width-align.hero .darkgray{
+	padding: 0;
+}
+
+.banner {
+	
+	height:auto;
+	
+}
+
+.breaker.content.banner{
+	
+	background: inherit;
+	-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+	margin-bottom: 0;
+}
+
+.testimonials{
+	padding-top: 10px;
+}
+
+.nobg{
+	padding: 20px;
+}
+
+.nobg .wide, .nobg p {
+display: block;
+margin: auto;
+width: 90%;
+}
+
+.candidate-entry {
+margin: 16px auto;
+display: block;
+width: 240px;
+float: left;
+}
+
+.hero .darkgray .left, .hero .darkgray .right{
+	clear: both;
+	float:none;
+	display:block;
+	width: 100%;
+	text-align: center;
+}
+
+
+.hero .darkgray .left a.pull-right{
+	display:block;
+	clear:both;
+	float:none;
+	margin: 4px auto;
+}
+
+.hero .darkgray .right{
+	padding: 20px 0;
+	background-color: #006ea9;
+	margin-top:20px;
+}
+
+.hero .countdown-unit{
+	float: none;
+	margin:auto;
+}
+
+.hero .darkgray h3.wide{
+	margin:auto;
+}
+
+
+.hidden-phone{
+	display:none;
+}
+
+footer .nav ul{
+	width: auto;
+}
+
+.candidate-entries{
+display: block;
+width: 90%;
+margin: auto;
+padding-top:20px;
+}
+
+}
+
 </style>
 
 
@@ -130,11 +244,12 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
 
 	<div class="width-align hero cf">
 		
-		<div class="candidate-blurbs">
+		<div class="candidate-blurbs cf">
+			
+<div class="candidate-entries">
 			<h4>The Candidates</h4>
 			<hr />
-
-			<div class="candidate-entry cf">
+			<div class="candidate-entry">
 			  <a href="/ma5/candidates/#will-brownsberger"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/brownsberger-debate.jpg" /></a>
 				<div class="after">
 					<p class="name">Will Brownsberger</p>
@@ -178,7 +293,7 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
 					<a class="more" href="/ma5/candidates/#karen-spilka">Learn More</a>
 				</div>
 			</div>
-															
+			</div>												
 		</div>
 	   <div class="darkgray cf">
 		   <h1>You choose. They answer.</h1> 

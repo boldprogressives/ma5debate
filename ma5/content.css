@@ -36,6 +36,11 @@ Gray background: #e8e8e8
 .card p { line-height: 1.4em; }
 
 @media only screen and (max-width: 430px) {
-
+.width-align.hero{
+	width: auto;
+	padding:0;
+	width:100%;
+	margin-top: 0;
+}
 
 }
