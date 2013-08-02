@@ -425,6 +425,7 @@ background-color: #006ea9;
 
 .lightbox input[type=email], input[type=text]{
 	display: block;
+	clear:both;
 }
 
 hr.mic_icon{
