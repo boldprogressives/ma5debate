@@ -25,7 +25,7 @@ footer .nav ul{
 	padding:0;
 }
 
-.hidden-phone{
+.hidden-phone, header .breaker.logos a:last-child img {
 	display:none;
 }
 
