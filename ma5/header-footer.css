@@ -26,10 +26,6 @@ footer .nav ul{
 	width: auto;
 }
 
-.card{
-	padding:0;
-}
-
 .hidden-phone, header .breaker.logos a:last-child img {
 	display:none;
 }
