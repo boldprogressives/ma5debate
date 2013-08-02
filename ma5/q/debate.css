@@ -423,6 +423,10 @@ background-color: #006ea9;
 	
 }
 
+.lightbox input[type=email], input[type=text]{
+	display: block;
+}
+
 hr.mic_icon{
 	
 	color: #fff;
