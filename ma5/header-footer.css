@@ -16,11 +16,14 @@ footer .blurb .disclaimer p { color: #e3e3e3; border-style: solid; border-width:
 footer .blurb { background-color: #005786; padding-top: 60px; padding-bottom: 30px; }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
 footer .nav ul{
 	width: auto;
 }
 
+.card{
+	padding:0;
+}
 
 .hidden-phone{
 	display:none;
