@@ -447,7 +447,7 @@ background: #60a5c9;
 	border: solid 10px #fff;
 	border-radius: 0;
 	width: 300px;
-	left:33%;
+	left:30%;
 	margin-left:auto;
 }
 
@@ -458,7 +458,6 @@ background: #60a5c9;
 }
 
 hr.mic_icon, hr.checkbox_icon {
-	
 	color: #fff;
 	background-color: #fff;
 	height: 2px;
@@ -467,6 +466,7 @@ hr.mic_icon, hr.checkbox_icon {
 
 hr.checkbox_icon:after {
 	background: url('check-lightbox-debate.png') no-repeat center center #006ea9;
+        background-position-y: 5px;
 }
 hr.mic_icon:after {
 	background: url('mic-form-v2.png') no-repeat center center #006ea9;
