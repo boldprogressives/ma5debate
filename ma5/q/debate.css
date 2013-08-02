@@ -420,8 +420,8 @@ background-color: #006ea9;
 
 .close_box {
 display: block;
-color: #006ea9
-border: solid 1px #fff;
+color: #006ea9;
+border:0;
 padding: 0 5px;
 font-size: 12px;
 line-height: 18px;
