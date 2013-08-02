@@ -496,6 +496,8 @@ and (max-width : 930px) {
         margin-top: 30px;
         width: 94%;
     }
+    
+    div.breaker.content > div.width-align > div.span66 { width: 100%; }
 
     #add_question input, #add_question textarea {
         width: 97%;
