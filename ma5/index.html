@@ -42,7 +42,7 @@ Gray background: #e8e8e8
 .candidate-entry { margin: 16px 12px 14px 0; }
 .candidate-entry .after {float: left; }
 .candidate-blurbs { line-height: 1em; float: right; background-color: white; padding: 15px 15px 15px 30px; width: 225px; 
-	
+	float: right;
 	 -moz-box-shadow:    0px 0px 2px 2px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
   box-shadow:         0px 0px 2px 2px rgba(0,0,0,0.1);
@@ -76,7 +76,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 	width: 900px;
 }
 .width-align.hero .darkgray { background-image:url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-feature-bg.png); color: white; 
-	text-align: center; padding: 30px; max-width: 570px; max-height: 325px;
+	text-align: center; padding: 30px; max-width: 570px; max-height: 325px; float: left;
 }
 h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-top: 0.8em; margin-bottom: 0.6em; font-size: 16px;}
 .hero h1 { font-size: 43px; font-family: "Open Sans Condensed", Helvetica, sans-serif; margin-bottom: 0.8em; margin-top: 0.6em; line-height: 1.0em;}
@@ -108,6 +108,9 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
 	margin:0;
 }
 
+.hero .darkgray>p {
+padding: 0 20px;
+}
 .width-align.hero .darkgray, .width-align.hero .candidate-blurbs{
 	width:100%;
 	clear:both;
@@ -117,7 +120,7 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
 	margin-bottom: 0;
 }
 .width-align.hero .candidate-blurbs{
-	padding: 0;
+	padding: 20px 0;
 }
 
 .width-align.hero .darkgray{
@@ -140,7 +143,7 @@ box-shadow: none;
 }
 
 .testimonials{
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 .nobg{
@@ -150,7 +153,8 @@ box-shadow: none;
 .nobg .wide, .nobg p {
 display: block;
 margin: auto;
-width: 90%;
+width: 80%;
+text-align: center;
 }
 
 .candidate-entry {
@@ -206,6 +210,16 @@ padding-top:20px;
 
 }
 
+
+@media only screen and (max-width: 960px) {
+.candidate-entries{
+display: block;
+width: 65%;
+margin: auto;
+padding-top:20px;
+}
+}
+
 </style>
 
 
@@ -240,7 +254,26 @@ padding-top:20px;
 <div class="breaker content banner cf">
 
 	<div class="width-align hero cf">
-		
+		   <div class="darkgray cf">
+		   <h1>You choose. They answer.</h1> 
+		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? With the open debate format, you ask the questions &ndash; and if you're a Massachusetts resident, you can vote on the most relevant questions. We'll use your input and your votes to structure the debate on Saturday, August 10 at 11am Eastern. </p>
+		   <div class="left cf">
+			   <a href="/ma5/q/#add_question" class="take-action blue pull-right">Submit a question</a>
+			   <a href="/ma5/q/"  class="take-action blue pull-right">Vote on the questions</a>
+			   <a href="/ma5/reminders/" class="take-action red pull-right">sign up for a reminder</a>			   			   
+		   </div>
+		   
+		   <div class="right"><center>
+			   <h3 class="wide">Mark your calendar!</h3>
+			   <div class="countdown-unit">
+				   <p class="number">8/10/2013</p>
+				   <p class="label">Saturday, 11:00 a.m. Eastern</p>
+
+			   </div>
+			   
+		   </center></div>
+	   </div>
+	  	   	
 		<div class="candidate-blurbs cf">
 			
 <div class="candidate-entries">
@@ -292,33 +325,18 @@ padding-top:20px;
 			</div>
 			</div>												
 		</div>
-	   <div class="darkgray cf">
-		   <h1>You choose. They answer.</h1> 
-		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? With the open debate format, you ask the questions &ndash; and if you're a Massachusetts resident, you can vote on the most relevant questions. We'll use your input and your votes to structure the debate on Saturday, August 10 at 11am Eastern. </p>
-		   <div class="left cf">
-			   <a href="/ma5/q/#add_question" class="take-action blue pull-right">Submit a question</a>
-			   <a href="/ma5/q/"  class="take-action blue pull-right">Vote on the questions</a>
-			   <a href="/ma5/reminders/" class="take-action red pull-right">sign up for a reminder</a>			   			   
-		   </div>
-		   
-		   <div class="right"><center>
-			   <h3 class="wide">Mark your calendar!</h3>
-			   <div class="countdown-unit">
-				   <p class="number">8/10/2013</p>
-				   <p class="label">Saturday, 11:00 a.m. Eastern</p>
 
-			   </div>
-			   
-		   </center></div>
-	   </div>
 	   
+	   	     
 	   <div class="nobg">
 	   	<h3 class="wide">Watch the debate right here.</h3>
 	   	<p>When the debate airs, the window above will show the event to a nationwide audience. <br /> If you want us to send you a reminder, <a href="/ma5/reminders/">click here</a>.</p>
 		   
 		   
 	   </div>
-	    
+
+
+	   	    
     </div><!-- .hero.width-align -->
 
 </div>

@@ -35,12 +35,3 @@ Gray background: #e8e8e8
 .card .title { font-weight: 400; font-size: 13px; margin-bottom: 1em; margin-top: 0em; }
 .card p { line-height: 1.4em; }
 
-@media only screen and (max-width: 430px) {
-.width-align.hero{
-	width: auto;
-	padding:0;
-	width:100%;
-	margin-top: 0;
-}
-
-}
