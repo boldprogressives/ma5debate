@@ -166,6 +166,9 @@
     	
     	<form id="new_question" name="new_question" onsubmit="opendebate.submitQuestion(); return false;">
 	  <textarea name="question" id="new_question_text" placeholder="Question..."></textarea>
+          <div class="count" style="float: right; margin-right: 9px">
+            (<span class="count">200</span> / 200)
+          </div>
 
 	  <input class="user" type="text" name="first_name" id="first_name"  placeholder="First Name"/>    	
 	  <input class="user" type="text" name="last_name" id="last_name"  placeholder="Last Name"/>
@@ -328,6 +331,7 @@
       
       $("#thanks").slideUp();
       $("thanks").remove("p");
+      $("div.count span.count").text("200").removeClass("count_warning");
       
       if( result == "success" ) {
         
@@ -426,6 +430,15 @@
         $(".already_voted").fadeIn();
         $("#overlay").fadeIn();
       }
+
+      $("#new_question textarea").on("keyup", function() {
+        var text = $(this).val();
+        var length = 200 - text.length;
+        $("div.count span.count").text(length);
+        if( length < 0 ) {
+          $("div.count span.count").addClass("count_warning");
+        }
+      });
 
       $(window).load(function() {
 
