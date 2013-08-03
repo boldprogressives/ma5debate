@@ -1,4 +1,9 @@
 <div>
+  <div data-if="!entries.length">
+    Congratulations &mdash; you are one of the first people to submit a question!
+    Type it in the form, and it will show up here.
+  </div>
+  <div data-if="entries.length">
   <div class="pagination top">
     <a class="pagination-prev"
        data-pagination="{pages.previous}"
@@ -19,6 +24,7 @@
     <a class="pagination-next"
        data-pagination="{pages.next}"
        href="#{pages.next}">Next&nbsp;&raquo;</a>
+  </div>
   </div>
 </div>
 
