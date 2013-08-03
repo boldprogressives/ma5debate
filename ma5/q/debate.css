@@ -500,7 +500,7 @@ and (max-width : 930px) {
         width: 94%;
     }
     .reminder_well {
-        width: 94% !important;
+        width: 100% !important;
     }  
 
     div.breaker.content > div.width-align > div.span66 { width: 100%; }
