@@ -44,7 +44,7 @@
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
       maxZoom: 18
     }).addTo(map);
-    od.map_layer = L.markerClusterGroup({disableClusteringAtZoom: 9}).addTo(map);
+    od.map_layer = L.markerClusterGroup({disableClusteringAtZoom: 11, maxClusterRadius: 30 }).addTo(map);
     map.invalidateSize();
     map.on("popupopen", function(e) {
       var contents = $(e.popup._container).find("#map_popup").get(0);
