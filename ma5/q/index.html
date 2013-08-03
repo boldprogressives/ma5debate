@@ -24,6 +24,11 @@
   box-shadow:         0px 0px 1px 1px #aaa !important;
 }
 .vote-bottom { font-size: 12px; font-weight: 600; }
+
+a.take-action.red{
+	background: #d9000d;
+}
+a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 </style>
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
@@ -178,11 +183,19 @@
 	  <button type="submit" class="take-action">Add Your Question</button>
    
     	</form>
-    	
-   
+    	   
     </div>
     
     </div>
+
+        <div class="reminder_well" style="float: right; width: 34%">
+          <a target="_blank"
+             href="/ma5/reminders/" style="display: block; width: 100%; 
+                                           margin: 0; padding-right: 0; padding-left: 0"
+             class="take-action red">sign up for a reminder</a>	
+        </div>
+
+
     
   </div>
 </div>
@@ -209,7 +222,7 @@
     	
         <div class="breaker cf blurb">
         	<div class="width-align"><center>
-                    <div style="padding-bottom: 1em">
+                    <div style="margin-top: -20px; padding-bottom: 1em">
                       <a style="font-size: 12px; color: white"
                          href="/ma5/contact/">
                         Having trouble with the site? Tell us about it here.
