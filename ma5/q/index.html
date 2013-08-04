@@ -40,7 +40,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     <link rel="stylesheet" href="http://opendebatequestions.com/ma5/q/leaflet.markercluster/MarkerCluster.Default.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.ie.css" /><![endif]-->
 <link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/lightbox.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/q/debate.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="debate.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://opendebatequestions.com/ma5/header-footer.css" />
 
 </head>
@@ -158,6 +158,12 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
       <span id="recognized_user">
       </span>
 
+      <h2 style="margin-top: 0">Find a Topic</h2>
+      <form onsubmit="return false;" style="text-align: center">
+        <textarea id="search" style="margin-top: -10px; margin-bottom: 20px"
+                  placeholder="Enter one or more words that you'd like to search for."
+                  onkeyup="var text=$(this).val().trim(); if( text ) { opendebate.search(text); } return false;"></textarea>
+      </form>
 		<hr class="mic_icon"/>
 		
         <div id="add_question" name="add_question">

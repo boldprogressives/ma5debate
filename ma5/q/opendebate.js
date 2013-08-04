@@ -391,6 +391,10 @@ Date.fromISO= (function(){
     iface: "list",
     obvtUrl: "templates/list.html"
   });
+  obviel.view({
+    iface: "searchList",
+    obvtUrl: "templates/search.html"
+  });
 
   od.render = function() {
 
@@ -480,6 +484,22 @@ Date.fromISO= (function(){
 
       $("#container").render(od.data).done(od.refresh);
     }
+  };
+
+  od.search = function(text) { 
+    od.searchResults = {"iface": "searchList", "total": od.data.entries.length,
+                        "search": text, "entries": []};
+    var re = new RegExp(text, "i");
+    od.searchResults.entries = $.grep(od.data.entries, function(e) {
+        return (e.submission && 
+                  e.submission.match(re)) || (
+                e.first_name && 
+                  e.first_name.match(re)) || (
+                e.last_name &&
+                  e.last_name.match(re));
+            ;
+    });
+    $("#container").render(od.searchResults).done(od.refresh);
   };
 
   od.processOneFetchedVoter = function(json) {

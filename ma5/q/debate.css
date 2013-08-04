@@ -110,7 +110,8 @@ margin-bottom: 20px;
 }
 
 
-#add_question input, #add_question textarea{
+#add_question input, #add_question textarea,
+textarea#search {
 background: #fff;
 width: 87%;
 padding: 6px 10px;
