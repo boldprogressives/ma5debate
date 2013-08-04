@@ -1,0 +1,21 @@
+<div>
+  <div data-if="!entries.length">
+    <strong>No questions matched your search, "{search}".</strong>
+    Try broadening your search by using fewer terms, or use synonyms.
+  </div>
+  <div data-if="entries.length">
+  <div class="pagination top">
+    <span style="float: right"><strong style="float: left">
+        Searching for: "{search}"</strong>
+      (Showing {entries.length} questions (out of {total})</span>
+  </div>
+  <div data-repeat="entries">
+    <div data-render="@."></div>
+  </div>
+  <div class="pagination bottom">
+    <span style="float: right"><strong style="float: left">
+        Searching for: "{search}"</strong>
+      (Showing {entries.length} questions (out of {total})</span>
+  </div>
+</div>
+
