@@ -501,6 +501,9 @@ Date.fromISO= (function(){
     });
     $("#container").render(od.searchResults).done(od.refresh);
   };
+  od.clearSearch = function() {
+    od.searchResults = null;
+  };
 
   od.processOneFetchedVoter = function(json) {
       for( var i=0; i<json.length-1; ++i ) { // json will have an empty object at the end of its array

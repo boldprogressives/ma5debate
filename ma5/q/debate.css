@@ -82,7 +82,7 @@ margin-bottom: 30px;
 	background:  #e8e8e8;
 }
 
-#container, #map {
+#container, #map, .nav_card {
 margin-right: 20px;
 }
 
@@ -273,6 +273,10 @@ text-transform: uppercase;
 	border: solid 2px rgb(201,201,201);
 }
 
+h3.search_label a {
+    text-transform: uppercase;
+}
+h3.search_label a,
 h3.question_text a {
 	font-size: 18px;
 	font-weight: 400;
@@ -361,9 +365,9 @@ input[type=email].error, input[type=text].error, textarea.error{
 }
 
 #nav{
-	margin: 1em 20px 1em 0;
+	margin: 1em 1em;
 	font-size: 14px;
-	text-align: center;
+	text-align: left;
 }
 
 #recognized_user {

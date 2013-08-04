@@ -24,6 +24,10 @@
   -webkit-box-shadow: 0px 0px 1px 1px #aaa !important;
   box-shadow:         0px 0px 1px 1px #aaa !important;
 }
+.nav_card {
+  padding-bottom: 0;
+  margin-bottom: 20px;
+}
 .vote-bottom { font-size: 12px; font-weight: 600; }
 
 a.take-action.red{
@@ -96,7 +100,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 <div id="page_content">
     <header>
     	<div class="breaker cf nav">
-    	<div class="width-align">
+    	  <div class="width-align">
 	    	<ul class="pull-right">
 	    		<li><a href="/ma5/">Home</a></li>
 	    		<li><a href="/ma5/candidates/">Candidates</a></li>
@@ -132,19 +136,36 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     
 
     <div class="span66">
-    <div id="nav">
 
-      <a href="#/sort/date/">Show Newest Questions</a>
-      |
-      <a href="#/sort/votes/">Show Popular Questions</a>
-      |
-      <a href="#/location/">Browse on a Map</a>
-      <span class="add_question_header_link">|
-        <a href="#add_question">Submit a Question</a>
-      </span>
-      
+      <div class="cf card nav_card">
+
+
+        <div id="nav">
+          <div class="width-align">
+            <h3 style="display: inline-block; vertical-align: center"
+                class="search_label"><a style="font-size: 16px"
+                                        name="search">Search for a topic</a></h3>
+            <form style="vertical-align: center; display: inline-block; 
+                         margin-left: 0.8em; width: 60%"
+                  onsubmit="return false;" style="text-align: center">
+              <input type="text" id="search" 
+                     style="vertical-align: center; width: 100%"
+                     placeholder="Search current questions"
+                     onkeyup="var text=$(this).val().trim(); if( text ) { opendebate.search(text); } return false;" />
+            </form>
+
+          </div>
+          <a onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/date/">Show Newest Questions</a>
+          |
+          <a onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/votes/">Show Popular Questions</a>
+          |
+          <a onclick="$('#search').val(''); opendebate.clearSearch();" href="#/location/">Browse on a Map</a>
+          <span class="add_question_header_link">|
+            <a href="#add_question">Submit a Question</a>
+          </span>
+          
         </div>
-
+      </div>
     
      <div id="map" style="display: none; height: 400px;"></div>
     <div id="container" >
@@ -157,13 +178,6 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     <div class="span33 form-well">
       <span id="recognized_user">
       </span>
-
-      <h2 style="margin-top: 0">Find a Topic</h2>
-      <form onsubmit="return false;" style="text-align: center">
-        <textarea id="search" style="margin-top: -10px; margin-bottom: 20px"
-                  placeholder="Enter one or more words that you'd like to search for."
-                  onkeyup="var text=$(this).val().trim(); if( text ) { opendebate.search(text); } return false;"></textarea>
-      </form>
 		<hr class="mic_icon"/>
 		
         <div id="add_question" name="add_question">
