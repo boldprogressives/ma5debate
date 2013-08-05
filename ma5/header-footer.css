@@ -18,7 +18,7 @@ footer .blurb { background-color: #005786; padding-top: 60px; padding-bottom: 30
 footer .nav ul, header .nav ul { padding: 0; margin-top: 0; margin-bottom: 0; }
 footer .nav ul li, header .nav ul li { padding: 0; margin-top: -2px; margin-bottom: -2px; }
 footer .nav li a { padding: 15px 10px; line-height: 52px; }
-header .nav li a { padding: 15px 10px; line-height: 62px; }
+header .nav li a { padding: 8px 10px; line-height: 38px; }
 header .nav li:last-child a { padding: 8px 20px; }
 footer .nav li a.donate, footer .nav li:last-child a { font-weight: 600; background-color: #d3202f;}
 header .nav .pull-left li a { text-transform: none; font-size: 34px; font-weight: 400; font-family: "Open Sans Condensed", Helvetica, sans-serif; /* line-height: 48px; */ }
