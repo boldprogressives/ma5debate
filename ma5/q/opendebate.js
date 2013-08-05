@@ -88,7 +88,7 @@
                    jsonp: "jsonp",
                    contentType: "application/json",
                    dataType: 'jsonp',
-                   success: od.processOneFetchedVoter
+                   success: od.processUserRecognition
                });
     }
   };
@@ -105,26 +105,50 @@
       $.cookie("pccc.first_name", user.first_name, {expires: 7, path: "/"});
       $.cookie("pccc.last_name", user.last_name, {expires: 7, path: "/"});
       od.akid = user.akid;
+      var votes = null;
+      if( od.recognized_user && od.recognized_user.id && (user.id == od.recognized_user.id) ) {
+          votes = od.recognized_user.votes;
+      }
       od.recognized_user = {
           iface: "recognized_user",
           akid: user.akid,
           email: user.email,
           zip: user.zip,
           first_name: user.first_name,
-          last_name: user.last_name
+          last_name: user.last_name,
+          id: user.id,
+          votes: votes
       };
       od.recognized_user.best_name = (user.first_name && user.last_name) ? (user.first_name + " " + user.last_name) : user.email;
       $("#recognized_user").render(od.recognized_user);
+      od.getVotesForUser(user.id);
       od.recognized_user_callback && od.recognized_user_callback(true, od.recognized_user);
+      od.refresh();
   };
 
   od.refresh = function(view) {
     od.map.invalidateSize();
     FB.XFBML.parse();
+    
+    if( od.recognized_user && od.recognized_user.id && od.recognized_user.votes ) {
+      var votes = od.recognized_user.votes;
+      $(".votes .vote-bottom").each(function() {
+          var question = $(this)
+              .closest(".votes").find("a.vote-button").data("question_id");
+          if( !question ) {
+              return;
+          }
+          if( votes.indexOf(question) != -1 ) {
+              $(this).text("voted")
+                  .css("font-size", "12px").css("color", "gray")
+                  .css("background-color", "white");
+          }
+      });
+    }
   };
 
   od.submitVote = function(question_id, akid, user_id) {
-    var votes = od.getVotesForUser(user_id);
+    var votes = (od.recognized_user && od.recognized_user.votes) || od.getVotesForUser(user_id);
     if( votes.indexOf(question_id) == -1 ) {
       votes.push(question_id);
     } else {
@@ -154,7 +178,6 @@
                });
                od.vote_submitted_callback("success", 
                                           {akid: akid, question_id: question_id});
-               window.location.hash = "#/question/" + question_id + "/";
 
              } else {
                ga("send", "event", "vote", "error", question_id, 
@@ -342,6 +365,15 @@ Date.fromISO= (function(){
             if( akid && akid.length ) {
               akid = akid[1];
               var user_id = parseInt(akid.split(".")[1]);
+
+/*              if( od.votes ) {
+                  var tally = od.votes[question_id] || [];
+                  if( tally.indexOf(user_id) == -1 ) {
+                      tally.push(user_id);
+                  }
+                  od.votes[question_id] = tally;
+                }
+*/
               od.setAkid(akid);
 
               ga("send", "event", "vote", "attempt", question_id, 
@@ -574,6 +606,9 @@ Date.fromISO= (function(){
         }
       });
     });
+    if( od.recognized_user && od.recognized_user.id == user_id && !(od.recognized_user.votes) ) {
+        od.recognized_user.votes = votes
+    };
     return votes;
   };
 
