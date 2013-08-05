@@ -504,6 +504,8 @@ Date.fromISO= (function(){
         od.sortByDate();
       } else if( active_sort === "votes" && od.dataSort !== "votes" ) {
         od.sortByVotes(); 
+      } else if( active_sort === "state_votes" && od.dataSort !== "state_votes" ) {
+        od.sortByStateVotes(); 
       }
       if( !page && !map_view ) {
         window.location.hash = "#/sort/" + (active_sort || "votes") + "/p1/";
@@ -677,6 +679,28 @@ Date.fromISO= (function(){
       }
     });
     od.dataSort = "votes";
+
+    od.data.pages = {};
+    od.data.pages.current = 1;
+
+    recalcPage();
+
+  };
+  od.sortByStateVotes = function() {
+    if( !od.data || !od.votes ) {
+      throw "No data has been loaded yet."
+    }
+    od.data.entries.sort(function(a, b) { 
+      
+      if( a.state_votes < b.state_votes ) {
+          return 1;
+      } else if( a.state_votes > b.state_votes ) {
+          return -1;
+      } else {
+          return 0;
+      }
+    });
+    od.dataSort = "state_votes";
 
     od.data.pages = {};
     od.data.pages.current = 1;
