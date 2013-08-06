@@ -328,6 +328,7 @@ Date.fromISO= (function(){
        $("#verify_location_error input.error").removeClass("error");
  
       var q = $(".votes a.vote-button[data-question_id=" + question_id + "]");
+      q.find(".vote_tally").css("color", "yellow");
       var t = q.find(".vote_tally span");
       if( t ) {
           var tI = parseInt(t.text());
