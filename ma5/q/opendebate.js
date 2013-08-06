@@ -327,8 +327,17 @@ Date.fromISO= (function(){
         $("#verify_location_error").children().fadeOut();
        $("#verify_location_error input.error").removeClass("error");
  
-      $(".votes a.vote-button[data-question-id=" + question_id + "]")
-        .closest(".votes").find(".vote-bottom")
+      var q = $(".votes a.vote-button[data-question_id=" + question_id + "]");
+      q.find(".vote_tally").css("color", "yellow");
+      var t = q.find(".vote_tally span");
+      if( t ) {
+          var tI = parseInt(t.text());
+          if( typeof(tI) === "number" ) {
+              t.text(tI + 1);
+          }
+      }
+
+          q.closest(".votes").find(".vote-bottom")
             .text("voted")
             .css("font-size", "12px").css("color", "gray")
             .css("background-color", "white");      
