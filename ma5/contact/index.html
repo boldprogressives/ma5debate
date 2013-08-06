@@ -333,6 +333,7 @@ Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.f
 	window.pccc = {}, window.pccc.args = getArgs();
 	$(function() {   
 		$("form").append('<input type="hidden" name="source" value="'+window.pccc.args.source+'" />')
+	  	         .append('<input type="hidden" name="action_browser" value="' + window.navigator.userAgent + '" />')
 	  	         .append('<input type="hidden" name="action_referrer" value="' + document.referrer + '" />');
 	});
 	// actionkit.forms.contextRoot = '//act.boldprogressives.org/context/';
