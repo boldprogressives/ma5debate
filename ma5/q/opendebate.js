@@ -327,7 +327,11 @@ Date.fromISO= (function(){
         $("#verify_location_error").children().fadeOut();
        $("#verify_location_error input.error").removeClass("error");
  
-      
+      $(".votes a.vote-button[data-question-id=" + question_id + "]")
+        .closest(".votes").find(".vote-bottom")
+            .text("voted")
+            .css("font-size", "12px").css("color", "gray")
+            .css("background-color", "white");      
        
        var data = {
           "action_vote": question_id,
