@@ -526,11 +526,7 @@ Date.fromISO= (function(){
     var re = new RegExp(text, "i");
     od.searchResults.entries = $.grep(od.data.entries, function(e) {
         return (e.submission && 
-                  e.submission.match(re)) || (
-                e.first_name && 
-                  e.first_name.match(re)) || (
-                e.last_name &&
-                  e.last_name.match(re));
+                  e.submission.match(re));
             ;
     });
     $("#container").render(od.searchResults).done(od.refresh);

@@ -522,9 +522,34 @@ and (max-width : 930px) {
 
 @media only screen and (max-width: 430px) {
     .question-block {
-        margin-left: -10%;
-        width: 120%;
+        width: 100%;
     }
+    
+    .question {
+    	width: 70%;
+    }
+    
+    #add_question input, #add_question textarea {
+	    width:91%;
+	    margin: 6px auto;
+    }
+    
+    .form-well.span33{
+	    width:90%;
+	    clear:both;
+	    float:none;
+	    margin: 30px auto;
+    }
+    
+    #add_question .take-action {
+		width: 98%;
+		margin: 10px auto;
+		}
+    
+    .pagination span {
+		width: 76%;
+		}
+    
 }
 
 .question-block

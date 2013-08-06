@@ -135,10 +135,11 @@ auto;
     <header>
     	<div class="breaker cf nav">
     	<div class="width-align">
-    		<ul class="pull-left">
+    		<!--ul class="pull-left">
 	    		<li><a href="/ma5/">OpenDebateQuestions.com</a></li>
-    		</ul>
+    		</ul-->
 	    	<ul class="pull-right">
+<!-- -->	   <li><a href="/ma5/">Home</a></li> <!-- -->
 	    		<li><a href="/ma5/candidates/">Candidates</a></li>
 				<li><a href="/ma5/district/">The District</a></li>
 				<li><a href="/ma5/about/">About</a></li>
@@ -149,7 +150,7 @@ auto;
     	</div>
     	<div class="breaker cf logos">
     	<div class="width-align">
-    	  <a href="http://opendebatequestions.com/ma5/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-logo.gif" /></a>
+    	  <a href="/ma5/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-logo-url-MA.gif" /></a>
     	  <a href="http://boldprogressives.org"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/pccc-debate-logo.png" class="pull-right" /></a>
     	</div>
     	</div>
@@ -332,12 +333,32 @@ Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.f
 	window.pccc = {}, window.pccc.args = getArgs();
 	$(function() {   
 		$("form").append('<input type="hidden" name="source" value="'+window.pccc.args.source+'" />')
+	  	         .append('<input type="hidden" name="action_browser" value="' + window.navigator.userAgent + '" />')
 	  	         .append('<input type="hidden" name="action_referrer" value="' + document.referrer + '" />');
 	});
 	// actionkit.forms.contextRoot = '//act.boldprogressives.org/context/';
 	// actionkit.forms.initForm('candidate');
 	// actionkit.utils.appendHiddenInput('action_referrer', document.referrer);
 	</script>
+
+	<!-- Google Code for Remarketing Tag -->
+	<!--------------------------------------------------
+	Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+	--------------------------------------------------->
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	var google_conversion_id = 1035744392;
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+	/* ]]> */
+	</script>
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+	</script>
+	<noscript>
+	<div style="display:inline;">
+	<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1035744392/?value=0&amp;guid=ON&amp;script=0"/>
+	</div>
+	</noscript>	
 	
 </body>
 </html>
