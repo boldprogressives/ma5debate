@@ -517,6 +517,12 @@ Date.fromISO= (function(){
         od.sortByDate();
       } else if( active_sort === "votes" && od.dataSort !== "votes" ) {
         od.sortByVotes(); 
+      } else if( active_sort === "state_votes" && od.dataSort !== "state_votes" ) {
+        od.sortByStateVotes(); 
+      } else if( active_sort === "recent_votes" && od.dataSort !== "recent_votes" ) {
+        od.sortByRecentVotes(); 
+      } else if( active_sort === "random" && od.dataSort !== "random" ) {
+        od.sortByRandom(); 
       }
       if( !page && !map_view ) {
         window.location.hash = "#/sort/" + (active_sort || "date") + "/p1/";
@@ -686,6 +692,67 @@ Date.fromISO= (function(){
       }
     });
     od.dataSort = "votes";
+
+    od.data.pages = {};
+    od.data.pages.current = 1;
+
+    recalcPage();
+
+  };
+  od.sortByRandom = function() { 
+    if( !od.data ) {
+      throw "No data has been loaded yet."
+    }
+    od.data.entries.sort(function(a, b) { 
+        return Math.floor(Math.random() * 3) - 1;
+    });
+    od.dataSort = "random";
+
+    od.data.pages = {};
+    od.data.pages.current = 1;
+
+    recalcPage();
+    
+  };
+  od.sortByRecentVotes = function() {
+    if( !od.data ) {
+      throw "No data has been loaded yet."
+    }
+    od.data.entries.sort(function(a, b) { 
+        var aDate = new Date(Date.fromISO(a.latest_vote || 0)), 
+            bDate = new Date(Date.fromISO(b.latest_vote || 0));
+        if( aDate < bDate ) {
+            return 1;
+        } else if( aDate > bDate ) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+    od.dataSort = "recent_votes";
+
+    od.data.pages = {};
+    od.data.pages.current = 1;
+
+    recalcPage();
+
+  };
+
+  od.sortByStateVotes = function() {
+    if( !od.data || !od.votes ) {
+      throw "No data has been loaded yet."
+    }
+    od.data.entries.sort(function(a, b) { 
+      
+      if( a.state_votes < b.state_votes ) {
+          return 1;
+      } else if( a.state_votes > b.state_votes ) {
+          return -1;
+      } else {
+          return 0;
+      }
+    });
+    od.dataSort = "state_votes";
 
     od.data.pages = {};
     od.data.pages.current = 1;
