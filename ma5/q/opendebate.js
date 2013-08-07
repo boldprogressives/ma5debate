@@ -22,6 +22,8 @@
         ga("send", "event", "share", "facebook", $(this).data("question"));
     });
 
+    od.votes_this_session = 0;
+
     od.pages = {};
     od.pages.question = question_page;
     od.pages.vote = vote_page;
@@ -374,6 +376,9 @@ Date.fromISO= (function(){
       submitActionkitForm(od.pages.votecheck, data, 
         function(result, data) {
           if( result == "success" ) {
+
+              od.votes_this_session += 1;
+
             var akid = data.match(/akid=(\.\d+\.[\d\w\-_]+)&/);
             if( akid && akid.length ) {
               akid = akid[1];

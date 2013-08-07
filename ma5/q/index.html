@@ -58,11 +58,11 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
   <div class="lightbox donate" style="display: none; width: 400px">
     <div class="close_box">X</div>
     <hr class="checkbox_icon" />
-    <h2 style="font-size: 28px">Thanks for your submission</h2>
+    <h2 style="font-size: 28px">Thank you for your votes!</h2>
     <div style="font-size: 14px">Can you help support more people-powered debates by donating to this project?</div>
     <a class="take-action" target="_blank" style="font-size: 18px" 
        onclick="$('.donate').fadeOut(); $('#overlay').fadeOut(); return true;"
-       href="https://secure.actblue.com/contribute/page/ma5debate?refcode=ma5debate-postq">Yes, I'll Donate</a>
+       href="https://secure.actblue.com/contribute/page/ma5debate?refcode=ma5debate-3v">Yes, I'll Donate</a>
     <div><a style="font-size: 12px; color: white" 
             onclick="$('.donate').fadeOut(); $('#overlay').fadeOut(); return false;"
             href="#">No thanks.</a></div>
@@ -400,11 +400,6 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
         $("#thanks").html('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Want to submit another?</p>');
       	$("#thanks").slideDown();
 
-        if( ! $.cookie("pccc.donate-lb") ) {
-          $(".lightbox.donate").fadeIn();
-          $("#overlay").fadeIn();
-          $.cookie("pccc.donate-lb", "yes", {expires: 7, path: "/"});
-        }
       } else {
         
         $.each(data, function(key, val) {
@@ -422,8 +417,15 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
         
         if( result == "success" ) {
             $("#vote_form_lightbox").fadeOut();
-            $("#overlay").fadeOut();
-        
+
+              if( opendebate.votes_this_session === 3 && 
+                  !$.cookie("pccc.donate-lb") ) {
+                      $(".lightbox.donate").fadeIn();
+                      $("#overlay").fadeIn();
+                      $.cookie("pccc.donate-lb", "yes", {expires: 7, path: "/"});
+              } else {
+                $("#overlay").fadeOut();
+              }
         } else {
           $.each(data, function(key, val) {
             
