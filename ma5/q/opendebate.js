@@ -460,6 +460,9 @@ Date.fromISO= (function(){
 
     var map_view = hash.match(/^\#\/location\//);
     if( map_view ) {
+        $("a[data-sort]").css("font-weight", "normal");
+        $("a[data-sort=map]").css("font-weight", "bold");
+
         var y, x;
         var coords = hash.substr(11).replace("/", "");
         if( coords ) {
@@ -525,10 +528,13 @@ Date.fromISO= (function(){
         od.sortByRandom(); 
       }
       if( !page && !map_view ) {
-        window.location.hash = "#/sort/" + (active_sort || "date") + "/p1/";
+        window.location.hash = "#/sort/" + (active_sort || "recent_votes") + "/p1/";
         return;
       }
-
+      if( !map_view ) {
+          $("a[data-sort]").css("font-weight", "normal");
+          $("a[data-sort=" + od.dataSort + "]").css("font-weight", "bold");
+      }
       od.data.pages = {};
       od.data.pages.current = page;
       recalcPage();
