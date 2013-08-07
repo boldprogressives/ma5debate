@@ -533,7 +533,7 @@ Date.fromISO= (function(){
         od.sortByRandom(); 
       }
       if( !page && !map_view ) {
-        window.location.hash = "#/sort/" + (active_sort || "recent_votes") + "/p1/";
+        window.location.hash = "#/sort/" + (active_sort || "votes") + "/p1/";
         return;
       }
       if( !map_view ) {
