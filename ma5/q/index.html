@@ -153,7 +153,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
               <input type="text" id="search" 
                      style="vertical-align: center; width: 100%"
                      placeholder="Search current questions"
-                     onkeyup="var text=$(this).val().trim(); if( text ) { opendebate.search(text); } return false;" />
+                     onkeyup="var text=$(this).val().trim(); if( text && text.length >= 4 ) { opendebate.search(text); } return false;" />
             </form>
 
           </div>
