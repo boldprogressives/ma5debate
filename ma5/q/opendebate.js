@@ -384,14 +384,6 @@ Date.fromISO= (function(){
               akid = akid[1];
               var user_id = parseInt(akid.split(".")[1]);
 
-/*              if( od.votes ) {
-                  var tally = od.votes[question_id] || [];
-                  if( tally.indexOf(user_id) == -1 ) {
-                      tally.push(user_id);
-                  }
-                  od.votes[question_id] = tally;
-                }
-*/
               od.setAkid(akid);
 
               ga("send", "event", "vote", "attempt", question_id, 
@@ -424,14 +416,6 @@ Date.fromISO= (function(){
     iface: "question",
     name: "question_detail",
     obvtUrl: "templates/question_detail.html"
-  });
-  obviel.view({
-    iface: "question_votes",
-    render: function() {
-      if( !od.votes ) return;
-      var vote_tally = od.votes[parseInt(this.obj.question_id)] || [];
-      this.el.text(vote_tally.length);
-    }
   });
   obviel.view({
     iface: "empty",
@@ -689,7 +673,7 @@ Date.fromISO= (function(){
 
   };
   od.sortByVotes = function() {
-    if( !od.data || !od.votes ) {
+    if( !od.data ) {
       throw "No data has been loaded yet."
     }
     od.data.entries.sort(function(a, b) { 
@@ -750,7 +734,7 @@ Date.fromISO= (function(){
   };
 
   od.sortByStateVotes = function() {
-    if( !od.data || !od.votes ) {
+    if( !od.data ) {
       throw "No data has been loaded yet."
     }
     od.data.entries.sort(function(a, b) { 
