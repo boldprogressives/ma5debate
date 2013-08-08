@@ -533,6 +533,10 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
         if( sort ) {
           window.location = window.location.pathname + "#/sort/" + sort + "/";
         }                     
+        var qid = getArgs().question;
+        if( qid ) {
+          window.location = window.location.pathname + "#/question/" + qid + "/";
+        }                     
 
         opendebate.init("ma5debate_questions", "ma5debate_vote", "ma5debate_vote_check", "http://boldprogressives.github.io/ma5debate-data/questions.js", "http://boldprogressives.github.io/ma5debate-data/timeline.js", "http://boldprogressives.github.io/ma5debate-data/votes.js", recognized_user_callback, fetch_and_validate_question, question_submitted_callback, vote_user_data_fetcher, vote_submitted_callback, already_voted_callback);
      
