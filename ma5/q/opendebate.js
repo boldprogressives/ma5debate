@@ -611,8 +611,7 @@ Date.fromISO= (function(){
   };
   od.processTimeline = function(data) {
       $("#activity_entries").render(data).done(function() {
-this;
-//          window.setTimeout(od.fetchTimeline, 1000);
+          window.setTimeout(od.fetchTimeline, 1000);
       });
   };
     
