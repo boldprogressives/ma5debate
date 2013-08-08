@@ -285,6 +285,27 @@ h3.question_text a {
 	border: none;
 }
 
+.reminder_well a.take-action:hover,
+.submit_question a.take-action:hover {
+  background-color: #1a86ab !important;
+}
+
+.activity_well a.submission {
+    color: #006ea9;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+}
+.activity_well .activity_entry {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.activity_well .activity_entry:last-child {
+    border-bottom: none;
+}
+
 h5.question_text{
 	font-weight: 300; 
 	font-size: 14px; 
@@ -499,12 +520,18 @@ and (max-width : 930px) {
         display: initial;
     }
 
+    .reminder_well.submit_question {
+        display: none;
+    }
+    .form-well {
+        display: block !important;
+    }
     .content .span33 {
         margin-bottom: 30px;
         margin-top: 30px;
         width: 94%;
     }
-    .reminder_well {
+    .reminder_well, .activity_well {
         width: 100% !important;
     }  
 

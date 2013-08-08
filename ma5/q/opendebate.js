@@ -3,7 +3,7 @@
   var od = window.opendebate = {};
 
   od.init = function(question_page, vote_page, votecheck_page,
-                     question_proxy, vote_proxy,
+                     question_proxy, timeline_proxy, vote_proxy,
                      recognized_user_callback, 
                      submit_question_fetcher,
                      question_submitted_callback,
@@ -30,6 +30,7 @@
     od.pages.votecheck = votecheck_page;
     od.data_proxies = {};
     od.data_proxies.question = question_proxy;
+    od.data_proxies.timeline = timeline_proxy;
     od.data_proxies.vote = vote_proxy;
 
     od.recognized_user_callback = recognized_user_callback;
@@ -59,6 +60,7 @@
 
     od.fetchQuestions();
     od.fetchVotes();
+    od.fetchTimeline();
 
     window.location.hash && ga("send", "pageview", window.location.hash.substr(1));
   };
@@ -429,6 +431,18 @@ Date.fromISO= (function(){
     iface: "searchList",
     obvtUrl: "templates/search.html"
   });
+  obviel.view({
+    iface: "timeline",
+    obvtUrl: "templates/activity.html"
+  });
+  obviel.view({
+    iface: "timeline_question",
+    obvtUrl: "templates/activity_question.html"
+  });
+  obviel.view({
+    iface: "timeline_vote",
+    obvtUrl: "templates/activity_vote.html"
+  });
 
   od.render = function() {
 
@@ -584,6 +598,23 @@ Date.fromISO= (function(){
       od.render();
   };
 
+  od.fetchTimeline = function() {
+    $.ajax({
+          type: 'GET',
+          url: od.data_proxies.timeline,
+          async: false,
+          jsonp: "jsonp",
+          contentType: "application/json",
+          dataType: 'jsonp',
+          success: od.processTimeline
+    });
+  };
+  od.processTimeline = function(data) {
+      $("#activity_entries").render(data).done(function() {
+          window.setTimeout(od.fetchTimeline, 1000);
+      });
+  };
+    
   od.fetchQuestions = function() {
 
     $.ajax({
