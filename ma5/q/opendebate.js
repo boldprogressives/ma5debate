@@ -745,11 +745,11 @@ Date.fromISO= (function(){
       throw "No data has been loaded yet."
     }
     od.data.entries.sort(function(a, b) { 
-        var aDate = new Date(Date.fromISO(a.latest_vote || 0)), 
-            bDate = new Date(Date.fromISO(b.latest_vote || 0));
-        if( aDate < bDate ) {
+        var a = a.trending_score || 0,
+            b = b.trending_score || 0;
+        if( a < b ) {
             return 1;
-        } else if( aDate > bDate ) {
+        } else if( a > b ) {
             return -1;
         } else {
             return 0;
