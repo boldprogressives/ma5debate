@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="refresh" content="120">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>OpenDebateQuestions.com | Massachusetts 5th Congressional District</title>
         <meta property="og:image" content="https://s3.amazonaws.com/s3.boldprogressives.org/images/ma-5-fb-share-v2.jpg" />
@@ -28,20 +28,23 @@ Gray background: #e8e8e8
 	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
 	
 }
-.breaker.content.banner { background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg); min-height: 600px; }
+.breaker.content.banner { background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg); min-height: 662px; }
 .candidate-blurbs .name { font-size: 16px; }
 .candidate-blurbs .title { font-size: 13px; }
 .candidate-blurbs a.more { font-size: 13px; color: #006ea9; text-decoration: none; border-bottom: none 0px white; font-weight: 400; margin-top: 9px; line-height: 22px; }
 .candidate-blurbs a.more:hover { font-size: 13px; color: #bb0008; text-decoration: none; border-bottom-style: none; border-bottom-width: 0px; }
-.candidate-entry img { width: 64px; float: left; margin-right: 12px;}
-.candidate-entry { margin: 16px 12px 14px 0; }
+.candidate-entry img { width: 64px; float: }
+.candidate-entry a.cf { margin-right: 37px; margin-left: 37px; }
+/*.candidate-entry { margin: 16px 12px 14px 0; } */
+.horizontal-candidates .candidate-entry { margin: 16px 20px 14px 20px; float: left; }
 .candidate-entry .after {float: left; }
-.candidate-blurbs { line-height: 1em; float: right; background-color: white; padding: 15px 15px 15px 30px; width: 225px; 
+.candidate-blurbs { line-height: 1em; float: right; /* background-color: white; padding: 15px 15px 15px 30px;*/
+	width: 272px;
 	float: right;
-	 -moz-box-shadow:    0px 0px 2px 2px rgba(0,0,0,0.1);
+/*	 -moz-box-shadow:    0px 0px 2px 2px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
   box-shadow:         0px 0px 2px 2px rgba(0,0,0,0.1);
- margin-top: 1px;
+ margin-top: 1px;*/
 
 	
 	
@@ -59,10 +62,11 @@ a.take-action.blue:hover { background-color: rgba(76, 167, 228, .8); }
 a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 
 
-.waiting a.take-action { font-size: 24px; margin-top: 60px; padding: 15px 40px 15px 40px;}
+.waiting a.take-action, .testimonials a.take-action.big { font-size: 24px; margin-top: 60px; padding: 15px 40px 15px 40px;}
+.testimonials a.take-action.big { margin-top: 20px; margin-bottom: 90px;}
 
 .testimonials .take-action.gray { color: black; background-color: #e3e3e3; font-weight: 300; font-size: 14px; padding-top: 7px; padding-bottom: 7px; }
-.testimonials { border-bottom: 1px solid black;}
+/*.testimonials { border-bottom: 1px solid black;}*/
 @media (max-width: 960px) { 
 	.testimonials { border-top: 1px solid #d4d4d4;} 
 	.banner { border-bottom: 0px none white;}
@@ -100,7 +104,26 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
    box-shadow:         inset 0 0 10px #000000;
 }
 
+.nobg h1 {
+	margin-top: 15px;
+	margin-bottom: 0px;
+	line-height: 70px;
+	
+}
 
+/*.candidate-blurbs {
+	background: none;
+	border: none;
+	padding: none;
+	margin: none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	width: auto;
+	
+}*/
+.horizontal-candidates .candidate-blurbs .candidate-entry { float: left; }
+.horizontal-candidates { margin-top: -36px; /* border-bottom: 1px solid #ccc; */ margin-bottom: 20px; }
 @media only screen and (max-width: 960px) {
 .width-align.hero{
 	width: auto;
@@ -124,7 +147,7 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
 	padding: 20px 0;
 }
 .width-align.hero .darkgray {
-	padding: 0;
+	padding: 15px 0;
 }
 .banner {
 	height: auto;
@@ -137,8 +160,9 @@ h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-to
   		  box-shadow: none;
 	margin-bottom: 0;
 }
-.testimonials {
-	padding-top: 20px;
+div.breaker.content.testimonials {
+	padding-top: 32px;
+	margin-top: 20px;
 }
 
 .nobg {
@@ -196,7 +220,12 @@ padding-top:20px;
 }
 
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:900px) {
+
+.top-section .candidate-blurbs {
+  display: none;
+}
+
 .candidate-entries {
 	display: block;
 	width: 65%;
@@ -205,6 +234,84 @@ padding-top:20px;
 }
 }
 
+.video-frame {
+	
+}
+
+div.breaker.waiting.testimonials, div.breaker.waiting.testimonials h3 {
+	color: white;
+	
+}
+.bluebg { background-color: #006ea9; color: white; margin-top: 15px; width: 900px; font-weight: 400; }
+.bluebg h4 {
+    color: white;
+    font-family: "Open Sans Condensed", Arial, Helvetic, sans-serif;
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: relative;
+    float: left;
+    top: 72px;
+    right: 24px;
+    text-transform: uppercase;
+}
+.bluebg .candidate-entry {
+    float: left;
+    margin-left: 8px; margin-right: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.bluebg .candidate-entry img { border-radius: 50%; clear: both; margin-top: 0px; }
+.bluebg .candidate-entry .name { font-size: 14px; margin-top: -10px; margin-bottom: -3px; }
+.bluebg .candidate-entry .more { font-size: 12px; color: yellow; border-bottom-style: none; }
+.testimonials { text-align: center; }
+.candidate-entry { width: 18%; }
+
+.twitter_box {
+    width: 58px; height: 34px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    }
+.twitter_box:after,
+.twitter_box:before {
+    width: 0; height: 0;
+    position: absolute;
+    top: 100%;
+    border: solid transparent;
+    pointer-events: none;
+    content: " ";
+    }
+.twitter_box:after {
+    left: 50%;
+    border-top-color: #fff;
+    border-width: 3px;
+    margin-left: -3px;
+    }
+.twitter_box:before {
+    left: 50%;
+    border-top-color: #aaa;
+    border-width: 4px;
+    margin-left: -4px;
+    }
+.twitter_box #followers {
+    width: 100%; height: auto;
+    position: absolute;
+    top: 0px; left: 0px;
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 16px; line-height: 34px;
+    letter-spacing: 0;
+    white-space: nowrap;
+    color: #333;
+    text-align: center;
+    -webkit-font-smoothing: subpixel-antialiased;
+   }
 </style>
 
 
@@ -212,6 +319,15 @@ padding-top:20px;
 
 </head>
 <body>	
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 	<div id="overlay" style="display:none">&nbsp;</div>   
 <div id="page_content">
@@ -243,86 +359,86 @@ padding-top:20px;
 <div class="breaker content banner cf">
 
 	<div class="width-align hero cf">
-		   <div class="darkgray cf">
-		   <h1>You choose. They answer.</h1> 
+	  <div class="cf top-section">
+
+<div id="social" style="
+    margin-left: -90px;
+    height:  0;
+">
+    <div style="display: block; padding-bottom: 3px; margin-left: 7px" class="fb-like" data-href="http://facebook.com/boldprogressives" data-send="false" data-layout="box_count" data-width="56" data-show-faces="false" data-font="verdana">
+    </div>   
+
+<div style="margin-left: -4px">
+<div class="twitter_box"><span id="followers"></span></div>
+
+<a href="https://twitter.com/BoldProgressive" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
+</div>
+
+  </div>
+
+
+		   <div class="video-frame" style="float: left;">
+		     <iframe width="600" height="340" src="//www.youtube.com/embed/gz8imGYYegM?autoplay=1" frameborder="0" allowfullscreen></iframe>
+		   </div>
+		   
+		   <div class="candidate-blurbs cf">
+		     <a class="twitter-timeline" href="https://twitter.com/search?q=%23ma5debate" height="340" data-widget-id="365476877219024896">Tweets about "#ma5debate"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+		   </div>
+	 </div>
+
+
+		   <div class="bluebg cf">
+			<div class="candidate-entry cf">
+			  <a class="cf" target="_blank" href="/ma5/candidates/#will-brownsberger"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/brownsberger-debate.jpg" /></a>
+				<p class="name">Will Brownsberger</p>
+				<!--p class="title">State Senator</p-->
+				<a target="_blank" class="more" href="/ma5/candidates/#will-brownsberger">Learn More</a>
+			</div>
+
+			<div class="candidate-entry cf">
+			  <a target="_blank" class="cf" href="/ma5/candidates/#katherine-clark"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/clark-debate.jpg" /></a>
+				<p class="name">Katherine Clark</p>
+				<!--p class="title">State Senator</p-->
+				<a target="_blank" class="more" href="/ma5/candidates/#katherine-clark">Learn More</a>
+			</div>
+
+			<div class="candidate-entry cf">
+			  <a target="_blank" class="cf" href="/ma5/candidates/#peter-koutoujian"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/koutoujian-debate.jpg" /></a>
+				<p class="name">Peter Koutoujian</p>
+				<!--p class="title">County Sheriff</p-->
+				<a target="_blank" class="more" href="/ma5/candidates/#peter-koutoujian">Learn More</a>
+			</div>
+
+			<div class="candidate-entry cf">
+			  <a target="_blank" class="cf" href="/ma5/candidates/#carl-sciortino"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/sciortino-debate.jpg" /></a>
+				<p class="name">Carl Sciortino</p>
+				<!--p class="title">State Representative</p-->
+				<a target="_blank" class="more" href="/ma5/candidates/#carl-sciortino">Learn More</a>
+			</div>
+
+			<div class="candidate-entry cf">
+			  <a class="cf" target="_blank" href="/ma5/candidates/#karen-spilka"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/spilka-debate.jpg" /></a>
+					<p class="name">Karen Spilka</p>
+					<!--p class="title">State Senator</p-->
+					<a target="_blank" class="more" href="/ma5/candidates/#karen-spilka">Learn More</a>
+			</div>
+			
+</div>	
+	   
+	   	     
+	   <!--div class="nobg">
+	   	<h1>You choose. They answer.</h1> 
 		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? With the Open Debate format, you ask the questions and vote on the most relevant questions. We'll use your your votes to decide what questions get asked in the debate in the 5th congressional district of Massachusetts &ndash; the race to fill Ed Markey&lsquo;s open seat. </p>
 		   <div class="left cf">
 			   <a href="/ma5/q/#add_question" class="take-action blue pull-right">Submit a question</a>
 			   <a href="/ma5/q/"  class="take-action blue pull-right">Vote on the questions</a>
 			   <a href="/ma5/reminders/" class="take-action red pull-right">sign up for a reminder</a>			   			   
-		   </div>
+		   </div>		   
 		   
-		   <div class="right"><center>
-			   <h3 class="wide">Mark your calendar!</h3>
-			   <div class="countdown-unit">
-				   <p class="number">8/10/2013</p>
-				   <p class="label">Saturday, 11:00 a.m. Eastern</p>
-
-			   </div>
-			   
-		   </center></div>
-	   </div>
-	  	   	
-		<div class="candidate-blurbs cf">
-			
-<div class="candidate-entries">
-			<h4>The Candidates</h4>
-			<hr />
-			<div class="candidate-entry cf">
-			  <a href="/ma5/candidates/#will-brownsberger"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/brownsberger-debate.jpg" /></a>
-				<div class="after">
-					<p class="name">Will Brownsberger</p>
-					<p class="title">State Senator</p>
-					<a class="more" href="/ma5/candidates/#will-brownsberger">Learn More</a>
-				</div>
-			</div>
-
-			<div class="candidate-entry cf">
-			  <a href="/ma5/candidates/#katherine-clark"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/clark-debate.jpg" /></a>
-				<div class="after">
-					<p class="name">Katherine Clark</p>
-					<p class="title">State Senator</p>
-					<a class="more" href="/ma5/candidates/#katherine-clark">Learn More</a>
-				</div>
-			</div>
-
-			<div class="candidate-entry cf">
-			  <a href="/ma5/candidates/#peter-koutoujian"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/koutoujian-debate.jpg" />
-				<div class="after">
-					<p class="name">Peter Koutoujian</p>
-					<p class="title">County Sheriff</p>
-					<a class="more" href="/ma5/candidates/#peter-koutoujian">Learn More</a>
-				</div>
-			</div>
-
-			<div class="candidate-entry cf">
-			  <a href="/ma5/candidates/#carl-sciortino"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/sciortino-debate.jpg" /></a>
-				<div class="after">
-					<p class="name">Carl Sciortino</p>
-					<p class="title">State Representative</p>
-					<a class="more" href="/ma5/candidates/#carl-sciortino">Learn More</a>
-				</div>
-			</div>
-
-			<div class="candidate-entry cf">
-			  <a href="/ma5/candidates/#karen-spilka"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/spilka-debate.jpg" /></a>
-				<div class="after">
-					<p class="name">Karen Spilka</p>
-					<p class="title">State Senator</p>
-					<a class="more" href="/ma5/candidates/#karen-spilka">Learn More</a>
-				</div>
-			</div>
-			</div>												
-		</div>
-
-	   
-	   	     
-	   <div class="nobg">
-	   	<h3 class="wide">Watch the debate right here.</h3>
-	   	<p>When the debate airs, the window above will show the event to a nationwide audience. <br /> If you want us to send you a reminder, <a href="/ma5/reminders/">click here</a>.</p>
-		   
-		   
-	   </div>
+	   </div-->
 
 
 	   	    
@@ -330,44 +446,44 @@ padding-top:20px;
 
 </div>
 
+<div class="breaker content horizontal-candidates cf">
+<div class="width-align">
 
+
+											
+</div></div>
+
+<!--div class="breaker content testimonials waiting cf"-->
 <div class="breaker content testimonials cf">
 <div class="width-align">
-    <h1 class="thin">Here's how the community debate works:</h1>
+    <h1 class="thin">How the Open Debate Series works:</h1>
 
    <div class="candidate-testimonial span33">
    	<img class="testimonial-photo img-circle" src="https://s3.amazonaws.com/s3.boldprogressives.org/images/submit-step.gif"/>
    	<h3>1. Submit Your Question</h3>
-   	<p>Anyone can submit a question to be asked of the 5 Democratic candidates for US House in MA-5.</p>
-   	<a class="take-action gray" href="/ma5/q/#add_question">submit</a>
+   	<p>Anyone can submit a question to be asked the the candidates. </p>
+   	<!-- a class="take-action gray" href="/ma5/q/#add_question">submit</a-->
    </div>
 
    <div class="candidate-testimonial span33">
    	<img class="testimonial-photo img-circle" src="https://s3.amazonaws.com/s3.boldprogressives.org/images/vote-step.gif"/>
    	<h3>2. Vote For The Best</h3>
-   	<p>Vote for the questions that matter most to you, to show the moderators what issues are on people's minds.</p>
-   	<a class="take-action gray" href="/ma5/q/">vote</a>
+   	<p>The online community votes for the best questions. We'll use your votes to select the debate questions.</p>
+   	<!--a class="take-action gray" href="/ma5/q/">vote</a-->
    </div>
    
       <div class="candidate-testimonial span33">
    	<img class="testimonial-photo img-circle" src="https://s3.amazonaws.com/s3.boldprogressives.org/images/watch-step.gif" />
    	<h3>3. Watch Online</h3>
-   	<p>Watch online, and tell your friends. This debate is for the community, so spread the word!</p>
-   	<a class="take-action gray" href="/">watch</a>
+   	<p>You and your fellow citizens watch the debate live. These debates are for the community, so spread the word!</p>
+   	<!--a class="take-action gray" href="/">watch</a-->
    </div>
-
+   <div id="start"> 
+    	<a href="/ma5/about/" class="take-action blue big">Stay in the loop about our open debate series</a>
+    </div>
         </div>
 </div>
 
-
-<div class="breaker content waiting cf">
-<div class="width-align">
-    <h2 class="home-header">It's your turn to help shape the debate.</h2>
-    <div id="start"> 
-    	<a href="/ma5/q/" class="take-action blue">Click here to start</a>
-    </div>
-</div>
-</div>
 
 <footer>
     	<div class="breaker cf nav">
@@ -430,9 +546,192 @@ padding-top:20px;
       if( source ) {
         $.cookie("pccc.source", source, {expires: 1, path: "/"});
       } 
+
+$(function() {
+    function m(n, d) {
+        P = Math.pow;
+        R = Math.round
+        d = P(10, d);
+        i = 7;
+        while(i) {
+            (s = P(10, i-- * 3)) <= n && (n = R(n * d / s) / d + "KMGTPE"[i])
+        }
+        return n;
+    }
+
+$(function() {
+    $.ajax({
+        url: 'https://twitter.com/users/BoldProgressive.json?callback=?',
+        data: {
+        },
+        dataType: 'json',
+        success: function(data) {
+            $('#followers').html(m(data.followers_count, 1));
+        }
+    });
+});
+});
     });
   </script>
   <script src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/js/bootstrap.js.gzip"></script>
+
+<script type="text/javascript" src="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/ak/jquery.embedly.min.js"></script>
+<script type="text/javascript">
+  validators = {};
+  validators.email = function(value) {
+    if ( !/^\s*\S+@\S+\.\S+\s*$/.test(value) )
+        return false
+    return true;
+  };
+
+  validators.zip = function(value) {
+    if ( !/\d{5}/.test(value) )
+        return false;
+    return true;
+  };	  
+  var validate = function() {
+    var valid = true;
+    var val = $("#actionkit-signup-form input[name=email]").val();
+    if( !val || !validators.email(val) ) {
+      $("#actionkit-signup-form input[name=email]").css("background-color", "pink");
+      valid = false;
+    } else {
+      $("#actionkit-signup-form input[name=email]").css("background-color", "white");
+    }
+    var val = $("#actionkit-signup-form input[name=zip]").val();
+    if( !val || !validators.zip(val) ) {
+      $("#actionkit-signup-form input[name=zip]").css("background-color", "pink");
+      valid = false;
+    } else {
+      $("#actionkit-signup-form input[name=zip]").css("background-color", "white");
+    }
+    if( !valid ) return false;
+  };
+  $("#actionkit-signup-form").on("submit", validate);
+  $("#actionkit-signup-form input[type=submit]").on("click", validate);
+
+  window.formatDate = function(datestring) {
+
+  var zeroPadded = function(n) {
+    return n < 10 ? "0" + n : "" + n;
+  };
+	     
+	     var last_updated = new Date(datestring) // e.g. "Feb. 13, 2013, 03:39:14 AM", assumed to be UTC
+	     last_updated.setMinutes(last_updated.getMinutes() - last_updated.getTimezoneOffset());
+	     var months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.",
+	     "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+	     last_updated = months[last_updated.getMonth()] + " " + last_updated.getDate()
+	     + ", " + (last_updated.getYear() + 1900) + ", "
+	     + (last_updated.getHours() > 12 ? last_updated.getHours() - 12 : last_updated.getHours()) 
+    + ":" + zeroPadded(last_updated.getMinutes())
+    + (last_updated.getHours() > 11 ? " PM" : " AM");
+    return last_updated;
+    }
+    $("span.time a").each(function() { 
+      var gmt = $(this).text();
+      var localeTime = formatDate(gmt);
+      $(this).attr("title", localeTime).text(humaneDate(localeTime) || localeTime);
+    });
+</script>
+<script type="text/javascript">
+    window.tweetList = [];
+    window.newestVisibleTweetId = null;
+    function reloadTweetList(callback) {
+      $.getJSON("/tweets/", function(data) { 
+        var tweetListIds = $.map(tweetList, function(i) { return i.id_str });
+        for( var i=data.length; i>0; --i ) {
+          var tweet = data[i-1];
+          if( $.inArray(tweet.id_str, tweetListIds) != -1 ) {
+            continue;
+          }
+          tweetList.unshift(tweet);
+        }
+        callback && callback();
+      });
+    };
+    function cycleTweets() {
+      var tweetListIds = $.map(tweetList, function(i) { return i.id_str });
+      var nextTweetIndex;
+      for( var i=tweetListIds.length; i>0; --i ) {
+        if( newestVisibleTweetId == tweetListIds[i-1] ) {
+          nextTweetIndex = i-2;
+          if( nextTweetIndex < 0 ) { nextTweetIndex = tweetListIds.length-1; }
+          break;
+        }
+      }
+      if( nextTweetIndex === undefined ) {
+        nextTweetIndex = tweetListIds.length-6;
+        if( nextTweetIndex  < 0 ) nextTweetIndex = tweetListIds.length-1;
+      }
+      newestVisibleTweetId = tweetList[nextTweetIndex].id_str;
+      return tweetList[nextTweetIndex];
+    };
+    function buildTweetDiv(tweet) {
+      var div = '<div class="tweet"><div class="tcont"><p>';
+      if( tweet.user && tweet.user.screen_name ) {
+        div +=  'From <a href="http://twitter.com/' + tweet.user.screen_name + '">@' + tweet.user.screen_name + '</a>: ';
+      }
+      if( tweet.text ) {
+        var tweet_text = tweet.text;
+        if( tweet.entities && tweet.entities.user_mentions ) {
+          var mentions = tweet.entities.user_mentions;
+          for( var i=0; i<mentions.length; ++i ) {
+            tweet_text = tweet_text.replace(RegExp("@" + mentions[i].screen_name, "g"), "<a href='https://twitter.com/" + mentions[i].screen_name + "' target='_blank'>@" + mentions[i].screen_name + "</a>");
+          }
+        }
+        if( tweet.entities && tweet.entities.hashtags ) {
+          var hashtags = tweet.entities.hashtags;
+          for( var i=0; i<hashtags.length; ++i ) {
+            tweet_text = tweet_text.replace(RegExp("#" + hashtags[i].text, "g"), "<a href='https://twitter.com/search?q=%23" + hashtags[i].text + "' target='_blank'>#" + hashtags[i].text + "</a>");
+          }
+        } 
+        if( tweet.entities && tweet.entities.urls ) {
+          var urls = tweet.entities.urls;
+          for( var i=0; i<urls.length; ++i ) {
+            tweet_text = tweet_text.replace(RegExp(urls[i].url, "g"), "<a href='" + urls[i].expanded_url + "' target='_blank' rel='nofollow'>" + urls[i].url + "</a>");
+          }
+        } 
+        div += tweet_text;
+      }
+      div += '</p></div>';
+      var localeTime = formatDate(tweet.created_at);
+      div += '<div class="tact"><span class="time"><a target="_blank" href="http://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str + '" title="' + localeTime + '">' + (humaneDate(localeTime) || localeTime) + '</a></span><span class="reply"><a target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=' + tweet.id_str + '">Reply</a></span><span class="retweet"><a target="_blank" href="https://twitter.com/intent/retweet?tweet_id=' + tweet.id_str + '">Retweet</a></span><span class="favorite"><a target="_blank" href="https://twitter.com/intent/favorite?tweet_id=' + tweet.id_str + '">Favorite</a></span></div></div>';
+
+      $(div).hide().prependTo("#tweet_stream").slideDown();
+      var tweetstream = $("#tweet_stream div.tweet");
+      for( var i=5; i<tweetstream.length; ++i ) {
+        $(tweetstream[i]).fadeOut().remove();
+      }
+    };
+    reloadTweetList(function() { 
+      for( var i=0; i<5; ++i ) {
+        buildTweetDiv(cycleTweets());
+      }
+      enableScrollbar();
+    });
+    window.setInterval(function() { buildTweetDiv(cycleTweets()); }, 8000);
+</script>
+
+<script type="text/javascript">
+window.embedly_settings = {
+    query: {maxwidth: 540},
+    wrapElement: 'div', 
+    method : 'replace',
+    key: "a3660a460afe11e1bbbc4040d3dc5c07",
+    className: 'oembed',
+    embedly_wmode: 'transparent',
+    urlRe: /((http:\/\/(.*yfrog\..*\/.*|twitter\.com\/.*\/status\/.*\/photo\/.*|twitter\.com\/.*\/statuses\/.*\/photo|pic\.twitter\.com\/.*|www\.twitter\.com\/.*\/statuses\/.*\/photo\/.*|mobile\.twitter\.com\/.*\/status\/.*\/photo\/.*|mobile\.twitter\.com\/.*\/statuses\/.*\/photo\/.*|www\.flickr\.com\/photos\/.*|flic\.kr\/.*|twitpic\.com\/.*|www\.twitpic\.com\/.*|twitpic\.com\/photos\/.*|www\.twitpic\.com\/photos\/.*|.*imgur\.com\/.*|.*\.posterous\.com\/.*|post\.ly\/.*|twitgoo\.com\/.*|i.*\.photobucket\.com\/albums\/.*|s.*\.photobucket\.com\/albums\/.*|media\.photobucket\.com\/image\/.*|phodroid\.com\/.*\/.*\/.*|www\.mobypicture\.com\/user\/.*\/view\/.*|moby\.to\/.*|xkcd\.com\/.*|www\.xkcd\.com\/.*|imgs\.xkcd\.com\/.*|www\.asofterworld\.com\/index\.php\?id=.*|www\.asofterworld\.com\/.*\.jpg|asofterworld\.com\/.*\.jpg|www\.qwantz\.com\/index\.php\?comic=.*|23hq\.com\/.*\/photo\/.*|www\.23hq\.com\/.*\/photo\/.*|.*dribbble\.com\/shots\/.*|drbl\.in\/.*|.*\.smugmug\.com\/.*|.*\.smugmug\.com\/.*#.*|emberapp\.com\/.*\/images\/.*|emberapp\.com\/.*\/images\/.*\/sizes\/.*|emberapp\.com\/.*\/collections\/.*\/.*|emberapp\.com\/.*\/categories\/.*\/.*\/.*|embr\.it\/.*|picasaweb\.google\.com.*\/.*\/.*#.*|picasaweb\.google\.com.*\/lh\/photo\/.*|picasaweb\.google\.com.*\/.*\/.*|dailybooth\.com\/.*\/.*|brizzly\.com\/pic\/.*|pics\.brizzly\.com\/.*\.jpg|img\.ly\/.*|www\.tinypic\.com\/view\.php.*|tinypic\.com\/view\.php.*|www\.tinypic\.com\/player\.php.*|tinypic\.com\/player\.php.*|www\.tinypic\.com\/r\/.*\/.*|tinypic\.com\/r\/.*\/.*|.*\.tinypic\.com\/.*\.jpg|.*\.tinypic\.com\/.*\.png|meadd\.com\/.*\/.*|meadd\.com\/.*|.*\.deviantart\.com\/art\/.*|.*\.deviantart\.com\/gallery\/.*|.*\.deviantart\.com\/#\/.*|fav\.me\/.*|.*\.deviantart\.com|.*\.deviantart\.com\/gallery|.*\.deviantart\.com\/.*\/.*\.jpg|.*\.deviantart\.com\/.*\/.*\.gif|.*\.deviantart\.net\/.*\/.*\.jpg|.*\.deviantart\.net\/.*\/.*\.gif|www\.fotopedia\.com\/.*\/.*|fotopedia\.com\/.*\/.*|photozou\.jp\/photo\/show\/.*\/.*|photozou\.jp\/photo\/photo_only\/.*\/.*|instagr\.am\/p\/.*|instagram\.com\/p\/.*|share\.ovi\.com\/media\/.*\/.*|www\.questionablecontent\.net\/|questionablecontent\.net\/|www\.questionablecontent\.net\/view\.php.*|questionablecontent\.net\/view\.php.*|questionablecontent\.net\/comics\/.*\.png|www\.questionablecontent\.net\/comics\/.*\.png|picplz\.com\/.*|twitrpix\.com\/.*|.*\.twitrpix\.com\/.*|www\.someecards\.com\/.*\/.*|someecards\.com\/.*\/.*|some\.ly\/.*|www\.some\.ly\/.*|pikchur\.com\/.*|achewood\.com\/.*|www\.achewood\.com\/.*|achewood\.com\/index\.php.*|www\.achewood\.com\/index\.php.*|www\.whosay\.com\/content\/.*|www\.whosay\.com\/photos\/.*|www\.whosay\.com\/videos\/.*|say\.ly\/.*|ow\.ly\/i\/.*|color\.com\/s\/.*|bnter\.com\/convo\/.*|mlkshk\.com\/p\/.*|lockerz\.com\/s\/.*|lightbox\.com\/.*|www\.lightbox\.com\/.*|soundcloud\.com\/.*|soundcloud\.com\/.*\/.*|soundcloud\.com\/.*\/sets\/.*|soundcloud\.com\/groups\/.*|snd\.sc\/.*|www\.last\.fm\/music\/.*|www\.last\.fm\/music\/+videos\/.*|www\.last\.fm\/music\/+images\/.*|www\.last\.fm\/music\/.*\/_\/.*|www\.last\.fm\/music\/.*\/.*|www\.mixcloud\.com\/.*\/.*\/|www\.radionomy\.com\/.*\/radio\/.*|radionomy\.com\/.*\/radio\/.*|www\.hark\.com\/clips\/.*|www\.rdio\.com\/#\/artist\/.*\/album\/.*|www\.rdio\.com\/artist\/.*\/album\/.*|www\.zero-inch\.com\/.*|.*\.bandcamp\.com\/|.*\.bandcamp\.com\/track\/.*|.*\.bandcamp\.com\/album\/.*|freemusicarchive\.org\/music\/.*|www\.freemusicarchive\.org\/music\/.*|freemusicarchive\.org\/curator\/.*|www\.freemusicarchive\.org\/curator\/.*|www\.npr\.org\/.*\/.*\/.*\/.*\/.*|www\.npr\.org\/.*\/.*\/.*\/.*\/.*\/.*|www\.npr\.org\/.*\/.*\/.*\/.*\/.*\/.*\/.*|www\.npr\.org\/templates\/story\/story\.php.*|huffduffer\.com\/.*\/.*|www\.audioboo\.fm\/boos\/.*|audioboo\.fm\/boos\/.*|boo\.fm\/b.*|www\.xiami\.com\/song\/.*|xiami\.com\/song\/.*|www\.saynow\.com\/playMsg\.html.*|www\.saynow\.com\/playMsg\.html.*|grooveshark\.com\/.*|radioreddit\.com\/songs.*|www\.radioreddit\.com\/songs.*|radioreddit\.com\/\?q=songs.*|www\.radioreddit\.com\/\?q=songs.*|www\.gogoyoko\.com\/song\/.*|.*amazon\..*\/gp\/product\/.*|.*amazon\..*\/.*\/dp\/.*|.*amazon\..*\/dp\/.*|.*amazon\..*\/o\/ASIN\/.*|.*amazon\..*\/gp\/offer-listing\/.*|.*amazon\..*\/.*\/ASIN\/.*|.*amazon\..*\/gp\/product\/images\/.*|.*amazon\..*\/gp\/aw\/d\/.*|www\.amzn\.com\/.*|amzn\.com\/.*|www\.shopstyle\.com\/browse.*|www\.shopstyle\.com\/action\/apiVisitRetailer.*|api\.shopstyle\.com\/action\/apiVisitRetailer.*|www\.shopstyle\.com\/action\/viewLook.*|itunes\.apple\.com\/.*|gist\.github\.com\/.*|www\.crunchbase\.com\/.*\/.*|crunchbase\.com\/.*\/.*|www\.slideshare\.net\/.*\/.*|www\.slideshare\.net\/mobile\/.*\/.*|slidesha\.re\/.*|scribd\.com\/doc\/.*|www\.scribd\.com\/doc\/.*|scribd\.com\/mobile\/documents\/.*|www\.scribd\.com\/mobile\/documents\/.*|screenr\.com\/.*|polldaddy\.com\/community\/poll\/.*|polldaddy\.com\/poll\/.*|answers\.polldaddy\.com\/poll\/.*|www\.5min\.com\/Video\/.*|www\.howcast\.com\/videos\/.*|www\.screencast\.com\/.*\/media\/.*|screencast\.com\/.*\/media\/.*|www\.screencast\.com\/t\/.*|screencast\.com\/t\/.*|issuu\.com\/.*\/docs\/.*|www\.kickstarter\.com\/projects\/.*\/.*|www\.scrapblog\.com\/viewer\/viewer\.aspx.*|foursquare\.com\/.*|www\.foursquare\.com\/.*|4sq\.com\/.*|ping\.fm\/p\/.*|chart\.ly\/symbols\/.*|chart\.ly\/.*|.*\.craigslist\.org\/.*\/.*|my\.opera\.com\/.*\/albums\/show\.dml\?id=.*|my\.opera\.com\/.*\/albums\/showpic\.dml\?album=.*&picture=.*|tumblr\.com\/.*|.*\.tumblr\.com\/post\/.*|www\.polleverywhere\.com\/polls\/.*|www\.polleverywhere\.com\/multiple_choice_polls\/.*|www\.polleverywhere\.com\/free_text_polls\/.*|www\.quantcast\.com\/wd:.*|www\.quantcast\.com\/.*|siteanalytics\.compete\.com\/.*|statsheet\.com\/statplot\/charts\/.*\/.*\/.*\/.*|statsheet\.com\/statplot\/charts\/e\/.*|statsheet\.com\/.*\/teams\/.*\/.*|statsheet\.com\/tools\/chartlets\?chart=.*|.*\.status\.net\/notice\/.*|identi\.ca\/notice\/.*|brainbird\.net\/notice\/.*|shitmydadsays\.com\/notice\/.*|www\.studivz\.net\/Profile\/.*|www\.studivz\.net\/l\/.*|www\.studivz\.net\/Groups\/Overview\/.*|www\.studivz\.net\/Gadgets\/Info\/.*|www\.studivz\.net\/Gadgets\/Install\/.*|www\.studivz\.net\/.*|www\.meinvz\.net\/Profile\/.*|www\.meinvz\.net\/l\/.*|www\.meinvz\.net\/Groups\/Overview\/.*|www\.meinvz\.net\/Gadgets\/Info\/.*|www\.meinvz\.net\/Gadgets\/Install\/.*|www\.meinvz\.net\/.*|www\.schuelervz\.net\/Profile\/.*|www\.schuelervz\.net\/l\/.*|www\.schuelervz\.net\/Groups\/Overview\/.*|www\.schuelervz\.net\/Gadgets\/Info\/.*|www\.schuelervz\.net\/Gadgets\/Install\/.*|www\.schuelervz\.net\/.*|myloc\.me\/.*|pastebin\.com\/.*|pastie\.org\/.*|www\.pastie\.org\/.*|redux\.com\/stream\/item\/.*\/.*|redux\.com\/f\/.*\/.*|www\.redux\.com\/stream\/item\/.*\/.*|www\.redux\.com\/f\/.*\/.*|cl\.ly\/.*|cl\.ly\/.*\/content|speakerdeck\.com\/u\/.*\/p\/.*|www\.kiva\.org\/lend\/.*|www\.timetoast\.com\/timelines\/.*|storify\.com\/.*\/.*|.*meetup\.com\/.*|meetu\.ps\/.*|www\.dailymile\.com\/people\/.*\/entries\/.*|.*\.kinomap\.com\/.*|www\.metacdn\.com\/r\/c\/.*\/.*|www\.metacdn\.com\/r\/m\/.*\/.*|prezi\.com\/.*\/.*|.*\.uservoice\.com\/.*\/suggestions\/.*|formspring\.me\/.*|www\.formspring\.me\/.*|formspring\.me\/.*\/q\/.*|www\.formspring\.me\/.*\/q\/.*|twitlonger\.com\/show\/.*|www\.twitlonger\.com\/show\/.*|tl\.gd\/.*|www\.qwiki\.com\/q\/.*|crocodoc\.com\/.*|.*\.crocodoc\.com\/.*|www\.wikipedia\.org\/wiki\/.*|www\.wikimedia\.org\/wiki\/File.*|graphicly\.com\/.*\/.*\/.*|.*youtube\.com\/watch.*|.*\.youtube\.com\/v\/.*|youtu\.be\/.*|.*\.youtube\.com\/user\/.*|.*\.youtube\.com\/.*#.*\/.*|m\.youtube\.com\/watch.*|m\.youtube\.com\/index.*|.*\.youtube\.com\/profile.*|.*\.youtube\.com\/view_play_list.*|.*\.youtube\.com\/playlist.*|.*justin\.tv\/.*|.*justin\.tv\/.*\/b\/.*|.*justin\.tv\/.*\/w\/.*|www\.ustream\.tv\/recorded\/.*|www\.ustream\.tv\/channel\/.*|www\.ustream\.tv\/.*|qik\.com\/video\/.*|qik\.com\/.*|qik\.ly\/.*|.*revision3\.com\/.*|.*\.dailymotion\.com\/video\/.*|.*\.dailymotion\.com\/.*\/video\/.*|collegehumor\.com\/video:.*|collegehumor\.com\/video\/.*|www\.collegehumor\.com\/video:.*|www\.collegehumor\.com\/video\/.*|.*twitvid\.com\/.*|www\.break\.com\/.*\/.*|vids\.myspace\.com\/index\.cfm\?fuseaction=vids\.individual&videoid.*|www\.myspace\.com\/index\.cfm\?fuseaction=.*&videoid.*|www\.metacafe\.com\/watch\/.*|www\.metacafe\.com\/w\/.*|blip\.tv\/.*\/.*|.*\.blip\.tv\/.*\/.*|video\.google\.com\/videoplay\?.*|.*revver\.com\/video\/.*|video\.yahoo\.com\/watch\/.*\/.*|video\.yahoo\.com\/network\/.*|sports\.yahoo\.com\/video\/.*|.*viddler\.com\/explore\/.*\/videos\/.*|liveleak\.com\/view\?.*|www\.liveleak\.com\/view\?.*|animoto\.com\/play\/.*|dotsub\.com\/view\/.*|www\.overstream\.net\/view\.php\?oid=.*|www\.livestream\.com\/.*|www\.worldstarhiphop\.com\/videos\/video.*\.php\?v=.*|worldstarhiphop\.com\/videos\/video.*\.php\?v=.*|teachertube\.com\/viewVideo\.php.*|www\.teachertube\.com\/viewVideo\.php.*|www1\.teachertube\.com\/viewVideo\.php.*|www2\.teachertube\.com\/viewVideo\.php.*|bambuser\.com\/v\/.*|bambuser\.com\/channel\/.*|bambuser\.com\/channel\/.*\/broadcast\/.*|www\.schooltube\.com\/video\/.*\/.*|bigthink\.com\/ideas\/.*|bigthink\.com\/series\/.*|sendables\.jibjab\.com\/view\/.*|sendables\.jibjab\.com\/originals\/.*|www\.xtranormal\.com\/watch\/.*|socialcam\.com\/v\/.*|www\.socialcam\.com\/v\/.*|dipdive\.com\/media\/.*|dipdive\.com\/member\/.*\/media\/.*|dipdive\.com\/v\/.*|.*\.dipdive\.com\/media\/.*|.*\.dipdive\.com\/v\/.*|v\.youku\.com\/v_show\/.*\.html|v\.youku\.com\/v_playlist\/.*\.html|www\.snotr\.com\/video\/.*|snotr\.com\/video\/.*|video\.jardenberg\.se\/.*|www\.clipfish\.de\/.*\/.*\/video\/.*|www\.myvideo\.de\/watch\/.*|www\.hulu\.com\/watch.*|www\.hulu\.com\/w\/.*|www\.hulu\.com\/embed\/.*|hulu\.com\/watch.*|hulu\.com\/w\/.*|.*crackle\.com\/c\/.*|www\.fancast\.com\/.*\/videos|www\.funnyordie\.com\/videos\/.*|www\.funnyordie\.com\/m\/.*|funnyordie\.com\/videos\/.*|funnyordie\.com\/m\/.*|www\.vimeo\.com\/groups\/.*\/videos\/.*|www\.vimeo\.com\/.*|vimeo\.com\/groups\/.*\/videos\/.*|vimeo\.com\/.*|vimeo\.com\/m\/#\/.*|www\.ted\.com\/talks\/.*\.html.*|www\.ted\.com\/talks\/lang\/.*\/.*\.html.*|www\.ted\.com\/index\.php\/talks\/.*\.html.*|www\.ted\.com\/index\.php\/talks\/lang\/.*\/.*\.html.*|.*nfb\.ca\/film\/.*|www\.thedailyshow\.com\/watch\/.*|www\.thedailyshow\.com\/full-episodes\/.*|www\.thedailyshow\.com\/collection\/.*\/.*\/.*|movies\.yahoo\.com\/movie\/.*\/video\/.*|movies\.yahoo\.com\/movie\/.*\/trailer|movies\.yahoo\.com\/movie\/.*\/video|www\.colbertnation\.com\/the-colbert-report-collections\/.*|www\.colbertnation\.com\/full-episodes\/.*|www\.colbertnation\.com\/the-colbert-report-videos\/.*|www\.comedycentral\.com\/videos\/index\.jhtml\?.*|www\.theonion\.com\/video\/.*|theonion\.com\/video\/.*|wordpress\.tv\/.*\/.*\/.*\/.*\/|www\.traileraddict\.com\/trailer\/.*|www\.traileraddict\.com\/clip\/.*|www\.traileraddict\.com\/poster\/.*|www\.escapistmagazine\.com\/videos\/.*|www\.trailerspy\.com\/trailer\/.*\/.*|www\.trailerspy\.com\/trailer\/.*|www\.trailerspy\.com\/view_video\.php.*|www\.atom\.com\/.*\/.*\/|fora\.tv\/.*\/.*\/.*\/.*|www\.spike\.com\/video\/.*|www\.gametrailers\.com\/video\/.*|gametrailers\.com\/video\/.*|www\.koldcast\.tv\/video\/.*|www\.koldcast\.tv\/#video:.*|techcrunch\.tv\/watch.*|techcrunch\.tv\/.*\/watch.*|techcrunch\.tv\/show\/.*\/.*|mixergy\.com\/.*|video\.pbs\.org\/video\/.*|www\.zapiks\.com\/.*|tv\.digg\.com\/diggnation\/.*|tv\.digg\.com\/diggreel\/.*|tv\.digg\.com\/diggdialogg\/.*|www\.trutv\.com\/video\/.*|www\.nzonscreen\.com\/title\/.*|nzonscreen\.com\/title\/.*|app\.wistia\.com\/embed\/medias\/.*|hungrynation\.tv\/.*\/episode\/.*|www\.hungrynation\.tv\/.*\/episode\/.*|hungrynation\.tv\/episode\/.*|www\.hungrynation\.tv\/episode\/.*|indymogul\.com\/.*\/episode\/.*|www\.indymogul\.com\/.*\/episode\/.*|indymogul\.com\/episode\/.*|www\.indymogul\.com\/episode\/.*|channelfrederator\.com\/.*\/episode\/.*|www\.channelfrederator\.com\/.*\/episode\/.*|channelfrederator\.com\/episode\/.*|www\.channelfrederator\.com\/episode\/.*|tmiweekly\.com\/.*\/episode\/.*|www\.tmiweekly\.com\/.*\/episode\/.*|tmiweekly\.com\/episode\/.*|www\.tmiweekly\.com\/episode\/.*|99dollarmusicvideos\.com\/.*\/episode\/.*|www\.99dollarmusicvideos\.com\/.*\/episode\/.*|99dollarmusicvideos\.com\/episode\/.*|www\.99dollarmusicvideos\.com\/episode\/.*|ultrakawaii\.com\/.*\/episode\/.*|www\.ultrakawaii\.com\/.*\/episode\/.*|ultrakawaii\.com\/episode\/.*|www\.ultrakawaii\.com\/episode\/.*|barelypolitical\.com\/.*\/episode\/.*|www\.barelypolitical\.com\/.*\/episode\/.*|barelypolitical\.com\/episode\/.*|www\.barelypolitical\.com\/episode\/.*|barelydigital\.com\/.*\/episode\/.*|www\.barelydigital\.com\/.*\/episode\/.*|barelydigital\.com\/episode\/.*|www\.barelydigital\.com\/episode\/.*|threadbanger\.com\/.*\/episode\/.*|www\.threadbanger\.com\/.*\/episode\/.*|threadbanger\.com\/episode\/.*|www\.threadbanger\.com\/episode\/.*|vodcars\.com\/.*\/episode\/.*|www\.vodcars\.com\/.*\/episode\/.*|vodcars\.com\/episode\/.*|www\.vodcars\.com\/episode\/.*|confreaks\.net\/videos\/.*|www\.confreaks\.net\/videos\/.*|video\.allthingsd\.com\/video\/.*|videos\.nymag\.com\/.*|aniboom\.com\/animation-video\/.*|www\.aniboom\.com\/animation-video\/.*|clipshack\.com\/Clip\.aspx\?.*|www\.clipshack\.com\/Clip\.aspx\?.*|grindtv\.com\/.*\/video\/.*|www\.grindtv\.com\/.*\/video\/.*|ifood\.tv\/recipe\/.*|ifood\.tv\/video\/.*|ifood\.tv\/channel\/user\/.*|www\.ifood\.tv\/recipe\/.*|www\.ifood\.tv\/video\/.*|www\.ifood\.tv\/channel\/user\/.*|logotv\.com\/video\/.*|www\.logotv\.com\/video\/.*|lonelyplanet\.com\/Clip\.aspx\?.*|www\.lonelyplanet\.com\/Clip\.aspx\?.*|streetfire\.net\/video\/.*\.htm.*|www\.streetfire\.net\/video\/.*\.htm.*|trooptube\.tv\/videos\/.*|www\.trooptube\.tv\/videos\/.*|sciencestage\.com\/v\/.*\.html|sciencestage\.com\/a\/.*\.html|www\.sciencestage\.com\/v\/.*\.html|www\.sciencestage\.com\/a\/.*\.html|link\.brightcove\.com\/services\/player\/bcpid.*|wirewax\.com\/.*|www\.wirewax\.com\/.*|canalplus\.fr\/.*|www\.canalplus\.fr\/.*|www\.vevo\.com\/watch\/.*|www\.vevo\.com\/video\/.*|www\.godtube\.com\/featured\/video\/.*|godtube\.com\/featured\/video\/.*|www\.godtube\.com\/watch\/.*|godtube\.com\/watch\/.*|www\.tangle\.com\/view_video.*|mediamatters\.org\/mmtv\/.*|www\.clikthrough\.com\/theater\/video\/.*|espn\.go\.com\/video\/clip.*|espn\.go\.com\/.*\/story.*|abcnews\.com\/.*\/video\/.*|abcnews\.com\/video\/playerIndex.*|abcnews\.go\.com\/.*\/video\/.*|abcnews\.go\.com\/video\/playerIndex.*|washingtonpost\.com\/wp-dyn\/.*\/video\/.*\/.*\/.*\/.*|www\.washingtonpost\.com\/wp-dyn\/.*\/video\/.*\/.*\/.*\/.*|www\.boston\.com\/video.*|boston\.com\/video.*|www\.boston\.com\/.*video.*|boston\.com\/.*video.*|cnbc\.com\/id\/.*\?.*video.*|www\.cnbc\.com\/id\/.*\?.*video.*|cnbc\.com\/id\/.*\/play\/1\/video\/.*|www\.cnbc\.com\/id\/.*\/play\/1\/video\/.*|cbsnews\.com\/video\/watch\/.*|www\.google\.com\/buzz\/.*\/.*\/.*|www\.google\.com\/buzz\/.*|www\.google\.com\/profiles\/.*|google\.com\/buzz\/.*\/.*\/.*|google\.com\/buzz\/.*|google\.com\/profiles\/.*|www\.cnn\.com\/video\/.*|edition\.cnn\.com\/video\/.*|money\.cnn\.com\/video\/.*|today\.msnbc\.msn\.com\/id\/.*\/vp\/.*|www\.msnbc\.msn\.com\/id\/.*\/vp\/.*|www\.msnbc\.msn\.com\/id\/.*\/ns\/.*|today\.msnbc\.msn\.com\/id\/.*\/ns\/.*|www\.globalpost\.com\/video\/.*|www\.globalpost\.com\/dispatch\/.*|guardian\.co\.uk\/.*\/video\/.*\/.*\/.*\/.*|www\.guardian\.co\.uk\/.*\/video\/.*\/.*\/.*\/.*|bravotv\.com\/.*\/.*\/videos\/.*|www\.bravotv\.com\/.*\/.*\/videos\/.*|video\.nationalgeographic\.com\/.*\/.*\/.*\.html|dsc\.discovery\.com\/videos\/.*|animal\.discovery\.com\/videos\/.*|health\.discovery\.com\/videos\/.*|investigation\.discovery\.com\/videos\/.*|military\.discovery\.com\/videos\/.*|planetgreen\.discovery\.com\/videos\/.*|science\.discovery\.com\/videos\/.*|tlc\.discovery\.com\/videos\/.*|video\.forbes\.com\/fvn\/.*))|(https:\/\/(twitter\.com\/.*\/status\/.*\/photo\/.*|twitter\.com\/.*\/statuses\/.*\/photo\/.*|www\.twitter\.com\/.*\/status\/.*\/photo\/.*|www\.twitter\.com\/.*\/statuses\/.*\/photo\/.*|mobile\.twitter\.com\/.*\/status\/.*\/photo\/.*|mobile\.twitter\.com\/.*\/statuses\/.*\/photo\/.*|itunes\.apple\.com\/.*|foursquare\.com\/.*|www\.foursquare\.com\/.*|crocodoc\.com\/.*|.*\.crocodoc\.com\/.*|urtak\.com\/u\/.*|urtak\.com\/clr\/.*|ganxy\.com\/.*|www\.ganxy\.com\/.*|.*youtube\.com\/watch.*|.*\.youtube\.com\/v\/.*|app\.wistia\.com\/embed\/medias\/.*)))/i
+}
+
+
+    if ($('div.video-wrap').width() * 0.92 < embedly_settings.query.maxwidth) {
+        embedly_settings.query.maxwidth = $('div.video-wrap').width() * 0.92;
+    }
+//    alert($('div.video-wrap').width() + "--" + $('.darkgray .video-wrap a').length);
+    $('.darkgray .video-wrap a').embedly(embedly_settings);
+
+</script>
+
   <script type="text/javascript">
 // instead of including all of http://act.boldprogressives.org/resources/actionkit.js
 // just using the getArgs function
