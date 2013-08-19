@@ -1,0 +1,30 @@
+<div>
+  <div data-if="!entries.length">
+    Congratulations &mdash; you are one of the first people to submit a question!
+    Type it in the form, and it will show up here.
+  </div>
+  <div data-if="entries.length">
+  <div class="pagination top">
+    <a class="pagination-prev"
+       data-pagination="{pages.previous}"
+       href="#{pages.previous}">&laquo;&nbsp;Prev</a>
+    <span>Page {pages.current} of {pages.total} (Showing {pages.entries.length} of {entries.length} questions)</span>
+    <a class="pagination-next"
+       data-pagination="{pages.next}"
+       href="#{pages.next}">Next&nbsp;&raquo;</a>
+  </div>
+  <div data-repeat="pages.entries">
+    <div data-render="@."></div>
+  </div>
+  <div class="pagination bottom">
+    <a class="pagination-prev"
+       data-pagination="{pages.previous}"
+       href="#{pages.previous}">&laquo;&nbsp;Prev</a>
+    <span>Page {pages.current} of {pages.total} (Showing {pages.entries.length} of {entries.length} questions)</span>
+    <a class="pagination-next"
+       data-pagination="{pages.next}"
+       href="#{pages.next}">Next&nbsp;&raquo;</a>
+  </div>
+  </div>
+</div>
+
