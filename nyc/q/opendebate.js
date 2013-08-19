@@ -505,11 +505,22 @@ Date.fromISO= (function(){
         }
       }
       if( active_question.iface !== "question" ) {
-        active_question = null;
+
+        $.ajax({
+          type: 'GET',
+          url: "//act.boldprogressives.org/thanks/opendebate_questions_nyc/?getQuestion=yes&action_id=" + active_question,
+          async: false,
+          jsonp: "jsonp",
+          contentType: "application/json",
+          dataType: 'jsonp'
+        });
       } 
     }
     if( active_question ) {
-      $("#container").render(active_question, "question_detail").done(od.refresh);
+
+      if( active_question.iface === "question" ) {
+          $("#container").render(active_question, "question_detail").done(od.refresh);
+      }
     } else {
       var active_sort = hash.match(/^\#\/sort\/(\w+)\//);
       var page = hash.match(/^\#\/sort\/\w+\/p(\d+)\/$/);
@@ -613,7 +624,16 @@ Date.fromISO= (function(){
           window.setTimeout(od.fetchTimeline, 1000);
       });
   };
-    
+
+  od.getQuestionFallbackFailed = function(question_id) {
+      od.change_hash("#/sort/votes/p1/");
+  };
+
+  od.getQuestionFallback = function(question_data) {
+      od.data.entries.push(question_data);
+      od.render();
+  };
+
   od.fetchQuestions = function() {
 
     $.ajax({
