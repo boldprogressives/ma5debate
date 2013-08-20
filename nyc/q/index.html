@@ -741,7 +741,7 @@ $(function() {
           window.location = window.location.pathname + "#/question/" + qid + "/";
         }                     
 
-        $.ajaxSetup({cache: true});
+        $.ajaxSetup({cache: false});
         opendebate.init(
                      "opendebate_questions_nyc",
                      "opendebate_vote_nyc",
