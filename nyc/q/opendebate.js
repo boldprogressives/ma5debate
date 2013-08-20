@@ -24,7 +24,7 @@
                      question_submitted_callback,
                      vote_user_data_fetcher,
                      vote_submitted_callback,
-                     already_voted_callback) {
+                     already_voted_callback, questions_loaded_callback) {
 
     $(window).on("hashchange", function(e) {
         od.hashchange();
@@ -49,6 +49,7 @@
     od.recognized_user_callback = recognized_user_callback;
     od.submit_question_fetcher = submit_question_fetcher;
     od.question_submitted_callback = question_submitted_callback;
+    od.questions_loaded_callback = questions_loaded_callback;
     od.vote_user_data_fetcher = vote_user_data_fetcher;
     od.vote_submitted_callback = vote_submitted_callback;
     od.already_voted_callback = already_voted_callback;
@@ -596,6 +597,7 @@ Date.fromISO= (function(){
   od.processFetchedQuestions = function(json) {
     od.data = json;
     od.render();
+    od.questions_loaded_callback && od.questions_loaded_callback(json);
   };
 
   od.processOneFetchedQuestion = function(question) {

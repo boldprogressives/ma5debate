@@ -234,6 +234,16 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
             (<span class="count">200</span> / 200)
           </div>
 
+          <select id="category" style="padding-top: 3px; width: 95%" name="category" 
+                  class="required">
+            <option class="fixed" value="">Select a category</option>
+
+            <option class="fixed" value="_other">other category</option>
+          </select>
+          <input style="display: none" id="other_category" type="text"
+                 name="other_category" placeholder="add your category" />
+          <hr />
+
 	  <input class="user required" type="text" name="first_name" id="first_name"  placeholder="First Name"/>    	
 	  <input class="user required" type="text" name="last_name" id="last_name"  placeholder="Last Name"/>
 	  <input class="user required" type="email" name="email" id="email"  placeholder="Email"/>
@@ -514,20 +524,23 @@ $(function() {
 
     $("#add_question_error").slideUp();
     $("#add_question_error .empty_input, #add_question_error .invalid_email, #add_question_error .invalid_zip").fadeOut();
-    $("input.error, textarea.error").removeClass("error");
+    $("input.error, textarea.error, select.error").removeClass("error");
 
     var data = {};
     var empty = 0;
     
-    $("#new_question input, #new_question textarea").each(function() {
+    $("#new_question input, #new_question textarea, #new_question select").each(
+      function() {
     	if( $(this).hasClass("required") ) {
       	  if( $(this).val() === "" ) {
             $(this).addClass("error");
             empty++;
           }
-        }
+        } 
     });
-    
+    if( $("#category").val() === "_other" && !($("#other_category").val()) ) {
+      $("#other_category").addClass("error"); empty++;
+    }
     //handle all possible errors
     
     if( empty > 0 || !validators.email($("#email").val()) || !validators.zip($("#zip").val())) {
@@ -557,10 +570,15 @@ $(function() {
     data.last_name = $("#last_name").val();
     data.email = $("#email").val();
     data.zip = $("#zip").val();
+ 
+    var category = $("#category").val();
+    if( category === "_other" ) {
+      category = $("#other_category").val();
+    }
+    data.action_question_category = category;
 
 
-
-	data.action_submission = $("#new_question_text").val();
+    data.action_submission = $("#new_question_text").val();
     return data;
   };
 
@@ -681,6 +699,15 @@ $(function() {
 
       $(window).load(function() {
 
+        $("#category").change(function() {
+          var val = $(this).val();
+          if( val === "_other" ) {
+                     $("#other_category").slideDown();
+          } else {
+                     $("#other_category").slideUp();                     
+          } 
+        });                     
+
         var source = getArgs().source;
         if( source ) {
           $.cookie("pccc.source", source, {expires: 1, path: "/"});
@@ -710,6 +737,14 @@ $(function() {
                      vote_user_data_fetcher, 
                      vote_submitted_callback, 
                      already_voted_callback);
+
+        window.populateCategories = function(cats) {
+          $("#category option[class~=fixed]").remove();
+          for( var i=0; i<cats.length; ++i ) {
+            $("<option>").attr("value", cats[i].name).text(cats[i].name + " (" + cats[i].num + ")").appendTo("#category");
+          }
+        };
+        $.ajax({type: "GET", url: "http://boldprogressives.github.io/nycdebate-data/categories.js", async: true, jsonp: "jsonp", contentType: "application/json", dataType:"jsonp", success: populateCategories});
      
      	$(document).on("click", ".vote-button", function(){
           

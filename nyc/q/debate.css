@@ -381,7 +381,7 @@ background: url('https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-
 }
 
 
-input[type=email].error, input[type=text].error, textarea.error{
+input[type=email].error, input[type=text].error, textarea.error, select.error {
 	border: solid 1px #D9000D;
 }
 
