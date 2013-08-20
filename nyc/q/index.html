@@ -257,7 +257,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     	
     	<form id="new_question" name="new_question" onsubmit="opendebate.submitQuestion(); return false;">
 	  <textarea class="required" name="question" id="new_question_text" rows="4" placeholder="Enter your question here.  If you have multiple questions, please submit each one separately."></textarea>
-          <div class="count" style="float: right; margin-right: 9px">
+          <div class="count" style="float: right; margin-right: 9px; display: none">
             (<span class="count">200</span> / 200)
           </div>
 
@@ -312,6 +312,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 				<li><a href="/nyc/q/">Participate</a></li>
 				<li><a href="/nyc/contact/">Contact</a></li>
 				<li><a href="/nyc/privacy/">Privacy Policy</a></li>				
+			        <li><a href="/ma5/">Past Debates</a></li>
 				<li><a href="https://secure.actblue.com/contribute/page/ma5debate?refcode=nyc-opendebate-footer">Donate to our work</a></li>
 	    	</ul>
     	</div>
@@ -355,19 +356,16 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
       };
 
     $("#new_question_text").on("focusout", function() {
-      $("#category_warning").fadeOut();
+      $("#category_warning").fadeOut().remove();
       var cats = $(".category-well a:not(.fixed)").map(function() { 
         return $(this).text(); });
-console.log(cats);
       var val = $(this).val();
       for( var i=0; i<cats.length; ++i ) {
         var match = val.match(new RegExp(cats[i], "gi")); 
-console.log(val, match);
         if( match ) {
           var count = parseInt($(".category-well a[data-category=" + cats[i] + "]").attr("rel"));
-console.log(count);
           if( count ) {  
-            $("<div>").attr("id", "category_warning").html("Psst -- we already have " + count + " question" + (count === 1 ? " " : "s ") + "about " + cats[i] + "!<br/><a style='color: white; font-weight: bold' href='#/category/" + cats[i] + "/'>You can browse through them all here</a>.<br/><br/>If one of them is similar to the question you'd like to ask, please vote for it and share it with your friends instead of submitting a new question!").css("display", "none").insertAfter("#new_question_text").slideDown();
+            $("<div>").attr("id", "category_warning").html("<br/>Psst -- we already have " + count + " question" + (count === 1 ? " " : "s ") + "about " + cats[i] + "!<br/><a style='color: white; font-weight: bold' href='#/category/" + cats[i] + "/'>You can browse through them all here</a>.<br/><br/>If one of them is similar to the question you'd like to ask, please vote for it and share it with your friends instead of submitting a new question!<br/><br/>").css("display", "none").insertBefore("#category").slideDown();
             break;
           }
         }
