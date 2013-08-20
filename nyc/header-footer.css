@@ -5,8 +5,8 @@ footer .nav ul { margin-top: 15px; margin-bottom: 15px; width: 777px; margin-lef
 .nav li { float: left; padding-left: 20px; text-transform: uppercase; }
 footer .nav li { padding-left: 10px; padding-right: 10px; }
 .width-align { max-width: 960px; }
-header .logos { padding-top: 30px; }
-header .logos img { margin-bottom: 30px; } 
+header .logos { padding-top: 15px; }
+header .logos a:last-child img { margin-bottom: 15px; } 
 header .logos 
 footer .width-align, footer ul, footer ul li { text-align: center; }
 header, footer { font-weight: 300; }
