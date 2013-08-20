@@ -194,8 +194,22 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     
     </div>
     </div>
+
     <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well').slideDown(); return false;"
+         onclick="$(this).hide(); $('.form-well.category-well').slideDown(); return false;"
+         style="clear: right; float: right; width: 34%">
+      <a target="_blank"
+         href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
+                                       margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
+         class="take-action">Browse by Issue</a>	
+    </div>
+    <div style="display: none" class="span33 form-well category-well" style="clear: right">
+      <h2>Issues</h2>
+      <div></div>
+    </div>
+
+    <div class="reminder_well submit_question"
+         onclick="$(this).hide(); $('.form-well.question-well').slideDown(); return false;"
          style="clear: right; float: right; width: 34%">
       <a target="_blank"
          href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
@@ -203,7 +217,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
          class="take-action">Submit a New Question</a>	
     </div>
 
-    <div style="display: none" class="span33 form-well" style="clear: right">
+    <div style="display: none" class="span33 form-well question-well" style="clear: right">
       <span id="recognized_user">
       </span>
       <center>
@@ -307,6 +321,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/nyc/jquery.cookie.js"></script>
+  <script src="/nyc/q/jquery.tagcloud.js"></script>
   <script type="text/javascript">
       window.getArgs = function() {
 	    var argsStr = window.location.search;
@@ -739,12 +754,18 @@ $(function() {
                      vote_submitted_callback, 
                      already_voted_callback);
 
+        $.fn.tagcloud.defaults = {
+          size: {start: 14, end: 18, unit: 'pt'},
+          color: {start: '#cde', end: '#f52'}
+        };
         window.populateCategories = function(cats) {
           $("script.jsonp").remove();
           $("#category option:not(.fixed)").remove();
           for( var i=0; i<cats.length; ++i ) {
             $("<option>").attr("value", cats[i].name).text(cats[i].name + " (" + cats[i].num + ")").insertBefore("#category option.last");
+            $("<a>").attr("rel", cats[i].num).css("color", "white").css("font-weight", "bold").css("padding", "0 2px").attr("href", "#/category/" + cats[i].name + "/").text(cats[i].name).appendTo(".category-well div");
           }
+          $(".category-well div a").tagcloud();
         };
        $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
           .attr("src", "http://boldprogressives.github.io/nycdebate-data/categories.js")
