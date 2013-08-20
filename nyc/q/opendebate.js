@@ -161,7 +161,7 @@
     }
   };
 
-  od.submitVote = function(question_id, akid, user_id, thanks_redirect) {
+  od.submitVote = function(question_id, akid, user_id) {
       var votes = (od.recognized_user && od.recognized_user.votes) || od.getVotesForUser(user_id);
       if( votes.indexOf(question_id) == -1 ) {
           votes.push(question_id);
@@ -171,10 +171,6 @@
       }
   
       ga("send", "event", "vote", "complete", question_id);
-
-      $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
-          .attr("src", "//act.boldprogressives.org" + thanks_redirect)
-          .appendTo("body");
 
       od.vote_submitted_callback("success", 
                                  {akid: akid, question_id: question_id});
@@ -318,6 +314,8 @@ Date.fromISO= (function(){
  
       var q = $(".votes a.vote-button[data-question_id=" + question_id + "]");
       q.find(".vote_tally").css("color", "yellow");
+      q.closest(".question-block").find(".social_links")
+          .css("background-color", "lightyellow");
       var t = q.find(".vote_tally span");
       if( t ) {
           var tI = parseInt(t.text());
