@@ -1,9 +1,9 @@
-header .nav { background-color: #006ea9; color: white; }
+/*header .nav { background-color: #006ea9; color: white; }
 header .nav a { color: white; text-decoration: none; border-bottom-style: none; }
-header .nav ul { list-style-type: none; margin-top: 6px; margin-bottom: 6px; font-size: 13px;}
-header .nav li { float: left; padding-left: 20px; text-transform: uppercase; }
-header .logos { padding-top: 20px; }
-header .logos img { margin-bottom: 20px; } 
+/*header .nav ul { list-style-type: none; margin-top: 6px; margin-bottom: 6px; font-size: 13px;}
+header .nav li { float: left; /*padding-left: 20px; text-transform: uppercase; }
+/*header .logos { padding-top: 20px; }
+/*header .logos img { margin-bottom: 20px; } */
 
 body{
 	font-size: 13px;
