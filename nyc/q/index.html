@@ -238,7 +238,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
                   class="required">
             <option class="fixed" value="">Select a category</option>
 
-            <option class="fixed" value="_other">other category</option>
+            <option class="fixed last" value="_other">other category</option>
           </select>
           <input style="display: none" id="other_category" type="text"
                  name="other_category" placeholder="add your category" />
@@ -726,6 +726,7 @@ $(function() {
           window.location = window.location.pathname + "#/question/" + qid + "/";
         }                     
 
+        $.ajaxSetup({cache: true});
         opendebate.init(
                      "opendebate_questions_nyc",
                      "opendebate_vote_nyc",
@@ -739,12 +740,15 @@ $(function() {
                      already_voted_callback);
 
         window.populateCategories = function(cats) {
-          $("#category option[class~=fixed]").remove();
+          $("script.jsonp").remove();
+          $("#category option:not(.fixed)").remove();
           for( var i=0; i<cats.length; ++i ) {
-            $("<option>").attr("value", cats[i].name).text(cats[i].name + " (" + cats[i].num + ")").appendTo("#category");
+            $("<option>").attr("value", cats[i].name).text(cats[i].name + " (" + cats[i].num + ")").insertBefore("#category option.last");
           }
         };
-        $.ajax({type: "GET", url: "http://boldprogressives.github.io/nycdebate-data/categories.js", async: true, jsonp: "jsonp", contentType: "application/json", dataType:"jsonp", success: populateCategories});
+       $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", "http://boldprogressives.github.io/nycdebate-data/categories.js")
+          .appendTo("body");
      
      	$(document).on("click", ".vote-button", function(){
           

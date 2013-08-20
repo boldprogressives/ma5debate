@@ -98,19 +98,16 @@
       akid = $.cookie("pccc.akid");
     }
     if( akid ) {
-               $.ajax({
-                   type: 'GET',
-                   url: "//act.boldprogressives.org/cms/thanks/" + od.pages.vote + "?checkAkid=yes&akid=" + akid,
-                   async: false,
-                   jsonp: "jsonp",
-                   contentType: "application/json",
-                   dataType: 'jsonp',
-                   success: od.processUserRecognition
-               });
+
+      $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", "//act.boldprogressives.org/cms/thanks/" + od.pages.vote + "?checkAkid=yes&akid=" + akid)
+          .appendTo("body");
+
     }
   };
 
   od.processUserRecognition = function(valid, user) {
+      $("script.jsonp").remove();
       if( !valid ) {
           od.unsetAkid();
           return false;
@@ -175,15 +172,10 @@
   
       ga("send", "event", "vote", "complete", question_id);
 
-      $.ajax({
-          type: 'GET',
-          url: "//act.boldprogressives.org" + thanks_redirect,
-          async: false,
-          jsonp: "jsonp",
-          contentType: "application/json",
-          dataType: 'jsonp',
-          success: od.processOneFetchedVoter
-      });
+      $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", "//act.boldprogressives.org" + thanks_redirect)
+          .appendTo("body");
+
       od.vote_submitted_callback("success", 
                                  {akid: akid, question_id: question_id});
       
@@ -301,15 +293,10 @@ Date.fromISO= (function(){
         }
 
         var thanks_redirect = data;
-        $.ajax({
-          type: 'GET',
-          url: "//act.boldprogressives.org" + thanks_redirect,
-          async: false,
-          jsonp: "jsonp",
-          contentType: "application/json",
-          dataType: 'jsonp',
-          success: od.processOneFetchedQuestion
-        });
+
+        $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", "//act.boldprogressives.org" + thanks_redirect)
+          .appendTo("body");
 
         od.question_submitted_callback("success", {question_id: question_id,
                                                    akid: akid});
@@ -458,6 +445,16 @@ Date.fromISO= (function(){
         return;
     }
 
+    var category_view = hash.match(/^\#\/category\//);
+    if( category_view ) {
+        $("a[data-sort]").css("font-weight", "normal");
+        var category = hash.substr(11).replace("/", "");
+        if( category ) {
+            od.browseCategory(category);
+            return;
+        }
+        od.change_hash("#/sort/votes/p1/");
+    }
     var map_view = hash.match(/^\#\/location\//);
     if( map_view ) {
         $("a[data-sort]").css("font-weight", "normal");
@@ -507,14 +504,10 @@ Date.fromISO= (function(){
       }
       if( active_question.iface !== "question" ) {
 
-        $.ajax({
-          type: 'GET',
-          url: "//act.boldprogressives.org/thanks/opendebate_questions_nyc/?getQuestion=yes&action_id=" + active_question,
-          async: false,
-          jsonp: "jsonp",
-          contentType: "application/json",
-          dataType: 'jsonp'
-        });
+        $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", "//act.boldprogressives.org/thanks/opendebate_questions_nyc/?getQuestion=yes&action_id=" + active_question)
+          .appendTo("body");
+
       } 
     }
     if( active_question ) {
@@ -567,11 +560,22 @@ Date.fromISO= (function(){
     });
     $("#container").render(od.searchResults).done(od.refresh);
   };
+  od.browseCategory = function(text) { 
+    od.searchResults = {"iface": "searchList", "total": od.data.entries.length,
+                        "search": text, "entries": []};
+    od.searchResults.entries = $.grep(od.data.entries, function(e) {
+        return (e.category && 
+                  e.category === text)
+        ;
+    });
+    $("#container").render(od.searchResults).done(od.refresh);
+  };
   od.clearSearch = function() {
     od.searchResults = null;
   };
 
   od.processOneFetchedVoter = function(json) {
+      $("script.jsonp").remove();
       for( var i=0; i<json.length-1; ++i ) { // json will have an empty object at the end of its array
           var vote = json[i];
           var tally = od.votes[parseInt(vote.question_id)] || [];
@@ -595,12 +599,14 @@ Date.fromISO= (function(){
   };
     
   od.processFetchedQuestions = function(json) {
+    $("script.jsonp").remove();
     od.data = json;
     od.render();
     od.questions_loaded_callback && od.questions_loaded_callback(json);
   };
 
   od.processOneFetchedQuestion = function(question) {
+      $("script.jsonp").remove();
       question = question[0]; // this will be an array of two elements, whose second element is an empty object
 
       od.data.entries.push(question);
@@ -611,42 +617,36 @@ Date.fromISO= (function(){
   };
 
   od.fetchTimeline = function() {
-    $.ajax({
-          type: 'GET',
-          url: od.data_proxies.timeline,
-          async: false,
-          jsonp: "jsonp",
-          contentType: "application/json",
-          dataType: 'jsonp',
-          success: od.processTimeline
-    });
+
+    $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", od.data_proxies.timeline)
+          .appendTo("body");
+
   };
   od.processTimeline = function(data) {
+      $("script.jsonp").remove();
       $("#activity_entries").render(data).done(function() {
           window.setTimeout(od.fetchTimeline, 1000);
       });
   };
 
   od.getQuestionFallbackFailed = function(question_id) {
+      $("script.jsonp").remove();
       od.change_hash("#/sort/votes/p1/");
   };
 
   od.getQuestionFallback = function(question_data) {
+      $("script.jsonp").remove();
       od.data.entries.push(question_data);
       od.render();
   };
 
   od.fetchQuestions = function() {
 
-    $.ajax({
-          type: 'GET',
-          url: od.data_proxies.question,
-          async: false,
-          jsonp: "jsonp",
-          contentType: "application/json",
-          dataType: 'jsonp',
-          success: od.processFetchedQuestions
-    });
+    $("<script>").attr("type", "text/javascript").attr("class", "jsonp")
+          .attr("src", od.data_proxies.question)
+          .appendTo("body");
+
   };
 
   od.addVote = function(question_id) {
