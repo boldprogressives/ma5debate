@@ -402,7 +402,7 @@ input[type=email].error, input[type=text].error, textarea.error, select.error {
 }*/
 .topline p {
 	line-height: 13px;
-	padding-bottom: 5px;
+	padding-bottom: 1em;
 	display: block;
 	
 }
