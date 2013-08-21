@@ -402,9 +402,11 @@ input[type=email].error, input[type=text].error, textarea.error, select.error {
 }*/
 .topline p {
 	line-height: 13px;
-	padding-bottom: 1em;
 	display: block;
 	
+}
+.topline .span33 p {
+	padding-bottom: 1em;
 }
 
 #recognized_user a {
@@ -590,5 +592,7 @@ and (max-width : 930px) {
 		}
     
 }
+/* ended up not using this .sidecar class
 .sidecar { width: 34%; line-height: 1em; margin-top: 1em; }
 /*.question-block*/
+.best_name { font-weight: 700; }
