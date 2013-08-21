@@ -394,10 +394,10 @@ input[type=email].error, input[type=text].error, textarea.error, select.error {
 	text-align: left;
 }
 
-#recognized_user {
+/*#recognized_user {
     text-align: right;
     margin-bottom: 15px;
-}
+}*/
 #recognized_user a {
     text-decoration: underline;
 /*    color: white; 
