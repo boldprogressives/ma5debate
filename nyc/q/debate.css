@@ -73,14 +73,14 @@ float: left;
 }
 
 .span33 { width: 34%; }
-
+.span33 .take-action { width: 100%; display: inline; }
 .form-well.span33 {
 /* .span33 { */
 width: 30%;
 float: right;
 margin-bottom: 30px;
 } 
-
+.form-well { margin-bottom: 30px; }
 .content{
 	background:  #e3e3e3;
 }
@@ -596,3 +596,14 @@ and (max-width : 930px) {
 .sidecar { width: 34%; line-height: 1em; margin-top: 1em; }
 /*.question-block*/
 .best_name { font-weight: 700; }
+
+/* from jquery-sticky-footer */
+.jquery-sticky-column-top-fixed {
+    position: fixed;
+    top: 0;
+}
+
+.jquery-sticky-column-bottom-fixed {
+    position:fixed;
+    bottom: 0;
+} /* end of jquery-sticky-footer */
