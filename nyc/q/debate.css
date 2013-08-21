@@ -72,14 +72,17 @@ width: 65%;
 float: left;
 }
 
-.span33 {
+.span33 { width: 34%; }
+
+.form-well.span33 {
+/* .span33 { */
 width: 30%;
 float: right;
 margin-bottom: 30px;
-}
+} 
 
 .content{
-	background:  #e8e8e8;
+	background:  #e3e3e3;
 }
 
 #container, #map, .nav_card {
