@@ -395,9 +395,18 @@ input[type=email].error, input[type=text].error, textarea.error, select.error {
 }
 
 /*#recognized_user {
-    text-align: right;
+/*    text-align: right;
     margin-bottom: 15px;
+    display: block;
+    line-height: 16px;
 }*/
+.topline p {
+	line-height: 13px;
+	padding-bottom: 5px;
+	display: block;
+	
+}
+
 #recognized_user a {
     text-decoration: underline;
 /*    color: white; 
