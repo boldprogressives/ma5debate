@@ -166,7 +166,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 	<div class="span66">
 		<p><span id="recognized_user"></span></p>
 	</div>
-	<div class="span33 pull-right">
+	<div class="span33">
         <p><a style="text-decoration: none;" href="/nyc/contact/">Having trouble with the site? Tell us about it here.</a></p>
 	</div>
 </div>    
@@ -217,28 +217,26 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
       
 
     <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well.category-well').slideDown(); return false;"
-         style="clear: right;">
+         onclick="$(this).hide(); $('.form-well.category-well').slideDown(); return false;">
       <a target="_blank"
          href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
                                        margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
          class="take-action">Browse by Issue</a>	
     </div>
-    <div style="display: none" class="span33 form-well category-well" style="clear: right">
+    <div style="display: none" class="span33 form-well category-well">
       <h2>Topics</h2>
       <div style="word-wrap: break-word; max-height: 400px; overflow-y: scroll"></div>
     </div>
 
     <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well.question-well').slideDown(); return false;"
-         style="clear: right; ">
+         onclick="$(this).hide(); $('.form-well.question-well').slideDown(); return false;">
       <a target="_blank"
          href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
                                        margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
          class="take-action">Submit a New Question</a>	
     </div>
 
-    <div style="display: none; clear: right" class="span33 form-well question-well">
+    <div style="display: none;" class="span33 form-well question-well">
       
 
 		
@@ -283,7 +281,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     
     </div>
 
-        <div class="reminder_well" style="clear: right;">
+        <div class="reminder_well">
           <a target="_blank"
              href="/nyc/reminders/" style="display: block; width: 100%; background-color: #006ea9;
                                            margin: 0; padding-right: 0; padding-left: 0"
@@ -291,7 +289,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
         </div>
 
 
-    <div class="activity_well" style="margin-top: 20px; margin-bottom: 10px; clear: right;">
+    <div class="activity_well" style="margin-top: 20px; margin-bottom: 10px;">
       <h2 style="font-family: 'Open Sans', helvetica, arial, sans-serif; color: #000; font-weight: 400; font-size: 18px; margin-bottom: 8px; padding-bottom: 3px;
                  text-transform: uppercase; border-bottom: 1px solid black">
         Recent Activity</h2>
@@ -556,7 +554,6 @@ $(function() {
     <script type="text/javascript" src="pccc-ak-async-post.js"></script>
     <script type="text/javascript" src="humane.js"></script>
     <script type="text/javascript" src="opendebate.js"></script>
-
     <script type="text/javascript">
       function recognized_user_callback(valid, user) {
         if( !valid ) {
@@ -859,157 +856,13 @@ $(function() {
      
       });
     </script>
+
+
+<script type="text/javascript" src="jquery.sticky-column.js">
 <script>
-(function ($, window) {
-    'use strict';
-
-    var pluginName = 'stickyColumn',
-        defaults = {
-            column: '.jquery-sticky-column',
-            content: '.jquery-sticky-column-content',
-            tolerance: 110
-        },
-        clearPosition = {
-            position: '',
-            top: ''
-        };
-
-    function Plugin(element, options) {
-        this.options = $.extend({}, defaults, options);
-
-        this.defaults = defaults;
-        this.name = pluginName;
-
-        this.root = $(element);
-
-        this.init();
-    }
-
-    Plugin.prototype.init = function () {
-        var self = this;
-
-        this.column = this.root.find(this.options.column);
-        this.content = this.root.find(this.options.content);
-        this.lastScrollTop = 0;
-
-        if (this.canBeSticky() === true) {
-            $(window).bind('scroll.jquery_sticky_column', function () {
-                self.setScrollDirection()
-                    .setBoundaries()
-                    .positionColumn();
-            });
-        }
-    };
-
-    Plugin.prototype.canBeSticky = function () {
-        return this.column.height() < this.content.height() &&
-               this.column.height() > $(window).height();
-    };
-
-    Plugin.prototype.setBoundaries = function () {
-        var contentTop = this.content.offset().top,
-            contentHeight = this.content.outerHeight();
-        this.boundaries = {
-            contentTop: contentTop,
-            contentBottom: contentTop + contentHeight,
-            contentHeight: contentHeight,
-            columnHeight: this.column.outerHeight(),
-            windowHeight: $(window).height()
-        };
-        return this;
-    };
-
-    Plugin.prototype.positionColumn = function () {
-        if (this.lastScrollTop > this.boundaries.contentTop &&
-                this.lastScrollTop < this.boundaries.contentBottom) {
-            this[this.scrollDirection === 'DOWN' ? 'scrollDown' : 'scrollUp']();
-        } else if (this.lastScrollTop < this.boundaries.contentTop) {
-            this.column.css('top', '').removeClass('jquery-sticky-column-top-fixed');
-        }
-        return this;
-    };
-
-    Plugin.prototype.scrollDown = function () {
-        var windowScroll = this.lastScrollTop + this.boundaries.windowHeight,
-            columnOffsetTop;
-        if (this.column.hasClass('jquery-sticky-column-scrolling-up')) {
-            this.column.removeClass('jquery-sticky-column-scrolling-up')
-                .addClass('jquery-sticky-column-scrolling-down');
-        } else if (this.column.hasClass('jquery-sticky-column-top-fixed')) {
-            columnOffsetTop = this.column.offset().top - this.boundaries.contentTop;
-            this.column.removeClass('jquery-sticky-column-top-fixed')
-                .css({
-                    position: 'absolute',
-                    top: columnOffsetTop
-                })
-                .addClass('jquery-sticky-column-scrolling-down');
-        }
-        if (this.column.hasClass('jquery-sticky-column-scrolling-down')) {
-            if (windowScroll > this.column.offset().top + this.boundaries.columnHeight) {
-                this.column.css(clearPosition)
-                            .addClass('jquery-sticky-column-bottom-fixed')
-                            .removeClass('jquery-sticky-column-scrolling-down');
-            }
-        } else {
-            if (windowScroll > this.boundaries.contentBottom) {
-                this.column.removeClass('jquery-sticky-column-bottom-fixed').css({
-                    position: 'absolute',
-                    top: this.boundaries.contentHeight - this.boundaries.columnHeight
-                });
-            } else if (windowScroll + this.options.tolerance >
-                       this.boundaries.columnHeight + this.boundaries.contentTop) {
-                this.column.css(clearPosition)
-                            .removeClass('jquery-sticky-column-top-fixed')
-                            .addClass('jquery-sticky-column-bottom-fixed');
-            }
-        }
-    };
-
-    Plugin.prototype.scrollUp = function () {
-        if (this.column.hasClass('jquery-sticky-column-scrolling-down')) {
-            this.column.removeClass('jquery-sticky-column-scrolling-down')
-                        .addClass('jquery-sticky-column-scrolling-up');
-        } else if (this.column.hasClass('jquery-sticky-column-bottom-fixed')) {
-            this.column.css({
-                position: 'absolute',
-                top: this.column.offset().top - this.boundaries.contentTop
-            }).removeClass('jquery-sticky-column-bottom-fixed').addClass('jquery-sticky-column-scrolling-up');
-        }
-        if (this.column.hasClass('jquery-sticky-column-scrolling-up')) {
-            if (this.lastScrollTop < this.column.offset().top) {
-                this.column.css(clearPosition)
-                            .addClass('jquery-sticky-column-top-fixed')
-                            .removeClass('jquery-sticky-column-scrolling-up');
-            }
-        } else {
-            if (this.lastScrollTop < this.boundaries.contentTop) {
-                this.column.css('position', '').removeClass('jquery-sticky-column-top-fixed');
-            } else if (this.lastScrollTop - this.options.tolerance <
-                       this.boundaries.contentBottom - this.boundaries.columnHeight) {
-                this.column.css(clearPosition)
-                            .removeClass('jquery-sticky-column-bottom-fixed')
-                            .addClass('jquery-sticky-column-top-fixed');
-            }
-        }
-    };
-
-    Plugin.prototype.setScrollDirection = function () {
-        var scrollTop = $(window).scrollTop();
-        this.scrollDirection = (scrollTop > this.lastScrollTop ? 'DOWN' : 'UP');
-        this.lastScrollTop = scrollTop;
-        return this;
-    };
-
-    $.fn[pluginName] = function (options) {
-        return this.each(function () {
-            if (!$.data(this, 'plugin_' + pluginName)) {
-                $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
-            }
-        });
-    };
-
-}(jQuery, window));
+$(document).ready(function () { 
+	$('.sidecar').stickyColumn(); 
+}); //$('#content').stickyColumn();
 </script>
-
 </body>
 </html>
