@@ -397,8 +397,8 @@ input[type=email].error, input[type=text].error, textarea.error, select.error {
 }
 #recognized_user a {
     text-decoration: underline;
-    color: white;
-    float: right;
+/*    color: white; 
+    float: right;*/
 }
 
 .tooltip{
@@ -578,5 +578,5 @@ and (max-width : 930px) {
 		}
     
 }
-
-.question-block
+.sidecar { width: 34%; line-height: 1em; margin-bottom: 1em; }
+/*.question-block*/
