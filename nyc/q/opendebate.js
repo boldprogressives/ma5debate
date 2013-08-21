@@ -274,6 +274,7 @@ Date.fromISO= (function(){
 
     data.source = $.cookie("pccc.source") || "";
 
+    var question_data = data;
     submitActionkitForm(od.pages.question, data, function(result, data) {
 	  
       if( result === "success" ) {
@@ -295,7 +296,7 @@ Date.fromISO= (function(){
           .appendTo("body");
 
         od.question_submitted_callback("success", {question_id: question_id,
-                                                   akid: akid});
+                                                   akid: akid, question: question_data});
       } else {
         ga("send", "event", "question", "submit_error");
         od.question_submitted_callback(result, data);
@@ -356,7 +357,6 @@ Date.fromISO= (function(){
       }
       
       data.source = $.cookie("pccc.source") || "";      
-      
       submitActionkitForm(od.pages.vote, data, 
         function(result, data) {
           if( result == "success" ) {
@@ -531,7 +531,6 @@ Date.fromISO= (function(){
       }
       if( !page && !map_view ) {
         var hash = "#/sort/" + (active_sort || "votes") + "/p1/";
-          console.log(hash);
         od.change_hash(hash);
         return;
       }

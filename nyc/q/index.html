@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenDebateQuestions.com | NYC Mayor</title>
-    <meta property="og:image" content="https://s3.amazonaws.com/s3.boldprogressives.org/images/ma-5-fb-share-v2.jpg" />
+    <meta property="og:image" content="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-NYC-logo.jpg" />
     <link rel="canonical" href="http://opendebatequestions.com/nyc/" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:700" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
@@ -87,14 +87,17 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 
   <div class="lightbox share_after_question" style="display:none">
     <div class="close_box">X</div>
+    <hr class="checkbox_icon" />
     <h2 style="font-size: 22px">Thanks for your submission</h2>
     Make sure your questions gets the most votes by sharing with your friends!
     
-    <a class="take-action lightblue nocase facebookshare">Share on Facebook</a>
-    <a class="take-action lightblue nocase twittershare">Post to Twitter</a>
+    <a style="width: 80%; margin-bottom: 0; margin-top: 30px" class="take-action lightblue nocase facebookshare"
+       data-href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/nyc/q/%3Fsource=fb%23/question/{id}/&redirect_uri=http://opendebatequestions.com/nyc/q/%23/question/{id}/&name=OpenNYCDebate&caption=I just sumitted a question in the Open NYC Debate for Mayor&description={submission}" target="_blank">Share on Facebook</a>
+    <a style="width: 80%" class="take-action lightblue nocase twittershare"
+       data-href="https://twitter.com/intent/tweet?url=http://opendebatequestions.com/nyc/q/%3Fsource=tw%23/question/{id}/&amp;text=Please vote for my question in this cool people powered %23OpenNYCDebate for mayor!&amp;via=WorkingFamilies">Post to Twitter</a>
     <div><a style="font-size: 12px; color: white" 
             onclick="$('.share_after_question').fadeOut(); $('#overlay').fadeOut(); return false;"
-            href="#">No thanks. I am not exactly the sharing type.</a>
+            href="#">No thanks.</a>
     </div>
   </div>
 
@@ -639,11 +642,17 @@ $(function() {
         $("input.error, textarea.error").removeClass("error");
 
 
-
-
         $("#new_question input, #new_question textarea").val("");
-        //$("#thanks").html('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Want to submit another?</p>');
-      	//$("#thanks").slideDown();
+        var href = $(".lightbox.share_after_question a.facebookshare").attr("data-href");
+        $(".lightbox.share_after_question a.facebookshare").attr("href", 
+          href.replace(/{id}/g, data.question_id)
+              .replace(/{submission}/g, data.question.action_submission));
+
+        var href = $(".lightbox.share_after_question a.twittershare").attr("data-href");
+        $(".lightbox.share_after_question a.twittershare").attr("href", 
+          href.replace(/{id}/g, data.question_id)
+              .replace(/{submission}/g, data.question.action_submission));
+
       	$(".lightbox.share_after_question").fadeIn();
           $("#overlay").fadeIn();
       } else {
