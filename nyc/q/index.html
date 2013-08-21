@@ -87,14 +87,17 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 
   <div class="lightbox share_after_question" style="display:none">
     <div class="close_box">X</div>
+    <hr class="checkbox_icon" />
     <h2 style="font-size: 22px">Thanks for your submission</h2>
     Make sure your questions gets the most votes by sharing with your friends!
     
-    <a class="take-action lightblue nocase facebookshare">Share on Facebook</a>
-    <a class="take-action lightblue nocase twittershare">Post to Twitter</a>
+    <a style="margin-bottom: 0; margin-top: 30px" class="take-action lightblue nocase facebookshare"
+       data-href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/nyc/q/%3Fsource=fb%23/question/{id}/&redirect_uri=http://opendebatequestions.com/nyc/q/%23/question/{id}/&name=MA-05 Debate&caption=OpenNYCDebate: An Open Debate for NYC Mayor&description={submission}" target="_blank">Share on Facebook</a>
+    <a style="width: 80%" class="take-action lightblue nocase twittershare"
+       data-href="https://twitter.com/intent/tweet?url=http://opendebatequestions.com/nyc/q/%3Fsource=tw%23/question/{id}/&amp;text=I just voted in cool people powered %23ma5debate - vote for this question! %23MA5 %23MaPoli&amp;via=BoldProgressive">Post to Twitter</a>
     <div><a style="font-size: 12px; color: white" 
             onclick="$('.share_after_question').fadeOut(); $('#overlay').fadeOut(); return false;"
-            href="#">No thanks. I am not exactly the sharing type.</a>
+            href="#">No thanks.</a>
     </div>
   </div>
 
@@ -640,11 +643,17 @@ $(function() {
         $("input.error, textarea.error").removeClass("error");
 
 
-
-
         $("#new_question input, #new_question textarea").val("");
-        //$("#thanks").html('<p>Thanks for adding your question! See it <a href="'+window.location.pathname+'#/question/'+data.question_id+'/">here</a>!  Want to submit another?</p>');
-      	//$("#thanks").slideDown();
+        var href = $(".lightbox.share_after_question a.facebookshare").attr("data-href");
+        $(".lightbox.share_after_question a.facebookshare").attr("href", 
+          href.replace(/{id}/g, data.question_id)
+              .replace(/{submission}/g, data.question.action_submission));
+
+        var href = $(".lightbox.share_after_question a.twittershare").attr("data-href");
+        $(".lightbox.share_after_question a.twittershare").attr("href", 
+          href.replace(/{id}/g, data.question_id)
+              .replace(/{submission}/g, data.question.action_submission));
+
       	$(".lightbox.share_after_question").fadeIn();
           $("#overlay").fadeIn();
       } else {
