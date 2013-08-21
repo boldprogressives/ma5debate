@@ -177,7 +177,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
           <div class="width-align">
             <h3 style="display: inline-block; vertical-align: center"
                 class="search_label"><a style="font-size: 16px"
-                                        name="search">Search for a topic</a></h3>
+                                        name="search">Search for a question</a></h3>
             <form style="vertical-align: center; display: inline-block; 
                          margin-left: 0.8em; width: 60%"
                   onsubmit="return false;" style="text-align: center">
@@ -223,7 +223,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
       <a target="_blank"
          href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
                                        margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
-         class="take-action">Browse by Issue</a>	
+         class="take-action">Browse by Topic</a>	
     </div>
     <div style="display: none" class="span33 form-well category-well" style="clear: right">
       <h2>Topics</h2>
@@ -264,12 +264,12 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 
           <select id="category" style="padding-top: 3px; width: 95%" name="category" 
                   class="required">
-            <option class="fixed" value="">Select a category</option>
+            <option class="fixed" value="">Select a topic</option>
 
-            <option class="fixed last" value="_other">other category</option>
+            <option class="fixed last" value="_other">other topic</option>
           </select>
           <input style="display: none" id="other_category" type="text"
-                 name="other_category" placeholder="add your category" />
+                 name="other_category" placeholder="add your topic" />
           <hr />
 
 	  <input class="user required" type="text" name="first_name" id="first_name"  placeholder="First Name"/>    	
@@ -367,7 +367,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
         if( match ) {
           var count = parseInt($(".category-well a[data-category=" + cats[i] + "]").attr("rel"));
           if( count ) {  
-            $("<div>").attr("id", "category_warning").html("<br/>Psst -- we already have " + count + " question" + (count === 1 ? " " : "s ") + "about " + cats[i] + "!<br/><a style='color: white; font-weight: bold' href='#/category/" + cats[i] + "/'>You can browse through them all here</a>.<br/><br/>If one of them is similar to the question you'd like to ask, please vote for it and share it with your friends instead of submitting a new question!<br/><br/>").css("display", "none").insertBefore("#category").slideDown();
+            $("<div>").attr("id", "category_warning").html("<br/>Psst -- we already have " + count + " question" + (count === 1 ? " " : "s ") + "about " + cats[i] + "!<br/><a style='color: pink; font-weight: bold' href='#/category/" + cats[i] + "/'>You can browse through them all by clicking here</a>.<br/><br/>If one of them is similar to the question you'd like to ask, please vote for it and share it with your friends instead of submitting a new question!<br/><br/>").css("display", "none").insertBefore("#category").slideDown();
             break;
           }
         }
