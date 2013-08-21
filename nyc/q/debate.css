@@ -578,5 +578,5 @@ and (max-width : 930px) {
 		}
     
 }
-.sidecar { width: 34%; line-height: 1em; margin-bottom: 1em; }
+.sidecar { width: 34%; line-height: 1em; margin-top: 1em; }
 /*.question-block*/
