@@ -216,33 +216,33 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 <div id="sticky-right" class="sidecar span33 pull-right"><div class="sidecar-inner">
       
 
-    <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well.category-well').slideDown(); return false;">
+    <div class="reminder_well submit_question c"
+         onclick="$(this).hide(); $('.form-well.category-well.c').slideDown(); return false;">
       <a target="_blank"
-         href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
-                                       margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
+         href="#add_question" style="display: block; width: 100%; margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
          class="take-action">Browse by Topic</a>	
     </div>
-    <div style="display: none" class="form-well category-well">
-      <h2>Topics</h2>
+    <div style="display: none" class="form-well category-well c">
+      
+      <button type="submit" class="take-action" onclick="$('.form-well.category-well.c').slideUp(); $('.reminder_well.submit_question.c').show(); return false;"><h2>Topics</h2></button>
+      
       <div style="max-height: 600px"></div>
     </div>
 
-    <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well.question-well').slideDown(); return false;">
+    <div class="reminder_well submit_question q"
+         onclick="$(this).hide(); $('.form-well.question-well.q').slideDown(); return false;">
       <a target="_blank"
-         href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
-                                       margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
+         href="#add_question" style="display: block; width: 100%; margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
          class="take-action">Submit a New Question</a>	
     </div>
 
-    <div style="display: none;" class="form-well question-well">
+    <div style="display: none;" class="form-well question-well q">
       
 
 		
         <div id="add_question" name="add_question">
         
-    	<h2>Submit a new Question</h2>
+    	<button type="submit" class="take-action" onclick="$('.form-well.question-well.q').slideUp(); $('.reminder_well.submit_question.q').show(); return false;"><h2>Submit a new Question</h2></button>
     	<hr class="mic_icon"/>    	
     	<div id="thanks" style="display:none"></div>
     	
@@ -283,7 +283,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
 
         <div class="reminder_well">
           <a target="_blank"
-             href="/nyc/reminders/" style="display: block; width: 100%; background-color: #006ea9;
+             href="/nyc/reminders/" style="display: block; width: 100%;
                                            margin: 0; padding-right: 0; padding-left: 0"
              class="take-action">sign up for a reminder</a>	
         </div>
