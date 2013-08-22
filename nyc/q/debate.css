@@ -609,4 +609,4 @@ and (max-width : 930px) {
 } /* end of jquery-sticky-footer */
 .sidecar h2 { font-family: "Open Sans", sans-serif; padding-top: 0px;}
 .sidecar a.take-action { background-color: #006ea9; }
-.sidecar a.take-action.control:hover h2 { opacity: 0.8; }
+.sidecar a.control:hover h2 { opacity: 0.8; }
