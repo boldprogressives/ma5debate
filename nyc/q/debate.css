@@ -244,7 +244,7 @@ text-transform: uppercase;
 
 }
 
-.votes>a:hover .vote-bottom {
+.question-block:not(.voted) .votes>a:hover .vote-bottom {
     background-color: #052b47;
 }
 
@@ -610,3 +610,15 @@ and (max-width : 930px) {
 .sidecar h2 { font-family: "Open Sans", sans-serif; padding-top: 0px;}
 .sidecar a.take-action { background-color: #006ea9; }
 .sidecar a.control:hover h2 { opacity: 0.8; }
+.social_links {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+} 
+.social_links.lightyellow {
+	background-color: lightyellow;
+}
+.voted .vote_tally { color: yellow; }
+.voted .vote-bottom { background-color: green; }
