@@ -162,12 +162,12 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     </script>
     <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
        
-<div class=" content cf">
+<div class="topline content cf">
 	<div class="span66">
-		<span id="recognized_user"></span>
+		<p><span id="recognized_user"></span></p>
 	</div>
-	<div class="span33 pull-right">
-        <a style="text-decoration: none;" href="/nyc/contact/">Having trouble with the site? Tell us about it here.</a>
+	<div class="span33 sidecar">
+        <p><a style="text-decoration: none;" href="/nyc/contact/">Having trouble with the site? Tell us about it here.</a></p>
 	</div>
 </div>    
 
@@ -213,33 +213,30 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     </div>
     </div>
 
-<!--div class="sidecar pull-right">
+<div id="sticky-right" class="sidecar span33 pull-right"><div class="sidecar-inner">
       
-</div-->
 
     <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well.category-well').slideDown(); return false;"
-         style="clear: right; float: right; width: 34%">
+         onclick="$(this).hide(); $('.form-well.category-well').slideDown(); return false;">
       <a target="_blank"
          href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
                                        margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
          class="take-action">Browse by Topic</a>	
     </div>
-    <div style="display: none" class="span33 form-well category-well" style="clear: right">
+    <div style="display: none" class="form-well category-well">
       <h2>Topics</h2>
       <div style="word-wrap: break-word; max-height: 400px; overflow-y: scroll"></div>
     </div>
 
     <div class="reminder_well submit_question"
-         onclick="$(this).hide(); $('.form-well.question-well').slideDown(); return false;"
-         style="clear: right; float: right; width: 34%">
+         onclick="$(this).hide(); $('.form-well.question-well').slideDown(); return false;">
       <a target="_blank"
          href="#add_question" style="display: block; width: 100%; background-color: #006ea9;
                                        margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
          class="take-action">Submit a New Question</a>	
     </div>
 
-    <div style="display: none; clear: right" class="span33 form-well question-well">
+    <div style="display: none;" class="form-well question-well">
       
 
 		
@@ -284,7 +281,7 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     
     </div>
 
-        <div class="reminder_well" style="clear: right; float: right; width: 34%">
+        <div class="reminder_well">
           <a target="_blank"
              href="/nyc/reminders/" style="display: block; width: 100%; background-color: #006ea9;
                                            margin: 0; padding-right: 0; padding-left: 0"
@@ -292,13 +289,13 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
         </div>
 
 
-    <div class="activity_well" style="margin-top: 20px; margin-bottom: 10px; clear: right; float: right; width: 34%">
+    <div class="activity_well" style="margin-top: 20px; margin-bottom: 10px;">
       <h2 style="font-family: 'Open Sans', helvetica, arial, sans-serif; color: #000; font-weight: 400; font-size: 18px; margin-bottom: 8px; padding-bottom: 3px;
                  text-transform: uppercase; border-bottom: 1px solid black">
         Recent Activity</h2>
       <div id="activity_entries">Loading...</div>
     </div>
-
+</div></div>
     
   </div>
 </div>
@@ -557,7 +554,6 @@ $(function() {
     <script type="text/javascript" src="pccc-ak-async-post.js"></script>
     <script type="text/javascript" src="humane.js"></script>
     <script type="text/javascript" src="opendebate.js"></script>
-
     <script type="text/javascript">
       function recognized_user_callback(valid, user) {
         if( !valid ) {
@@ -862,5 +858,11 @@ $(function() {
     </script>
 
 
+<!--script type="text/javascript" src="jquery.superSticky.js"></script>
+<script>
+$(document).ready(function () { 
+	$('#sticky-right').superSticky(); 
+}); //$('#content').stickyColumn();
+</script-->
 </body>
 </html>

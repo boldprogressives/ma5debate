@@ -73,14 +73,14 @@ float: left;
 }
 
 .span33 { width: 34%; }
-
+.span33 .take-action { width: 100%; display: inline; }
 .form-well.span33 {
 /* .span33 { */
 width: 30%;
 float: right;
 margin-bottom: 30px;
 } 
-
+.form-well { margin-bottom: 30px; }
 .content{
 	background:  #e3e3e3;
 }
@@ -394,10 +394,21 @@ input[type=email].error, input[type=text].error, textarea.error, select.error {
 	text-align: left;
 }
 
-#recognized_user {
-    text-align: right;
+/*#recognized_user {
+/*    text-align: right;
     margin-bottom: 15px;
+    display: block;
+    line-height: 16px;
+}*/
+.topline p {
+	line-height: 13px;
+	display: block;
+	
 }
+.topline .span33 p {
+	padding-bottom: 1em;
+}
+
 #recognized_user a {
     text-decoration: underline;
 /*    color: white; 
@@ -581,5 +592,18 @@ and (max-width : 930px) {
 		}
     
 }
+/* ended up not using this .sidecar class
 .sidecar { width: 34%; line-height: 1em; margin-top: 1em; }
 /*.question-block*/
+.best_name { font-weight: 700; }
+
+/* from jquery-sticky-footer */
+.jquery-sticky-column-top-fixed {
+    position: fixed;
+    top: 0;
+}
+
+.jquery-sticky-column-bottom-fixed {
+    position:fixed;
+    bottom: 0;
+} /* end of jquery-sticky-footer */
