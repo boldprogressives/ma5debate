@@ -608,3 +608,4 @@ and (max-width : 930px) {
     bottom: 0;
 } /* end of jquery-sticky-footer */
 .sidecar h2 { font-family: "Open Sans", sans-serif; padding-top: 0px;}
+.sidecar .take-action { background-color: #006ea9;}
