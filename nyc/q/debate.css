@@ -618,7 +618,7 @@ and (max-width : 930px) {
 	transition: all 1s ease;
 } 
 .social_links.lightyellow {
-	background-color: yellow;
+	background-color: lightyellow;
 }
 .voted .vote_tally { color: yellow; }
 .voted .vote-bottom { background-color: green; }
