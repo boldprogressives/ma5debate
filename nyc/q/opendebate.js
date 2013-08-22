@@ -154,8 +154,7 @@
           }
           if( votes.indexOf(question) != -1 ) {
               $(this).text("voted")
-                  .css("font-size", "12px").css("color", "gray")
-                  .css("background-color", "white");
+                  .css("font-size", "12px");
           }
       });
     }
@@ -315,8 +314,9 @@ Date.fromISO= (function(){
  
       var q = $(".votes a.vote-button[data-question_id=" + question_id + "]");
       q.find(".vote_tally").css("color", "yellow");
-      q.closest(".question-block").find(".social_links")
-          .css("background-color", "lightyellow");
+      q.closest(".question-block").addClass("voted")
+//      	.find(".social_links").addClass("lightyellow").removeClass('lightyellow');
+			.find(".social_links").addClass('lightyellow').animate({'background-color': "lightyellow"}, 1000, function(){$(this).removeClass('lightyellow')}); 
       var t = q.find(".vote_tally span");
       if( t ) {
           var tI = parseInt(t.text());
@@ -327,8 +327,7 @@ Date.fromISO= (function(){
 
           q.closest(".votes").find(".vote-bottom")
             .text("voted")
-            .css("font-size", "12px").css("color", "gray")
-            .css("background-color", "white");      
+            .css("font-size", "12px");
        
        var data = {
           "action_vote": question_id,
