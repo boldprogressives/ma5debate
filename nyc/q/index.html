@@ -804,8 +804,8 @@ $(function() {
           $("#category option:not(.fixed)").remove();
           cats.sort(function(a,b) {
 	          var aname = '', bname = '';
-	          aname = a.name.replace(/[\s\b\'-_]/g,'').toLowerCase();
-	          bname = b.name.replace(/[\s\b\'-_]/g,'').toLowerCase();
+	          aname = a.name.replace(/[\s\b\n\'-_]/g,'').toLowerCase();
+	          bname = b.name.replace(/[\s\b\n\'-_]/g,'').toLowerCase();
 	          if (aname == bname) return 0;
 	          if (aname < bname) return -1;
 	          return 1;
