@@ -802,6 +802,14 @@ $(function() {
         window.populateCategories = function(cats) {
           $("script.jsonp").remove();
           $("#category option:not(.fixed)").remove();
+          cats.sort(function(a,b) {
+	          var aname = '', bname = '';
+	          aname = a.name.replace(/[\s\b\'-_]/g,'').toLowerCase();
+	          bname = b.name.replace(/[\s\b\'-_]/g,'').toLowerCase();
+	          if (aname == bname) return 0;
+	          if (aname < bname) return -1;
+	          return 1;
+          });
           for( var i=0; i<cats.length; ++i ) {
             $("<option>").attr("value", cats[i].name).text(cats[i].name + " (" + cats[i].num + ")").insertBefore("#category option.last");
             $("<a>").attr("rel", cats[i].num).css("color", "white").css("font-weight", "bold")
