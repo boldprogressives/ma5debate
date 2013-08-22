@@ -807,7 +807,7 @@ $(function() {
             $("<a>").attr("rel", cats[i].num).css("color", "white").css("font-weight", "bold")
                                        .attr("data-category", cats[i].name)
                                        .css("padding", "0 2px")
-                                       .attr("href", "#/category/" + cats[i].name + "/").text(cats[i].name).appendTo(".category-well div");
+                                       .attr("href", "#/category/" + cats[i].name + "/").text(cats[i].name.replace(/[\s\b]/g, "\xa0")).appendTo(".category-well div");
           }
           $(".category-well div a").tagcloud();
         };
