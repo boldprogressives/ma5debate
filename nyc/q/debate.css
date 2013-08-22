@@ -607,3 +607,4 @@ and (max-width : 930px) {
     position:fixed;
     bottom: 0;
 } /* end of jquery-sticky-footer */
+.sidecar h2 { font-family: "Open Sans", sans-serif; padding-top: 0px;}
