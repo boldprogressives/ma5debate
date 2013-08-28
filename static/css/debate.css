@@ -1,3 +1,10 @@
+/* blue: #006ea9; navy: */
+
+body, label, p {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+}
+
 header.navbar { border-radius: 0; }
 section.backdrop-audience {
 	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg) no-repeat center center;
@@ -5,6 +12,34 @@ section.backdrop-audience {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	color: white;
+}
+.hero {
+	background-color: rgba(255,255,255,0.8);
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 20px 30px;
+	color: black;
+}
+.hero .hero-main {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.hero-main { width: 65%; float: left; } .hero-side { width: 35%; float: left;} .hero .no-bg { float: left; width: 65%; }
+.navy {
+	background-color: #052b47;
+	color: white;
+}
+.blue { 
+	background-color: #006ea9; 
+	color: white;
+}
+.red { 
+	background-color: #d9000d; 
+	color: white; }
+.white {
+	background-color: white;
+	color: black;
 }
 section.get-started {
 	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg) no-repeat center center;
@@ -12,4 +47,25 @@ section.get-started {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	color: white;
 }
+.btn { 
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+	text-transform: uppercase;
+	color: white;
+}
+.btn.nocase { text-transform: none;}
+.btn.gray { color: black; }
+.btn:hover { opacity: 0.8; color: white; }
+.btn.gray:hover { color: black; }
+h1 { font-family: "Open Sans Condensed", sans-serif; font-size: 48px; font-weight: 600; }
+h2 { font-family: "Open Sans", sans-serif; font-size: 40px; font-weight: 300; }
+h3 { font-family: "Open Sans Condensed", sans-serif; font-size: 25px; font-weight: 600; text-transform: uppercase; }
+h4 { font-family: "Open Sans", sans-serif; font-size: 16px; font-weight: 400; text-transform: uppercase; }
