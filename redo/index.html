@@ -11,6 +11,7 @@
     <!link rel="stylesheet" type="text/css" media="screen" href="/nyc/rfo.css" />
     <!link rel="stylesheet" type="text/css" media="screen" href="/nyc/header-footer.css" />
 	 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+ 	 <!link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.css" />
 	 <link rel="stylesheet" type="text/css" href="/static/css/debate.css" />	 
 
 
@@ -46,11 +47,12 @@
 
 <div class="container">
 	<div class="row-fluid">
-		<div class="span6">
-    	  <a href="/nyc/contact/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-host-btn.jpg" class="pull-right hidden-phone" /></a>
-		</div>
-		<div class="span6">
+		
+		<div class="col-md-6">
     	  <a href="/nyc/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-NYC-logo.jpg" /></a>
+		</div>
+		<div class="col-md-6">
+    	  <a href="/nyc/contact/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-host-btn.jpg" class="pull-right hidden-phone" /></a>
 		</div>
   	</div>
 </div>
@@ -68,7 +70,7 @@
 			<h3>The Candidates</h3>
 			<hr />
                         
-			<div class="candidate-entry">
+			<div class="candidate-entry clearfix">
 			  <a href="/nyc/candidates/#bill-de blasio"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/deblasio-nyc-debate.jpg" /></a>
 			  <div class="after">
 			    <p class="name">Bill de Blasio</p>
@@ -77,7 +79,7 @@
 			  </div>
 			</div>
 
-			<div class="candidate-entry">
+			<div class="candidate-entry clearfix">
 			  <a href="/nyc/candidates/#christine-quinn"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/quinn-nyc-debate.jpg" /></a>
 			  <div class="after">
 			    <p class="name">Christine Quinn</p>
@@ -86,7 +88,7 @@
 			  </div>
 			</div>
                         
-			<div class="candidate-entry">
+			<div class="candidate-entry clearfix">
 			  <a href="/nyc/candidates/#bill-thompson"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/thompson-nyc-debate.jpg" /></a>
 			  <div class="after">
 			    <p class="name">Bill Thompson</p>
@@ -100,7 +102,7 @@
 		<div class="hero-main navy">
 		   <h1>You choose. They answer.</h1> 
 		   <p>Do you ever feel like the debate moderator is focusing on all the wrong issues? With the Open Debate format, you ask the questions and vote on the most relevant questions. We will use your your votes to decide what questions get asked in the debate.</p>
-		   <div class="left" style="color: red;">
+		   <div class="left">
 		     <a href="/nyc/q/#add_question" class="btn blue pull-right">Submit a question</a>
 		     <a href="/nyc/q/" class="btn blue pull-right">Vote on the questions</a>
 		     <a href="/nyc/reminders/" class="btn red pull-right">sign up for a reminder</a>			   			   
@@ -133,36 +135,36 @@
 </div>
 </section>
 
-<section class="how-it-works">
+<section class="how-it-works navy relax">
 <div class="container">
 <div class="row">
     <h2>Here's how the open debate works:</h2>
 
-   <div class="span4">
+   <div class="col-md-4">
    	<img class="testimonial-photo" src="//s3.amazonaws.com/s3.boldprogressives.org/images/icon_submit.png"/>
    	<h3>1. Submit Your Question</h3>
    	<p>Anyone can submit a question for our moderators to ask the candidates during the debate.</p>
-   	<a class="btn red" href="/nyc/q/#add_question">submit</a>
+   	<a class="btn red small" href="/nyc/q/#add_question">submit</a>
    </div>
 
-   <div class="span4">
+   <div class="col-md-4">
    	<img class="testimonial-photo " src="//s3.amazonaws.com/s3.boldprogressives.org/images/icon_vote.png"/>
    	<h3>2. Vote For The Best</h3>
    	<p>Vote for the questions that matter most to you, and show candidates what issues are on your mind.</p>
-   	<a class="btn red" href="/nyc/q/">vote</a>
+   	<a class="btn red small" href="/nyc/q/">vote</a>
    </div>
    
-      <div class="span4">
+      <div class="col-md-4">
    	<img class="testimonial-photo " src="//s3.amazonaws.com/s3.boldprogressives.org/images/icon_watch.png" />
    	<h3>3. Watch Online</h3>
    	<p>Watch online, and tell your friends. This debate is for the community, so spread the word!</p>
-   	<a class="btn red" href="/">watch</a>
+   	<a class="btn red small" href="/">watch</a>
    </div>
 
         </div>
 </div>
 </section>
-<section class="sponsor-logos">
+<section class="sponsor-logos relax">
 <div class="container">
 <div class="row">
 
@@ -208,10 +210,10 @@
 </div></div>
 </section>
 
-<section class="get-started">
+<section class="get-started relax">
 <div class="container">
 <div class="row">
-    <h2 class="home-header">It's your turn to help shape the debate.</h2>
+    <h1>It's your turn to help shape the debate.</h2>
     <div id="start"> 
     	<a href="/nyc/q/" class="btn large red">Click here to start</a>
     </div>
@@ -221,7 +223,7 @@
 
 
 
-<footer>
+<footer class="blue">
     	<div class="container">
     	<div class="row">
 	    	<ul>
