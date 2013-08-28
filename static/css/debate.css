@@ -1,0 +1,15 @@
+header.navbar { border-radius: 0; }
+section.backdrop-audience {
+	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+section.get-started {
+	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

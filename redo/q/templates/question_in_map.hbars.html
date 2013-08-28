@@ -1,0 +1,48 @@
+<div id="map_popup">
+
+<div class="question-block cf">
+
+<div class="votes">
+
+    <a href="#/question/{{id}}/"
+         data-question_id="{{id}}"
+         class="vote-button">
+      <div class="vote_tally">
+        <div style="font-size: 10px; font-family: 'Open Sans', helvetica, arial, sans-serif; padding-top: 5px; margin-bottom: -5px; font-weight: lighter; text-transform: uppercase">Score</div>
+        <span>{{votes}}</span></div>
+      <div class="vote-bottom">
+        Vote
+      </div>
+    </a>
+</div> 
+
+<div style="margin-top: 10px; margin-left: 60px" class="question">  
+    <p class="question_text">
+      <a href="#/question/{{id}}/">{{excerpt submission}}</a>
+    </p>
+<div>
+</div>
+<div class="map-meta cf"> 
+    <div class="question-meta"><span class="user_name">{{first_name}} {{last_name}}</span>,
+    	<span class="location"><a href="#/location/{{y}},{{x}}/">{{city}}, {{state}}</a></span> in <strong><a href="#/category/{{category}}/">{{category}}</a></strong>
+    	<div class="time"><a href="#/question/{{id}}/" title="{{created}}">
+            {{datetime created}}</a></div>
+  	</div>
+    
+    <div class="social">
+    	<span class="tweet-button"><a class="twitter" href="https://twitter.com/intent/tweet?url=http://opendebatequestions.com/nyc/q/%3Fsource=tw%23/question/{{id}}/&amp;text=I just voted in cool people powered %23OpenNYCDebate for mayor - vote for this question!&amp;via=WorkingFamilies">Tweet</a></span>
+    	<span class="fb-button"><a class="facebook" href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/nyc/q/%23/question/{{id}}/&redirect_uri=http://opendebatequestions.com/nyc/q/%3Fsource=fb%23/question/{{id}}/&name=OpenNYCDebate&description={{excerpt submission}}" target="_blank">
+            Share</a></span>    
+        
+        <span class="comments"><a href="#/question/{{id}}/">
+            <span class="fb-comments-count" 
+                  data-href="http://opendebatequestions.com/ma5/q/#/question/{{id}}/"></span>
+            Comments
+        </a></span>
+
+  	</div>
+ 
+</div>
+
+</div>
+

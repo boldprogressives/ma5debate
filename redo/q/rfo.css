@@ -1,0 +1,511 @@
+/* screen styles */
+@media screen {
+
+
+body{
+font-weight: 300;
+}
+
+.text-center {
+text-align: center;
+}
+
+nav {
+height: 23px;
+background: #e3e3e3;
+padding: 10px 0;
+border-bottom: 1px solid #d9d9d9;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+z-index: 10;
+max-height: 23px;
+min-height: 23px;
+text-align: center;
+font-family: 'Open Sans', helvetica, arial, sans-serif;
+font-weight: normal;
+color: #333;
+}
+
+nav li{
+font-weight: 400;
+text-align: center;
+}
+
+.img-circle {
+-webkit-border-radius: 500px;
+-moz-border-radius: 500px;
+border-radius: 500px;
+}
+
+.candidate-testimonial{
+	text-align: center;
+	width: 30%;
+	margin: 0 1.5%;
+	padding-bottom: 50px;
+}
+
+.candidate-testimonial p{
+font-weight: 300;
+font-size: 16px;
+padding: 0 20px 0 20px;
+}
+
+.candidate-testimonial img {
+	width: 75%;
+	height: auto;
+	margin: 1.5em 0;
+}
+
+#previous_candidates p {
+	margin-top: 1em;
+}
+
+#previous_candidates ul li {
+	font-size: 18px;
+	color: #052b47;
+	display: inline-block;
+	width: 80%;
+	margin-top: 10px;
+	list-style-type: none;
+}
+
+#previous_candidates ul {
+list-style-type:none;
+margin-left: -40px;
+margin-top: 2em;
+margin-bottom: 2em;
+}
+
+#previous_candidates ul > li {
+	height: 45px;
+}
+
+#previous_candidates ul > li:before {
+	width:45px;
+	height:45px;
+	display:block;
+	float: left;
+	content: "";
+	margin-right: 10px;
+	color: #000;
+}
+
+#previous_candidates ul > li.ma:before {
+		background:url(RFO-states-sprite.png) 0px 0px;
+}
+li.wi:before{
+		background:url(RFO-states-sprite.png) 45px 0px;
+}
+li.fl:before{
+			background:url(RFO-states-sprite.png) 180px 0px;
+}
+li.ca:before{		background:url(RFO-states-sprite.png) 135px 0px;
+}
+li.ny:before{		background:url(RFO-states-sprite.png) 90px 0px;
+}
+li.oh:before{		background:url(RFO-states-sprite.png) 225px 0px;
+}
+
+#process a.take-action{
+ margin: 20px auto 50px;
+}
+
+button.take-action, a.take-action {
+width: auto;
+display:inline-block;
+color: #fff;
+background: #1a86ab;
+border: none;
+font-weight: 600;
+font-size: 20px;
+color: white;
+line-height: 18px;
+padding: 10px 30px 10px 30px;
+cursor: pointer;
+}
+
+.take-action{
+text-transform: uppercase;
+text-align: center;
+position: relative;
+top: -2px;
+opacity: 1;
+-webkit-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease;
+-o-transition: all .2s ease;
+transition: all .2s ease;
+margin: 2em auto;
+}
+
+
+a.take-action.red{
+	background: #d9000d;
+}
+
+button.take-action:hover, a.take-action:hover, .flat-button:hover, a.take-action.red:hover {
+text-decoration: none;
+opacity: .8;
+-webkit-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease;
+-o-transition: all .2s ease;
+transition: all .2s ease;
+}
+
+.banner{
+	height: 316px;
+	background-color: #ccc;
+	background-image:url(RFO-welcome.jpg);
+	background-repeat: no-repeat; 
+	background-position-x: center;
+	background-size: cover;
+	margin-bottom: 4em;
+	border-top: solid 1px #333;
+	border-bottom: solid 1px #333;
+}
+
+.hero{
+	margin-top: 50px;
+	display:block;
+}
+
+.hero.span50 { width: 500px; }
+
+.hero h2{
+	font-size: 38px;
+	line-height: 40px;
+	font-weight: 400;
+	border: none;
+}
+
+ol {
+    counter-reset:li; /* Initiate a counter */
+    margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
+}
+
+ol > li {
+
+	position:relative; /* Create a positioning context */
+    margin:0 0 10px 2em; /* Give each list item a left margin to make room for the numbers */
+    padding:10px 0; /* Add some spacing around the content */
+    font-size: 18px;
+    color: #052b47;
+    display: inline-block;
+    width: 80%;
+  
+}
+
+
+ol > li:before {
+    content:counter(li); /* Use the counter as content */
+    counter-increment:li; /* Increment the counter by 1 */
+    /* Position and style the number */
+    position:absolute;
+
+    left:-37px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    /* Some space between the number and the content in browsers that support
+       generated content but not positioning it (Camino 2 is one example) */
+    margin-right:4px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
+  	border-radius: 50%;
+	width: 27px;
+	height: 27px; 
+	background-color: #0087AF;
+	color: #fff;
+    font-weight:bold;
+    font-family:"Helvetica Neue", Arial, sans-serif;
+    text-align:center;
+}
+
+h2{
+font-family: 'Open Sans Condensed', sans-serif;
+font-weight: 700;
+font-size: 30px;
+line-height: normal;
+color: #052b47;
+width: 100%;
+border-bottom: 1px solid #999;
+}
+
+h4{
+font-weight: 600;
+font-size: 25px;
+color: #052b47;
+margin-bottom: .5em;
+
+}
+
+.offers {
+margin: 2.5em 0;
+display: block;
+}
+
+.offer_icon{
+	width:60px;
+	height:60px;
+	display:block;
+	float: left;
+	margin: .5em 2%;
+
+}
+
+.offer-body{
+float: left;
+width: 70%;
+padding-right: 8%;
+font-weight: 300;
+font-size: 15px;
+color: black;
+}
+
+#what_we_offer{
+  margin: 0 20px;
+}
+
+#training.offer_icon{
+	background:url(rfo-tools-sprite.png) 0 0;
+}
+
+#financial.offer_icon{
+	background:url(rfo-tools-sprite.png) 240px 0;
+}
+
+#call_vote.offer_icon{
+	background:url(rfo-tools-sprite.png) 120px 0;
+}
+
+#tools.offer_icon{
+	background:url(rfo-tools-sprite.png) 180px 0;
+}
+
+#guides.offer_icon{
+	background:url(rfo-tools-sprite.png) 60px 0;
+}
+
+
+/* CSS Ribbon */
+.ribbon {
+ font-family: 'Open Sans Condensed', helvetica, arial, sans-serif;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 40px;
+ line-height: 40px;
+ width: 70%;   
+ position: relative;
+ background: #0087b0;
+ color: #fff;
+ text-align: center;
+ padding: .3em 1em;
+ margin: 2em auto 1em;
+}
+
+.ribbon:before, .ribbon:after {
+content: "";
+position: absolute;
+display: block;
+bottom: -.5em;
+border: 1em solid #0d6f91;
+z-index: -1;
+}
+.ribbon:before {
+ left: -1.5em;
+border-right-width: 1em;
+border-left-color: transparent;
+}
+.ribbon:after {
+right: -1.5em;
+border-left-width: 1em;
+border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+content: "";
+position: absolute;
+display: block;
+border-style: solid;
+border-color: #052b47 transparent transparent transparent;
+bottom: -.5em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+border-width: .5em 0 0 .5em;
+}
+.ribbon .ribbon-content:after {
+right: 0;
+border-width: .5em .5em 0 0;
+}
+
+
+
+
+.waiting{
+	border-top: solid 1px #d9d9d9;
+	background: rgb(255,255,255); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+text-align: center;
+font-size: 20px;
+padding: 50px 0;
+}
+
+.waiting h2{
+	color: #0087b0;
+	text-transform: none;
+	font-size: 60px;
+	font-weight: 700;
+	margin: .67em 0;
+	border-bottom: none;
+}
+
+
+/* Form */
+input[type="radio"].radio {
+    display: none;
+}
+
+input[type="text"].campaign_website {
+width: 392px;
+}
+
+label.radio {
+background: green;
+color: #fff;
+padding: 5px 0;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 12px;
+opacity: .9;
+text-align: center;
+display: inline-block;
+top: -2px;
+padding: 6px 10px;
+opacity: .7;
+-webkit-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease;
+-o-transition: all .2s ease;
+transition: all .2s ease;
+}
+
+/*label.radio.role{
+	background-color: #0087b0;
+}*/
+
+form label.radio.active {
+    opacity: 1;
+    color: #fff;
+}
+
+
+button[type=submit] {
+	width: 400px;
+}
+
+}/* end screen styles */
+
+
+/* mobile styles */
+@media only screen 
+and (max-width : 930px) {
+
+#header nav {
+max-height: 39px;
+min-height: 39px;
+}
+
+.content .span33, .content .span66, .content .span50 {
+	clear:both;
+	display:block;
+	width: 100%;
+}
+.content .span33 {
+    width: 97%;
+}
+
+.hero{
+	margin-top: 20px;
+}
+
+.offers, .offer-body{
+	width: 100%;
+	padding: 0;
+}
+
+h2.ribbon{
+	color: inherit;
+	background-color: inherit;
+	border: inherit;
+	position: inherit;
+	padding: 0;
+	width: auto;
+	margin: 2em auto;
+}
+
+.waiting h2{
+	font-size: 40px;
+}
+
+.take-action{
+	margin: 1em auto;
+}
+
+#process, #previous_candidates {
+	padding-top: 1em;
+}
+
+#previous_candidates ul, ol#endorsement{
+	margin: 2em auto;
+	width: 80%;
+	display:block;
+}
+
+ol#endorsement{
+	width: 70%;
+}
+
+ol li {
+ width: 100%;
+}
+
+.hero.span50 { width: auto }
+
+
+.ribbon:before, .ribbon:after, .ribbon-content:before, .ribbon-content:after{
+	display:none;
+}
+
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after{
+	display:none;
+}
+
+.candidate-testimonial.span33{
+	width: 100%;
+	display: block;
+	clear: both;
+}
+
+.candidate-testimonial.span33 p{
+	padding: 0;
+	margin: 0;
+}
+
+.candidate-testimonial.span33 img{
+	width: 60%;
+}
+
+}
+
+/*end mobile styles */

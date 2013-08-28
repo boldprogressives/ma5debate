@@ -1,0 +1,45 @@
+<div class="question-block cf card">
+  <div class="votes">
+    <a href="#/question/{id}/" data-question_id="{id}"
+         class="vote-button">
+      <div class="vote_tally">
+        <div style="font-size: 10px; font-family: 'Open Sans', helvetica, arial, sans-serif; padding-top: 0; margin-top: -10px; font-weight: lighter; text-transform: uppercase">Score</div>
+        <span>{votes}</span></div>
+      <div class="vote-bottom">
+        Vote
+      </div>
+    </a>
+
+    <div class="social_links detail">
+      <span class="tweet-button"><a class="twitter" href="https://twitter.com/intent/tweet?url=http://opendebatequestions.com/nyc/q/%3Fsource=tw%23/question/{id}/&amp;text=I just voted in cool people powered %23OpenNYCDebate for mayor - vote for this question!&amp;via=WorkingFamilies">Tweet</a></span>
+      <span class="fb-button"><a class="facebook" href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/nyc/q/%23/question/{id}/&redirect_uri=http://opendebatequestions.com/nyc/q/%3Fsource=fb%23/question/{id}/&name=OpenNYCDebate&description={submission|excerpt}" target="_blank">
+      Share</a></span>  
+    </div>
+  </div>
+
+<div class="question">
+<div class="question-meta">
+      	Submitted by <span class="user_name">{first_name} {last_name}</span> from
+      	<span class="location"><a href="#/location/{y},{x}/">{city}, {state}</a></span> in <strong><a href="#/category/{category}/">{category}</a></strong>
+      	<div class="time"><a href="#/question/{id}/" title="{created}">{created|datetime}</a></div>
+      </div>
+
+     <h5 class="question_text" data-if="submission">
+       {submission}
+     </h5>
+      
+</div>
+  
+</div>
+
+  
+  
+  <hr />
+  
+  
+    <div class="fb-comments" data-href="http://opendebatequestions.com/ma5/q/#/question/{id}/"
+         data-width="470"
+         data-num-posts="10">
+    </div>
+  
+<hr />

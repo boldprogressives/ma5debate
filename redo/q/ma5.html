@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css" />
+        <![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+    
+    <script type="text/javascript" 
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="obviel/obviel-template.js"></script>
+    <script type="text/javascript" src="obviel/obviel.js"></script>
+    <script type="text/javascript" src="pccc-ak-async-post.js"></script>
+    <script type="text/javascript" src="opendebate.js"></script>
+    <script type="text/javascript">
+      $(window).load(function() {
+        opendebate.init("egj_test_submissions", "egj_test_call_votes", "egj_test_call_vote_check");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1390830227802266";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <div id="nav">
+      <a href="#/sort/date/">Show Newest Questions</a>
+      |
+      <a href="#/sort/votes/">Show Popular Questions</a>
+      |
+      <a href="#/location/">Browse on a Map</a>
+      |
+      <a href="#/sort/date" onclick="opendebate.submitQuestion();">Add a Question</a>
+    </div>
+    <hr />
+    <div id="container">
+      Hello!
+    </div>
+    <div id="map" style="display: none; height: 400px"></div>
+
+  </body>
+</html>
