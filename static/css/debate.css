@@ -1,14 +1,76 @@
 /* blue: #006ea9; navy: */
-
 body, label, p {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 }
+/* general utilities */
+section.relax { text-align: center; padding-top: 60px; padding-bottom: 60px; }
+section.relax h2 { margin-bottom: 40px; }
+section.relax h1 { margin-bottom: 40px; text-shadow: 0.1em 0.1em 0.1em black; }
+.disclaimer { border: 1px solid #e3e3e3; text-align: center; padding: 0.5em 3%; font-size: 11px; color: #e3e3e3; }
+iframe[name=google_conversion_frame] { display: none; }
+.relax p { font-size: 16px; margin: 1em; }
+.relax h3 { font-family: "Open Sans", sans-serif; font-weight: 300; text-transform: none; font-size: 20px; }
+
+/* general use styles */
+.btn { 
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+	text-transform: uppercase;
+	color: white;
+	font-size: 16px;
+	font-weight: 300;
+	padding-top: 4px; padding-bottom: 4px;
+}
+.btn.small { font-size: 14px; min-width: 120px; }
+.btn.large { font-size: 24px; padding: 8px 40px 8px 40px; }
+.btn.nocase { text-transform: none;}
+.btn.gray { color: black; }
+.btn:hover { opacity: 0.8; color: white; }
+.btn.gray:hover { color: black; }
+h1 { font-family: "Open Sans Condensed", sans-serif; font-size: 48px; font-weight: 600; }
+h2 { font-family: "Open Sans", sans-serif; font-size: 40px; font-weight: 300; }
+h3 { font-family: "Open Sans Condensed", sans-serif; font-size: 25px; font-weight: 600; text-transform: uppercase; }
+h4 { font-family: "Open Sans", sans-serif; font-size: 16px; font-weight: 400; text-transform: uppercase; }
 h3, h4, a { color: #006ea9; }
-header.navbar { border-radius: 0; }
-header.navbar-inverse { background-color: #006ea9; color: white; border-top: 1px solid #549ed7; border-bottom: 1px solid #004c76; border-left: 0 none transparent; border-right: 0 none transparent; }
-.navbar-inverse .navbar-nav > li > a { color: white; }
-.navbar-inverse .navbar-nav > li > a:hover { background-color: #549ed7; }
+.navy {
+	background-color: #052b47;
+	color: white;
+}
+.navy h3, .navy h4 { color: white; }
+.blue { 
+	background-color: #006ea9; 
+	color: white;
+}
+.footer.blue { background-color: #005786; }
+.red { 
+	background-color: #d9000d; 
+	color: white; }
+.white {
+	background-color: white;
+	color: black;
+}
+
+
+/* header and footer for this site */ 
+header.navbar, footer.navbar { border-radius: 0; }
+footer.navbar { margin: 0; }
+.navbar-inverse { background-color: #006ea9; color: white; border-left: 0 none transparent; border-right: 0 none transparent; }
+header.navbar-inverse, footer.navbar-inverse { border-top: 1px solid #549ed7; border-bottom: 1px solid #004c76; }
+.navbar-inverse .navbar-nav > li > a { color: white; text-transform: uppercase; }
+header.navbar-inverse .navbar-nav > li > a:hover { background-color: #549ed7; }
+.footer .navbar-inverse .navbar-nav > li > a:hover { text-shadow: 0 0 2px #e3e3e3; }
+.footer .navbar-inverse .navbar-nav > li > a:hover.red { background-color: #d9000d; }
+footer .navbar-nav {text-align: center; margin-left: auto; margin-right: auto; }
+.footer .row { text-align: center; margin: 50px auto 30px; }
+
+
 section.backdrop-audience {
 	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg) no-repeat center center;
 	-webkit-background-size: cover;
@@ -27,24 +89,20 @@ section.backdrop-audience {
 .hero .hero-main {
 	padding-top: 15px;
 	padding-bottom: 15px;
+	text-align: center;
+	padding: 2% 4%;
 }
-.hero-main { width: 65%; float: left; } .hero-side { width: 35%; float: left;} .hero .no-bg { float: left; width: 65%; }
-.navy {
-	background-color: #052b47;
-	color: white;
-}
-.navy h3, .navy h4 { color: white; }
-.blue { 
-	background-color: #006ea9; 
-	color: white;
-}
-.red { 
-	background-color: #d9000d; 
-	color: white; }
-.white {
-	background-color: white;
-	color: black;
-}
+
+.hero h1 { font-size: 43px; /* just a bit smaller than the usual 45 */ margin: 1em 0; }
+.hero .hero-main .container { padding-top: 20px; padding-bottom: 20px; }
+.hero .hero-main .container h1 { margin: 0; padding: 0; }
+.hero .hero-main .container p.label { text-transform: uppercase; font-weight: 300; font-size: 13px;}
+.hero .col-md-6 .btn { width: 100%; margin: 3px auto; } 
+.hero .hero-main .col-md-6:last-child { border-left: 1px solid white; }
+.hero .hero-main .col-md-6:first-child { margin-left: -4%; margin-right: 4%; }
+.hero-main { width: 70%; float: left; } .hero-side { width: 30%; float: left;} .hero .no-bg { float: left; width: 65%; }
+
+
 section.get-started {
 	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg) no-repeat center center;
 	-webkit-background-size: cover;
@@ -52,39 +110,12 @@ section.get-started {
 	-o-background-size: cover;
 	background-size: cover;
 	color: white;
+	padding-top: 100px;
+	padding-bottom: 150px;
 }
-.btn { 
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
-	text-transform: uppercase;
-	color: white;
-	font-size: 16px;
-	font-weight: 300;
-}
-.btn.small { font-size: 14px; }
-.btn.large { font-size: 24px; padding: 8px 40px 8px 40px; }
-.btn.nocase { text-transform: none;}
-.btn.gray { color: black; }
-.btn:hover { opacity: 0.8; color: white; }
-.btn.gray:hover { color: black; }
-h1 { font-family: "Open Sans Condensed", sans-serif; font-size: 48px; font-weight: 600; }
-h2 { font-family: "Open Sans", sans-serif; font-size: 40px; font-weight: 300; }
-h3 { font-family: "Open Sans Condensed", sans-serif; font-size: 25px; font-weight: 600; text-transform: uppercase; }
-h4 { font-family: "Open Sans", sans-serif; font-size: 16px; font-weight: 400; text-transform: uppercase; }
-.relax p { font-size: 16px; }
-.relax h3 { font-family: "Open Sans", sans-serif; font-weight: 300; text-transform: none; font-size: 20px; }
 .candidate-entry img { width: 64px; margin-right: 12px; float: left; }
 .candidate-entry .name { font-size: 16px; }
 .candidate-entry .title { font-size: 13px; }
 .candidate-entry .more { font-size: 13px; }
 .candidate-entry .after { float: left; }
 
-section.relax { text-align: center; padding-top: 60px; padding-bottom: 60px; }
-section.relax h2 { margin-bottom: 40px; }
-section.relax h1 { margin-bottom: 40px; text-shadow: 0.1em 0.1em 0.1em black; }
