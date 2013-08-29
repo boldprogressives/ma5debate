@@ -1,5 +1,5 @@
 /* blue: #006ea9; navy: */
-body, label, p {
+body, section, p, label {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 }
@@ -11,7 +11,7 @@ section.relax h1 { margin-bottom: 40px; text-shadow: 0.1em 0.1em 0.1em black; }
 iframe[name=google_conversion_frame] { display: none; }
 .relax p { font-size: 16px; margin: 1em; }
 .relax h3 { font-family: "Open Sans", sans-serif; font-weight: 300; text-transform: none; font-size: 20px; }
-/* general use styles */
+/* general use styles: buttons, color classes, and headings */
 .btn { 
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -38,25 +38,12 @@ h2 { font-family: "Open Sans", sans-serif; font-size: 40px; font-weight: 300; }
 h3 { font-family: "Open Sans Condensed", sans-serif; font-size: 25px; font-weight: 600; text-transform: uppercase; }
 h4 { font-family: "Open Sans", sans-serif; font-size: 16px; font-weight: 400; text-transform: uppercase; }
 h3, h4, a { color: #006ea9; } p > a { font-weight: 400; }
-.navy {
-	background-color: #052b47;
-	color: white;
-}
+.navy {	background-color: #052b47; color: white; }
 .navy h3, .navy h4 { color: white; }
-.blue { 
-	background-color: #006ea9; 
-	color: white;
-}
+.blue { background-color: #006ea9; color: white; }
 .footer.blue { background-color: #005786; }
-.red { 
-	background-color: #d9000d; 
-	color: white; }
-.white {
-	background-color: white;
-	color: black;
-}
-
-
+.red { background-color: #d9000d; color: white; }
+.white { background-color: white; color: black; }
 /* header and footer for this site */ 
 header.navbar, footer.navbar { border-radius: 0; }
 footer.navbar { margin: 0; }
@@ -66,10 +53,30 @@ header.navbar-inverse, footer.navbar-inverse { border-top: 1px solid #549ed7; bo
 header.navbar-inverse .navbar-nav > li > a:hover { background-color: #549ed7; }
 .footer .navbar-inverse .navbar-nav > li > a:hover { text-shadow: 0 0 2px #e3e3e3; }
 .footer .navbar-inverse .navbar-nav > li > a:hover.red { background-color: #d9000d; }
-footer .navbar-nav {text-align: center; margin-left: auto; margin-right: auto; }
+footer .navbar-nav {text-align: center; margin-left: auto; margin-right: auto; float: none; width: 80%; }
 .footer .row { text-align: center; margin: 50px auto 30px; }
-
-
+/* the hero section and the content therein. note: hero is not a bootstrap class anymore, just a name like any other. */
+.hero { background-color: rgba(255,255,255,0.8); margin-top: 50px; margin-bottom: 50px; padding: 20px 30px; color: black; }
+.hero .hero-main { padding-top: 15px; padding-bottom: 25px; text-align: center; padding: 2% 4%; }
+.hero h1 { font-size: 43px; /* just a bit smaller than the usual 45 */ margin: 0.85em 0; }
+.hero .hero-main .container { padding-top: 20px; padding-bottom: 20px; }
+.hero .hero-main .container h1 { margin: 0; padding: 0; }
+.hero .hero-main .container p.label { text-transform: uppercase; font-weight: 300; font-size: 13px; }
+.hero .col-md-6 .btn { width: 100%; margin: 3px auto; } 
+.hero .hero-main .col-md-6:last-child { border-left: 1px solid white; text-align: center; padding-bottom: 15px; }
+.hero .hero-main .col-md-6:first-child { margin-left: -3%; margin-right: 3%; }
+.hero-main { width: 70%; float: left; } 
+.hero-side { width: 30%; float: left; padding-left: 20px; padding-right: 20px; } 
+.hero .no-bg { float: left; width: 65%; }
+.candidate-entry img { width: 64px; margin-right: 12px; float: left; margin-bottom: 30px; }
+.candidate-entry .name { font-size: 16px; }
+.candidate-entry .title, .candidate-entry .more { font-size: 13px; }
+.candidate-entry .after { float: left; }
+.candidate-list h3 { margin-top: 10px; }
+.candidate-list hr { margin-top: 0px; margin-bottom: 15px; border-top: 1px solid #cccccc; }
+.candidate-list p { margin: 0; }
+.candidate-list { padding-bottom: 20px; }
+/* other sections */ 
 section.backdrop-audience {
 	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg) no-repeat center center;
 	-webkit-background-size: cover;
@@ -78,30 +85,6 @@ section.backdrop-audience {
 	background-size: cover;
 	color: white;
 }
-.hero {
-	background-color: rgba(255,255,255,0.8);
-	margin-top: 50px;
-	margin-bottom: 50px;
-	padding: 20px 30px;
-	color: black;
-}
-.hero .hero-main {
-	padding-top: 15px;
-	padding-bottom: 25px;
-	text-align: center;
-	padding: 2% 4%;
-}
-
-.hero h1 { font-size: 43px; /* just a bit smaller than the usual 45 */ margin: 0.85em 0; }
-.hero .hero-main .container { padding-top: 20px; padding-bottom: 20px; }
-.hero .hero-main .container h1 { margin: 0; padding: 0; }
-.hero .hero-main .container p.label { text-transform: uppercase; font-weight: 300; font-size: 13px;}
-.hero .col-md-6 .btn { width: 100%; margin: 3px auto; } 
-.hero .hero-main .col-md-6:last-child { border-left: 1px solid white; text-align: center; padding-bottom: 15px; }
-.hero .hero-main .col-md-6:first-child { margin-left: -3%; margin-right: 3%; }
-.hero-main { width: 70%; float: left; } .hero-side { width: 30%; float: left; padding-left: 20px; padding-right: 20px; } .hero .no-bg { float: left; width: 65%; }
-
-
 section.get-started {
 	background: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg) no-repeat center center;
 	-webkit-background-size: cover;
@@ -113,13 +96,4 @@ section.get-started {
 	padding-bottom: 150px;
 }
 section.get-started .btn { margin-top: 2em; margin-bottom: 2em; }
-.candidate-entry img { width: 64px; margin-right: 12px; float: left; margin-bottom: 30px; }
-.candidate-entry .name { font-size: 16px; }
-.candidate-entry .title, .candidate-entry .more { font-size: 13px; }
-.candidate-entry .after { float: left; }
-.candidate-list h3 { margin-top: 10px; }
-.candidate-list hr { margin-top: 0px; margin-bottom: 15px; border-top: 1px solid #cccccc;}
-.candidate-list p { margin: 0; }
-.candidate-list { padding-bottom: 20px; }
-
-section.partner-logos img { margin: 15px; }
+section.partner-logos img { margin: 20px; }
