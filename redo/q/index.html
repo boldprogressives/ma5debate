@@ -5,16 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenDebateQuestions.com | NYC Mayor</title>
     <meta property="og:image" content="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-NYC-logo.jpg" />
-    <link rel="canonical" href="http://opendebatequestions.com/nyc/" />
+    <link rel="canonical" href="http://opendebatequestions.com/redo/" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,400|Open+Sans+Condensed:700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/nyc/rfo.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/nyc/header-footer.css" />
-
-
-
-<!--[if !IE]><!--><script> if (/*@cc_on!@*/false) { document.documentElement.className+=' ie10'; } </script><!--<![endif]-->
-
+	 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+	 <link rel="stylesheet" type="text/css" href="/static/css/debate.css" />	 
+	<link rel="stylesheet" type="text/css" media="screen" href="lightbox.css" />
+	<!--[if !IE]><!--><script> if (/*@cc_on!@*/false) { document.documentElement.className+=' ie10'; } </script><!--<![endif]-->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+	<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css" />
+    <![endif]-->
+	<link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.css" />
+	<link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.ie.css" /><![endif]-->
+	<style type="text/css">
+.card { 
+  background-color: white; 
+  border: 0 !important; 
+  -moz-box-shadow:    0px 0px 1px 1px #aaa !important;
+  -webkit-box-shadow: 0px 0px 1px 1px #aaa !important;
+  box-shadow:         0px 0px 1px 1px #aaa !important;
+}
+.nav_card { padding-bottom: 0; margin-bottom: 20px; }
+.vote-bottom { font-size: 12px; font-weight: 600; }
+a.take-action.red{  background: #d9000d; }
+a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
+	</style>
 </head>
 <body>	
 
@@ -28,71 +44,38 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 	<div id="overlay" style="display:none">&nbsp;</div>   
-<div id="page_content">
-    
-    <header>
-    	<div class="breaker cf nav">
-    	<div class="width-align">
-    		<!--ul class="pull-left">
-	    		<li><a href="/nyc/">OpenDebateQuestions.com</a></li>
-    		</ul-->
-	    	<ul class="pull-right">
-<!-- -->	   <li><a href="/nyc/">Home</a></li> <!-- -->
-	    		<li><a href="/nyc/candidates/">Candidates</a></li>
-				<li><a href="/nyc/about/">About</a></li>
-			        <li><a href="/ma5/">Past Debates</a></li>
-				<li><a href="/nyc/q/">Participate</a></li>
-	    	</ul>
-    	</div>
-    	</div>
-    	<div class="breaker cf logos">
-    	<div class="width-align">
-    	  <a href="/nyc/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-NYC-logo.jpg" /></a>
-    	  <a href="/nyc/contact/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-host-btn.jpg" class="pull-right hidden-phone" /></a>
-    	</div>
-    	</div>
-    </header>
+
+<header class="navbar navbar-inverse" role="banner">
+<nav class="container" role="navigation">
+	<ul class="nav navbar-nav pull-right">
+		<li><a href="/redo/">Home</a></li> <!-- -->
+	    <li><a href="/redo/candidates/">Candidates</a></li>
+		<li><a href="/redo/about/">About</a></li>
+		<li><a href="/nyc/">Past Debates</a></li>
+		<li><a href="/redo/q/">Participate</a></li>
+	</ul>
+</nav>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+    	  <a href="/redo/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-NYC-logo.jpg" /></a>
+		</div>
+		<div class="col-md-6">
+    	  <a href="/redo/contact/"><img src="https://s3.amazonaws.com/s3.boldprogressives.org/images/ODQ-host-btn.jpg" class="pull-right hidden-phone" /></a>
+		</div>
+  	</div>
+</div>
 
 
-<link rel="stylesheet" type="text/css" media="screen" href="lightbox.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="debate.css" />
-<style type="text/css">
-.breaker.content {background-color: #e3e3e3; border-top: 1px solid rgb(160,160,160); padding-top: 20px; padding-bottom: 40px; }
-.card { 
-  background-color: white; 
-  border: 0 !important; 
-  -moz-box-shadow:    0px 0px 1px 1px #aaa !important;
-  -webkit-box-shadow: 0px 0px 1px 1px #aaa !important;
-  box-shadow:         0px 0px 1px 1px #aaa !important;
-}
-.nav_card {
-  padding-bottom: 0;
-  margin-bottom: 20px;
-}
-.vote-bottom { font-size: 12px; font-weight: 600; }
-
-a.take-action.red{
-	background: #d9000d;
-}
-a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
-</style>
-
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
-<!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css" />
-    <![endif]-->
-<link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.css" />
-<link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.css" />
-<!--[if lte IE 8]><link rel="stylesheet" href="leaflet.markercluster/MarkerCluster.Default.ie.css" /><![endif]-->
-
-  <div class="lightbox share_after_question" style="display:none">
+<div class="lightbox share_after_question" style="display:none">
     <div class="close_box">X</div>
     <hr class="checkbox_icon" />
     <h2 style="font-size: 22px">Thanks for your submission</h2>
     Make sure your questions gets the most votes by sharing with your friends!
     
-    <a style="width: 80%; margin-bottom: 0; margin-top: 30px" class="take-action lightblue nocase facebookshare"
-       data-href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/nyc/q/%3Fsource=fb%23/question/{id}/&redirect_uri=http://opendebatequestions.com/nyc/q/%23/question/{id}/&name=OpenNYCDebate&caption=I just sumitted a question in the Open NYC Debate for Mayor&description={submission}" target="_blank">Share on Facebook</a>
+    <a style="width: 80%; margin-bottom: 0; margin-top: 30px" class="take-action lightblue nocase facebookshare" data-href="https://www.facebook.com/dialog/feed?app_id=1390830227802266&link=http://opendebatequestions.com/nyc/q/%3Fsource=fb%23/question/{id}/&redirect_uri=http://opendebatequestions.com/nyc/q/%23/question/{id}/&name=OpenNYCDebate&caption=I just sumitted a question in the Open NYC Debate for Mayor&description={submission}" target="_blank">Share on Facebook</a>
     <a style="width: 80%" class="take-action lightblue nocase twittershare"
        data-href="https://twitter.com/intent/tweet?url=http://opendebatequestions.com/nyc/q/%3Fsource=tw%23/question/{id}/&amp;text=Please vote for my question in this cool people powered %23OpenNYCDebate for mayor!&amp;via=WorkingFamilies">Post to Twitter</a>
     <div><a style="font-size: 12px; color: white" 
@@ -101,12 +84,13 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
     </div>
   </div>
 
-  <div class="lightbox out_of_area" style="display:none">
+<div class="lightbox out_of_area" style="display:none">
     <div class="close_box">X</div>
     <h2 style="font-size: 22px">Sorry!  Massachusetts only.</h2>
     Sorry, we're currently only allowing Massachusetts residents to vote for the questions they want in the debate.  But feel free to submit your own question for voting, and share with your friends in Massachusetts!
   </div>
-  <div class="lightbox donate" style="display: none; width: 400px">
+  
+<div class="lightbox donate" style="display: none; width: 400px">
     <div class="close_box">X</div>
     <hr class="checkbox_icon" />
     <h2 style="font-size: 28px">Thank you for your votes!</h2>
@@ -118,219 +102,161 @@ a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
             onclick="$('.donate').fadeOut(); $('#overlay').fadeOut(); return false;"
             href="#">No thanks.</a></div>
   </div>
-  <div class="lightbox already_voted" style="display:none">
+  
+<div class="lightbox already_voted" style="display:none">
     <div class="close_box">X</div>
     <h2 style="font-size: 22px">You've already voted for this question!</h2>
     You can only vote once per question.  You can still cast a vote for any other questions, and make sure to tell your friends to vote for this question too!
   </div>
 
-  <div style="display:none; left: 35%" class="lightbox" id="vote_form_lightbox">
-  <div class="close_box">X</div>
-    	<hr class="mic_icon"/>
-    	<h2>Sign Up &ndash; Be Heard</h2>
-    	<div id="verify_location_error" class="error_msg" style="display:none">
-		<p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
-    	
-    	<p class="invalid_vote_email" style="display:none">Please enter a valid email address.</p>
-    	<p class="invalid_vote_zip" style="display:none">Please enter a valid zipcode.</p>
-
+<div style="display:none; left: 35%" class="lightbox" id="vote_form_lightbox">
+    <div class="close_box">X</div>
+    <hr class="mic_icon"/>
+   	<h2>Sign Up &ndash; Be Heard</h2>
+   	<div id="verify_location_error" class="error_msg" style="display:none">
+			<p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
+	    	<p class="invalid_vote_email" style="display:none">Please enter a valid email address.</p>
+    		<p class="invalid_vote_zip" style="display:none">Please enter a valid zipcode.</p>
     	</div>
-
-	    <form id="vote_form">
-    	<p><input type="email" id="vote_email" placeholder="Email"/></p>
-    	<p><input type="text" id="vote_zip" placeholder="Zip" /></p>
-    	<button class="take-action" type="submit">Vote!</button>
+    <form id="vote_form">
+    		<p><input type="email" id="vote_email" placeholder="Email"/></p>
+    		<p><input type="text" id="vote_zip" placeholder="Zip" /></p>
+    		<button class="take-action" type="submit">Vote!</button>
     	</form>
+	<div><a style="font-size: 12px; color: white" href="/nyc/about/#how_it_works">(Find out how we use this information)</a></div>
+  </div>
 
-<div><a style="font-size: 12px; color: white" href="/nyc/about/#how_it_works">(Find out how we use this information)</a></div>
-    	
-    </div>
+<div id="overlay" style="display:none">&nbsp;</div>   
 
-
-	<div id="overlay" style="display:none">&nbsp;</div>   
 <div id="page_content">
-<div class="breaker content cf">
-  <div class="width-align">
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1390830227802266";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+
+<div class="container">
+  <div class="row">
     <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-       
-<div class="topline content cf">
-	<div class="span66">
+    <div class="topline col-md-8">
 		<p><span id="recognized_user"></span></p>
 	</div>
-	<div class="span33 sidecar">
+	<div class="col-md-4">
         <p><a style="text-decoration: none;" href="/nyc/contact/">Having trouble with the site? Tell us about it here.</a></p>
 	</div>
-</div>    
+  </div><!-- row -->
+</div>
 
-    <div class="span66">
-      <div class="cf card nav_card">
-        <div id="nav">
-          <div class="width-align">
-            <h3 style="display: inline-block; vertical-align: center"
-                class="search_label"><a style="font-size: 16px"
-                                        name="search">Search for a question</a></h3>
-            <form style="vertical-align: center; display: inline-block; 
-                         margin-left: 0.8em; width: 60%"
-                  onsubmit="return false;" style="text-align: center">
-              <input type="text" id="search" 
-                     style="vertical-align: center; width: 100%"
-                     placeholder="Search current questions"
-                     onkeyup="var text=$(this).val().trim(); if( text && text.length >= 4 ) { opendebate.search(text); } return false;" />
+<div class="container">
+  <div class="row">  
+
+    <div class="col-md-4 pull-right sidecar" id="sticky-right">
+	<div class="sidecar-inner">
+		<div class="reminder_well submit_question c" onclick="$(this).hide(); $('.form-well.category-well.c').slideDown(); return false;">
+			<a target="_blank" href="#add_question" style="display: block; width: 100%; margin: 0 0 10px 0; padding-right: 0; padding-left: 0" class="take-action">Browse by Topic</a>
+		</div>
+		<div style="display: none" class="form-well category-well c">
+			<a class="control" onclick="$('.form-well.category-well.c').slideUp(function() {$('.reminder_well.submit_question.c').slideDown();}); return false;" href ><h2>Topics</h2></a>
+			<div style="max-height: 600px"></div>
+		</div>
+		
+		<div class="reminder_well submit_question q" onclick="$(this).hide(); $('.form-well.question-well.q').slideDown(); return false;">
+			<a target="_blank" href="#add_question" style="display: block; width: 100%; margin: 0 0 10px 0; padding-right: 0; padding-left: 0" class="take-action">Submit a New Question</a>
+		</div>
+		<div style="display: none;" class="form-well question-well q">
+			<div id="add_question" name="add_question">
+				<a class="control" onclick="$('.form-well.question-well.q').slideUp(function () {$('.reminder_well.submit_question.q').slideDown();}); return false;" href ><h2>Submit a new Question</h2></a>
+				<hr class="mic_icon"/> 
+				<div id="thanks" style="display:none"></div>
+				<div id="add_question_error" class="error_msg" style="display:none">
+					<p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
+					<p class="invalid_email" style="display:none">Please enter a valid email address.</p>
+					<p class="invalid_zip" style="display:none">Please enter a valid zipcode.</p>
+				</div>
+				<form id="new_question" name="new_question" onsubmit="opendebate.submitQuestion(); return false;">
+					<textarea class="required" name="question" id="new_question_text" rows="4" placeholder="Enter your question here. If you have multiple questions, please submit each one separately."></textarea>
+					<div class="count" style="float: right; margin-right: 9px; display: none">
+						(<span class="count">200</span> / 200)
+					</div>
+					<select id="category" style="padding-top: 3px; width: 95%" name="category" class="required">
+						<option class="fixed" value="">Select a topic</option>
+						<option class="fixed last" value="_other">other topic</option>
+					</select>
+					<input style="display: none" id="other_category" type="text" name="other_category" placeholder="add your topic" />
+					<hr />
+					<input class="user required" type="text" name="first_name" id="first_name" placeholder="First Name"/> 
+					<input class="user required" type="text" name="last_name" id="last_name" placeholder="Last Name"/>
+					<input class="user required" type="email" name="email" id="email" placeholder="Email"/>
+					<input class="user required" type="text" name="zip" id="zip" placeholder="Zipcode"/>
+					<button type="submit" class="take-action">Add Your Question</button>
+				</form>
+			</div>
+		</div>
+		<div class="reminder_well">
+			<a target="_blank" href="/nyc/reminders/" style="display: block; width: 100%; margin: 0; padding-right: 0; padding-left: 0" class="take-action">sign up for a reminder</a>
+		</div>
+		<div class="activity_well" style="margin-top: 20px; margin-bottom: 10px;">
+			<h2 style="font-family: 'Open Sans', helvetica, arial, sans-serif; color: #000; font-weight: 400; font-size: 18px; margin-bottom: 8px; padding-bottom: 3px; text-transform: uppercase; border-bottom: 1px solid black">Recent Activity</h2>
+			<div id="activity_entries">Loading...</div>
+		</div>
+	</div>
+  </div>
+    
+    <div class="col-md-8"><div class="card nav_card">
+      <div id="nav">
+        <div class="container">
+          <h3 style="display: inline-block; vertical-align: center" class="search_label"><a style="font-size: 16px" name="search">Search for a question</a></h3>
+          <form style="vertical-align: center; display: inline-block; margin-left: 0.8em; width: 60%" onsubmit="return false;" style="text-align: center">
+              <input type="text" id="search" style="vertical-align: center; width: 100%" placeholder="Search current questions" onkeyup="var text=$(this).val().trim(); if( text && text.length >= 4 ) { opendebate.search(text); } return false;" />
             </form>
-          </div>
-          <span style="display: inline-block; width: auto">Show:</span>
-          <span style="text-align: center; display: inline-block; width: 80%">
-          <a data-sort="recent_votes" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/recent_votes/p1/">Trending</a>
-          &sdot;
-          <a data-sort="date" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/date/p1/">Newest</a>
-          &sdot;
-          <a data-sort="votes" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/votes/p1/">Popular</a>
-          &sdot;
-          <a data-sort="random" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/random/p1/">Random</a>
-          &sdot;
-          <a data-sort="map" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/location/">Map</a>
-          <span class="add_question_header_link">&sdot;
+        </div><!-- container -->
+        <span style="display: inline-block; width: auto">Show:</span>
+        <span style="text-align: center; display: inline-block; width: 80%">
+          	<a data-sort="recent_votes" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/recent_votes/p1/">Trending</a>
+          	&sdot;
+          	<a data-sort="date" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/date/p1/">Newest</a>
+          	&sdot;
+          	<a data-sort="votes" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/votes/p1/">Popular</a>
+          	&sdot;
+          	<a data-sort="random" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/sort/random/p1/">Random</a>
+          	&sdot;
+          	<a data-sort="map" onclick="$('#search').val(''); opendebate.clearSearch();" href="#/location/">Map</a>
+          	<span class="add_question_header_link">&sdot;
             <a href="#add_question">Submit a Question</a>
           </span>
           </span>
-        </div>
-      </div>
-     <div id="map" style="display: none; height: 400px;"></div>
-    <div id="container" >
+      </div><!-- #nav -->
+    </div><!-- nav-card -->
+    </div><!-- col-md-8 -->
+
+    <div class="col-md-8"><div id="map" style="display: none; height: 400px;"></div></div>
+	 <div class="col-md-8"><div id="container"></div></div> 	
+  </div><!-- row -->
+</div><!-- container -->
     
-    
-    
-    
-    </div>
-    </div>
-
-<div id="sticky-right" class="sidecar span33 pull-right"><div class="sidecar-inner">
-      
-
-    <div class="reminder_well submit_question c"
-         onclick="$(this).hide(); $('.form-well.category-well.c').slideDown(); return false;">
-      <a target="_blank"
-         href="#add_question" style="display: block; width: 100%; margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
-         class="take-action">Browse by Topic</a>	
-    </div>
-    <div style="display: none" class="form-well category-well c">
-      
-      <a class="control" onclick="$('.form-well.category-well.c').slideUp(function() {$('.reminder_well.submit_question.c').slideDown();}); return false;" href ><h2>Topics</h2></a>
-      
-      <div style="max-height: 600px"></div>
-    </div>
-
-    <div class="reminder_well submit_question q"
-         onclick="$(this).hide(); $('.form-well.question-well.q').slideDown(); return false;">
-      <a target="_blank"
-         href="#add_question" style="display: block; width: 100%; margin: 0 0 10px 0; padding-right: 0; padding-left: 0"
-         class="take-action">Submit a New Question</a>	
-    </div>
-
-    <div style="display: none;" class="form-well question-well q">
-      
-
-		
-        <div id="add_question" name="add_question">
-        
-    	<a class="control" onclick="$('.form-well.question-well.q').slideUp(function () {$('.reminder_well.submit_question.q').slideDown();}); return false;" href ><h2>Submit a new Question</h2></a>
-    	<hr class="mic_icon"/>    	
-    	<div id="thanks" style="display:none"></div>
-    	
-    	<div id="add_question_error" class="error_msg" style="display:none"><p class="empty_input" style="display:none">Please fill all fields before submitting. </p>
-    	
-    	<p class="invalid_email" style="display:none">Please enter a valid email address.</p>
-    	<p class="invalid_zip" style="display:none">Please enter a valid zipcode.</p>
-    	
-    	</div>
-    	
-    	<form id="new_question" name="new_question" onsubmit="opendebate.submitQuestion(); return false;">
-	  <textarea class="required" name="question" id="new_question_text" rows="4" placeholder="Enter your question here.  If you have multiple questions, please submit each one separately."></textarea>
-          <div class="count" style="float: right; margin-right: 9px; display: none">
-            (<span class="count">200</span> / 200)
-          </div>
-
-          <select id="category" style="padding-top: 3px; width: 95%" name="category" 
-                  class="required">
-            <option class="fixed" value="">Select a topic</option>
-
-            <option class="fixed last" value="_other">other topic</option>
-          </select>
-          <input style="display: none" id="other_category" type="text"
-                 name="other_category" placeholder="add your topic" />
-          <hr />
-
-	  <input class="user required" type="text" name="first_name" id="first_name"  placeholder="First Name"/>    	
-	  <input class="user required" type="text" name="last_name" id="last_name"  placeholder="Last Name"/>
-	  <input class="user required" type="email" name="email" id="email"  placeholder="Email"/>
-	  <input class="user required" type="text" name="zip" id="zip"  placeholder="Zipcode"/>
-	  <button type="submit" class="take-action">Add Your Question</button>
-   
-    	</form>
-    	   
-    </div>
-    
-    </div>
-
-        <div class="reminder_well">
-          <a target="_blank"
-             href="/nyc/reminders/" style="display: block; width: 100%;
-                                           margin: 0; padding-right: 0; padding-left: 0"
-             class="take-action">sign up for a reminder</a>	
-        </div>
+</div><!-- page_content -->
 
 
-    <div class="activity_well" style="margin-top: 20px; margin-bottom: 10px;">
-      <h2 style="font-family: 'Open Sans', helvetica, arial, sans-serif; color: #000; font-weight: 400; font-size: 18px; margin-bottom: 8px; padding-bottom: 3px;
-                 text-transform: uppercase; border-bottom: 1px solid black">
-        Recent Activity</h2>
-      <div id="activity_entries">Loading...</div>
-    </div>
-</div></div>
-    
-  </div>
-</div>
-
-
-<footer>
-    	<div class="breaker cf nav">
-    	<div class="width-align">
-	    	<ul class="cf">
-	    		<li><a href="/nyc/">Home</a></li>
-	    		<li><a href="/nyc/candidates/">Candidates</a></li>
-				<li><a href="/nyc/about/">About</a></li>
-				<li><a href="/nyc/q/">Participate</a></li>
-				<li><a href="/nyc/contact/">Contact</a></li>
-				<li><a href="/nyc/privacy/">Privacy Policy</a></li>				
-			        <li><a href="/ma5/">Past Debates</a></li>
-				<li><a href="https://secure.actblue.com/contribute/page/ma5debate?refcode=nyc-opendebate-footer">Donate to our work</a></li>
-	    	</ul>
-    	</div>
-    	</div>
-    	
-    	
-        <div class="breaker cf blurb">
-        	<div class="width-align"><center>
-                <div class="disclaimer">
-                    <p>Paid for by the Progressive Change Campaign Committee PAC (BoldProgressives.org) and not authorized by any candidate or candidate's <br /> 
-                    committee. Contributions to the PCCC are not deductible as charitable contributions for federal income tax purposes.</p>
-                </div>
-        	</center></div>
-        </div>
+<section class="footer blue">
+<footer class="navbar navbar-inverse blue" role="banner">
+<!--div class="container"><div class="row"><div class="span12"--><center>
+<nav class="container" role="navigation">
+	<ul class="nav navbar-nav">
+   		<li><a href="/redo/">Home</a></li>
+   		<li><a href="/redo/candidates/">Candidates</a></li>
+		<li><a href="/redo/about/">About</a></li>
+		<li><a href="/redo/q/">Participate</a></li>
+		<li><a href="/redo/contact/">Contact</a></li>
+		<li><a href="/redo/privacy/">Privacy Policy</a></li>	
+	    <li><a href="/nyc/">Past Debates</a></li>
+		<li><a class="red" href="https://secure.actblue.com/contribute/page/ma5debate?refcode=nyc-opendebate-footer">Donate to our work</a></li>
+	</ul>
+</nav></center>
+<!--/div></div></div-->
 </footer>
 
-
-    </div><!-- headslide-wrap -->
+<div class="container"><div class="row"><div class="col-md-10 col-md-offset-1 disclaimer">
+Paid for by the Progressive Change Campaign Committee PAC (BoldProgressives.org) and not authorized by any candidate or candidate's <br /> 
+committee. Contributions to the PCCC are not deductible as charitable contributions for federal income tax purposes.
 </div>
+
+</section>
+
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/nyc/jquery.cookie.js"></script>
@@ -517,7 +443,6 @@ $(function() {
 	<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1035744392/?value=0&amp;guid=ON&amp;script=0"/>
 	</div>
 	</noscript>	
-
     <script>
       window.getArgs = function() {
 	    var argsStr = window.location.search;
@@ -543,9 +468,7 @@ $(function() {
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       
       ga('create', 'UA-6874881-6', 'opendebatequestions.com');
-    </script>
-
-        
+    </script>    
     <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
     <script src="leaflet.markercluster/leaflet.markercluster.js"></script>
     <script type="text/javascript" src="obviel/obviel-template.js"></script>
@@ -865,12 +788,5 @@ $(function() {
       });
     </script>
 
-
-<!--script type="text/javascript" src="jquery.superSticky.js"></script>
-<script>
-$(document).ready(function () { 
-	$('#sticky-right').superSticky(); 
-}); //$('#content').stickyColumn();
-</script-->
 </body>
 </html>
