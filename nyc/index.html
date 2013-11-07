@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/s3.boldprogressives.org/wp-content/themes/premise/style.css.gzip" />
     <link rel="stylesheet" type="text/css" media="screen" href="/nyc/rfo.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/nyc/header-footer.css" />
-
+    <link rel="stylesheet" type="text/css" media="screen" href="/nyc/home.css" />
 
 
 <!--[if !IE]><!--><script> if (/*@cc_on!@*/false) { document.documentElement.className+=' ie10'; } </script><!--<![endif]-->
@@ -37,12 +37,11 @@
 	    		<li><a href="/nyc/">OpenDebateQuestions.com</a></li>
     		</ul-->
 	    	<ul class="pull-right">
-<!-- -->	   <li><a href="/nyc/">Home</a></li> <!-- -->
+		    	<li><a href="/nyc/">Home</a></li>
 	    		<li><a href="/nyc/candidates/">Candidates</a></li>
-				<li><a href="/nyc/about/">About</a></li>
-			        <li><a href="/ma5/">Past Debates</a></li>
-
-				<li><a href="/nyc/q/">Participate</a></li>
+	    		<li><a href="/nyc/about/">About</a></li>
+		      <li><a href="/ma5/">Past Debates</a></li>
+		      <li><a href="/nyc/q/">Participate</a></li>
 	    	</ul>
     	</div>
     	</div>
@@ -55,219 +54,6 @@
     </header>
 
 
-<style>
-
-/* 
-Blue: #006ea9
-Red: #bb0008
-Gray background: #e8e8e8
-*/
-
-@media (min-width: 1200px) {
-	
-  .breaker.content.waiting { background-size: 100%; }
-
-}
-
-@media (min-width: 900px) {
-	/*.width-align { margin-left: 10%; margin-right: 10%; }*/
-	
-}
-.breaker.content.banner { background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-bg-image.jpg); min-height: 600px; }
-.candidate-blurbs .name { font-size: 16px; }
-.candidate-blurbs .title { font-size: 13px; }
-.candidate-blurbs a.more { font-size: 13px; color: #006ea9; text-decoration: none; border-bottom: none 0px white; font-weight: 400; margin-top: 9px; line-height: 22px; }
-.candidate-blurbs a.more:hover { font-size: 13px; color: #bb0008; text-decoration: none; border-bottom-style: none; border-bottom-width: 0px; }
-.candidate-entry img { width: 64px; float: left; margin-right: 12px;}
-.candidate-entry { margin: 16px 12px 14px 0;         padding-bottom: 20px;
-}
-.candidate-entry .after {float: left; }
-.candidate-blurbs { line-height: 1em; float: right; background-color: white; padding: 15px 15px 15px 30px; width: 225px; 
-	float: right;
-	 -moz-box-shadow:    0px 0px 2px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
-  box-shadow:         0px 0px 2px 2px rgba(0,0,0,0.1);
- margin-top: 1px;
-
-	
-	
-}
-.candidate-blurbs h4 { font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif; font-weight: 600; color: #006ea9; text-transform: uppercase; }
-h1.thin { font-size: 40px; font-weight: 300; line-height: 1.3em; text-align: center; margin-bottom: 20px; }
-.candidate-testimonial img { width: auto; max-width: 100px; }
-.candidate-testimonial h3 { font-weight: 300; color: black; font-size: 20px; margin-bottom: 1em; }
-.waiting h2.home-header { font-size: 48px; text-shadow: 0.1em 0.1em 0.1em black; color: white; margin-top: 210px; }
-.breaker.content.waiting { background-color: #484848; background-image: url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-start-bg.jpg); background-position: center center; background-repeat: no-repeat; height: 570px; border-top: none; }
-a.take-action {text-transform: uppercase; font-weight: 300; color: white; }
-a.take-action:hover { opacity: 0.8; }
-a.take-action.blue { background-color: #006ea9; }
-a.take-action.blue:hover { background-color: rgba(76, 167, 228, .8); }
-a.take-action.red:hover { background-color: rgba(234, 24, 34, .9); }
-
-
-.waiting a.take-action { font-size: 24px; margin-top: 60px; padding: 15px 40px 15px 40px;}
-
-.testimonials .take-action.gray { color: black; background-color: #e3e3e3; font-weight: 300; font-size: 14px; padding-top: 7px; padding-bottom: 7px; }
-.testimonials { border-bottom: 1px solid black;}
-@media (max-width: 960px) { 
-	.testimonials { border-top: 1px solid #d4d4d4;} 
-	.banner { border-bottom: 0px none white;}
-
-}
-.width-align.hero {
-	background-color: rgba(255,255,255,0.8);
-	margin-top: 50px; margin-bottom: 50px;
-	padding: 20px 30px;
-	width: 900px;
-}
-.width-align.hero .darkgray { background-color: #052b47; /* background-image:url(https://s3.amazonaws.com/s3.boldprogressives.org/images/debate-feature-bg.png); */ color: white; 
-	text-align: center; padding: 30px; max-width: 570px; max-height: 325px; float: left;
-}
-h3.wide { text-transform: uppercase; font-weight: 400; color: #006ea9; margin-top: 0.8em; margin-bottom: 0.6em; font-size: 16px;}
-.hero h1 { font-size: 43px; font-family: "Open Sans Condensed", Helvetica, sans-serif; margin-bottom: 0.8em; margin-top: 0.6em; line-height: 1.0em;}
-.hero .darkgray>p { margin-bottom: 40px;  }
-.hero .darkgray .left {width: 300px; border-right-color: white; border-right-style: solid; border-right-width: 1px; float: left; }
-.hero .darkgray .right { float: left; text-align: center; padding-left: 40px;}
-.hero .darkgray h3.wide { text-align: center; color: white; font-size: 16px; margin-left: -20px; margin-top: 8px; margin-bottom: 0.4em;}
-.hero .darkgray a.take-action {
-	margin-top:0px; margin-bottom: 0px; width: 200px; font-size: 16px; margin-right: 24px; padding-top: 7px; padding-bottom: 7px;
-}
-.hero .darkgray a.take-action.blue { margin-bottom: 7px;}
-.hero p { font-size: 14px; line-height: 1.3em; }
-.hero .countdown-unit { float: left; margin-right: 20px; }
-.hero .countdown-unit .number { font-size: 39px; font-family: "Open Sans Condensed", Helvetica, sans-serif; }
-.hero .countdown-unit .label { text-transform: uppercase; font-size: 13px;}
-.hero .nobg a { color: #006ea9; text-decoration: none; border-bottom: none 0px white; font-weight: 400;}
-.hero .nobg h3.wide { line-height: 44px; margin-bottom: -10px; }
-
-.breaker.banner {
-   -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
-}
-
-
-@media only screen and (max-width: 960px) {
-.width-align.hero{
-	width: auto;
-	padding:0;
-	width:100%;
-	margin:0;
-}
-
-.hero .darkgray>p {
-	padding: 0 20px;
-}
-.width-align.hero .darkgray, .width-align.hero .candidate-blurbs{
-	width:100%;
-	clear:both;
-	float: none;
-	max-width:inherit;
-	max-height:inherit;
-	margin-bottom: 0;
-}
-.width-align.hero .candidate-blurbs {
-	padding: 20px 0;
-}
-.width-align.hero .darkgray {
-	padding: 0;
-}
-.banner {
-	height: auto;
-}
-
-.breaker.content.banner {	
-	background: inherit;
-	-moz-box-shadow: none;
--webkit-box-shadow: none;
-  		  box-shadow: none;
-	margin-bottom: 0;
-}
-.testimonials {
-	padding-top: 20px;
-}
-
-.nobg {
-	padding: 20px;
-}
-
-.nobg .wide, .nobg p {
-	display: block;
-	margin: 5px auto 10px;
-	width: 80%;
-	text-align: center;
-}
-.hero .nobg h3.wide { margin-top: -10px; }
-.hero .nobg br { display: none; }
-.candidate-entry {
-	margin: 16px auto;
-	display: block;
-	width: 240px;
-	float: left;
-}
-
-.hero .darkgray .left, .hero .darkgray .right {
-	clear: both;
-	float:none;
-	display:block;
-	width: 100%;
-	text-align: center;
-}
-.hero .darkgray .left a.pull-right {
-	display:block;
-	clear:both;
-	float:none;
-	margin: 4px auto;
-}
-.hero .darkgray .right {
-	padding: 20px 0;
-	background-color: #006ea9;
-	margin-top:20px;
-}
-.hero .countdown-unit {
-	float: none;
-	margin:auto;
-}
-.hero .darkgray h3.wide {
-	margin: 5px auto -5px;
-}
-
-.candidate-entries {
-display: block;
-width: 90%;
-margin: auto;
-padding-top:20px;
-}
-
-}
-
-
-@media only screen and (max-width:767px) {
-.candidate-entries {
-	display: block;
-	width: 65%;
-	margin: auto;
-	padding-top: 20px;
-}
-}
-/* added just for this update 
-	navy: #052b47
-	
-*/
-
-
-
-.partners img {margin: 15px 15px; }
-.partners a, .partners a:visited, .partners a:hover, .partners a:active { text-decoration: none; border-bottom-style: none; }
-.partners { padding-bottom: 60px; }
-h2.thin { font-size: 40px; font-weight: 300; line-height: 1.3em; text-align: center; margin-bottom: 20px; border-bottom-style: none; font-family: "Open Sans", Arial, Helvetica, sans-serif; }
-.testimonials { background-color: #052b47; color: white; padding-top: 60px; }
-div.candidate-testimonial h1, div.candidate-testimonial h2, div.candidate-testimonial h3 { color: white; }
-div.breaker.content.banner { margin-bottom: 0; }
-.partners h2 { margin-top: 60px; margin-bottom: 45px;  }
-.testimonials .take-action.red { color: white; background-color: #bb0008; font-weight: 300; font-size: 14px; padding-top: 7px; padding-bottom: 7px; }
-.all-the-partner-logos { text-align: center; }
-</style>
 
 <div class="breaker content banner cf">
 
